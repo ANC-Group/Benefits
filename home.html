@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Rahat Benefits Hub</title>
+
+  <style>
+
+    body {
+
+      margin: 0;
+
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-family:
+        Arial,
+        sans-serif;
+
+      background:
+        #f4faf7;
+
+      color:
+        #17231e;
+    }
+
+
+    .card {
+
+      width:
+        min(520px, calc(100% - 40px));
+
+      padding:
+        40px;
+
+      background:
+        white;
+
+      border:
+        1px solid #dfe8e3;
+
+      border-radius:
+        22px;
+
+      text-align:
+        center;
+
+      box-shadow:
+        0 20px 50px rgba(30,70,50,.08);
+    }
+
+
+    h1 {
+
+      margin:
+        0 0 12px;
+
+      font-size:
+        30px;
+    }
+
+
+    .selection {
+
+      margin-top:
+        25px;
+
+      padding:
+        16px;
+
+      border-radius:
+        12px;
+
+      background:
+        #edf8f2;
+
+      color:
+        #147e52;
+
+      font-weight:
+        bold;
+    }
+
+
+    button {
+
+      margin-top:
+        25px;
+
+      border:
+        none;
+
+      border-radius:
+        10px;
+
+      background:
+        #159c63;
+
+      color:
+        white;
+
+      padding:
+        12px 18px;
+
+      cursor:
+        pointer;
+
+      font-weight:
+        bold;
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+  <div style="font-size:40px;">
+    🎁
+  </div>
+
+
+  <h1>
+    Rahat Benefits Hub
+  </h1>
+
+
+  <p>
+    Giriş sistemi uğurla işləyir.
+  </p>
+
+
+  <div
+    class="selection"
+    id="selection"
+  >
+  </div>
+
+
+  <button
+    onclick="window.location.href='index.html'"
+  >
+    Seçimi dəyiş
+  </button>
+
+</div>
+
+
+
+<script>
+
+const company =
+  localStorage.getItem(
+    "rahat-selected-company-name"
+  );
+
+
+const category =
+  localStorage.getItem(
+    "rahat-selected-worker-category-name"
+  );
+
+
+if (
+  !company ||
+  !category
+) {
+
+  window.location.href =
+    "index.html";
+
+}
+
+
+document
+  .getElementById(
+    "selection"
+  )
+  .textContent =
+    company +
+    " • " +
+    category;
+
+</script>
+
+
+</body>
+
+</html>
