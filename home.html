@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="az">
 
 <head>
@@ -10,114 +11,820 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>Rahat Benefits Hub</title>
+  <title>ANC Group Benefits Hub</title>
+
 
   <style>
 
-    body {
+    * {
+      box-sizing: border-box;
+    }
 
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    :root {
+
+      --green: #149d63;
+      --green-dark: #087b4f;
+      --green-soft: #eaf8f1;
+
+      --orange: #ff7417;
+      --orange-soft: #fff2e8;
+
+      --text: #16231d;
+      --muted: #78857e;
+
+      --border: #dee7e2;
+
+      --background: #f6faf8;
+
+      --white: #ffffff;
+
+    }
+
+
+    body {
       margin: 0;
 
-      min-height: 100vh;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
       font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
         Arial,
         sans-serif;
 
       background:
-        #f4faf7;
+        var(--background);
 
       color:
-        #17231e;
-    }
-
-
-    .card {
-
-      width:
-        min(520px, calc(100% - 40px));
-
-      padding:
-        40px;
-
-      background:
-        white;
-
-      border:
-        1px solid #dfe8e3;
-
-      border-radius:
-        22px;
-
-      text-align:
-        center;
-
-      box-shadow:
-        0 20px 50px rgba(30,70,50,.08);
-    }
-
-
-    h1 {
-
-      margin:
-        0 0 12px;
-
-      font-size:
-        30px;
-    }
-
-
-    .selection {
-
-      margin-top:
-        25px;
-
-      padding:
-        16px;
-
-      border-radius:
-        12px;
-
-      background:
-        #edf8f2;
-
-      color:
-        #147e52;
-
-      font-weight:
-        bold;
+        var(--text);
     }
 
 
     button {
+      font-family: inherit;
+    }
+
+
+
+    /* =========================================
+       APP HEADER
+    ========================================= */
+
+    .app-header {
+
+      background:
+        rgba(255,255,255,.96);
+
+      border-bottom:
+        1px solid var(--border);
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 100;
+
+      backdrop-filter:
+        blur(10px);
+    }
+
+
+    .header-inner {
+
+      max-width:
+        1280px;
+
+      min-height:
+        78px;
+
+      margin:
+        auto;
+
+      padding:
+        0 24px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        15px;
+    }
+
+
+    /* PROFILE */
+
+    .profile-avatar {
+
+      width:
+        49px;
+
+      height:
+        49px;
+
+      flex-shrink:
+        0;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      border-radius:
+        50%;
+
+      background:
+        linear-gradient(
+          145deg,
+          #ff7417,
+          #ff9a45
+        );
+
+      color:
+        white;
+
+      font-size:
+        15px;
+
+      font-weight:
+        850;
+
+      border:
+        3px solid white;
+
+      box-shadow:
+        0 3px 12px rgba(40,55,45,.12);
+    }
+
+
+    .welcome-block {
+
+      line-height:
+        1.15;
+    }
+
+
+    .welcome-title {
+
+      font-size:
+        16px;
+
+      font-weight:
+        850;
+    }
+
+
+    .welcome-subtitle {
 
       margin-top:
-        25px;
+        5px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        11px;
+    }
+
+
+    .header-spacer {
+
+      flex:
+        1;
+    }
+
+
+    .company-pill {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        8px;
+
+      padding:
+        8px 8px 8px 12px;
+
+      border:
+        1px solid #dce9e2;
+
+      border-radius:
+        999px;
+
+      background:
+        #f8fcfa;
+
+      font-size:
+        11px;
+
+      color:
+        #53655c;
+    }
+
+
+    .change-button {
 
       border:
         none;
 
       border-radius:
-        10px;
+        999px;
+
+      padding:
+        7px 10px;
 
       background:
-        #159c63;
+        white;
+
+      color:
+        var(--green);
+
+      font-size:
+        10px;
+
+      font-weight:
+        800;
+
+      cursor:
+        pointer;
+    }
+
+
+
+    /* =========================================
+       HERO
+    ========================================= */
+
+    .hero {
+
+      background:
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(21,156,99,.12),
+          transparent 27%
+        ),
+        linear-gradient(
+          120deg,
+          #fbfdfc,
+          #eef9f3
+        );
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+
+    .hero-inner {
+
+      max-width:
+        1280px;
+
+      margin:
+        auto;
+
+      padding:
+        48px 24px;
+    }
+
+
+    .hero-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        minmax(0,1.3fr)
+        minmax(300px,.7fr);
+
+      gap:
+        28px;
+
+      align-items:
+        center;
+    }
+
+
+    .hero-kicker {
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      gap:
+        7px;
+
+      padding:
+        7px 11px;
+
+      border:
+        1px solid #dcebe3;
+
+      border-radius:
+        999px;
+
+      background:
+        white;
+
+      color:
+        var(--green);
+
+      font-size:
+        11px;
+
+      font-weight:
+        800;
+    }
+
+
+    .hero-title {
+
+      max-width:
+        700px;
+
+      margin:
+        14px 0 0;
+
+      font-size:
+        clamp(31px,4vw,45px);
+
+      line-height:
+        1.08;
+
+      letter-spacing:
+        -.8px;
+
+      font-weight:
+        850;
+    }
+
+
+    .hero-text {
+
+      max-width:
+        650px;
+
+      margin-top:
+        12px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        14px;
+
+      line-height:
+        1.65;
+    }
+
+
+    .hero-company {
+
+      margin-top:
+        19px;
+
+      display:
+        inline-flex;
+
+      gap:
+        8px;
+
+      align-items:
+        center;
+
+      padding:
+        9px 12px;
+
+      border-radius:
+        11px;
+
+      background:
+        white;
+
+      border:
+        1px solid #dee8e3;
+
+      color:
+        #53645b;
+
+      font-size:
+        12px;
+    }
+
+
+    .hero-card {
+
+      min-height:
+        210px;
+
+      padding:
+        26px;
+
+      border-radius:
+        23px;
+
+      position:
+        relative;
+
+      overflow:
+        hidden;
 
       color:
         white;
 
-      padding:
-        12px 18px;
+      background:
+        linear-gradient(
+          145deg,
+          #149d63,
+          #087b4f
+        );
 
-      cursor:
-        pointer;
+      box-shadow:
+        0 18px 45px rgba(8,123,79,.17);
+    }
+
+
+    .hero-card::before {
+
+      content:
+        "";
+
+      position:
+        absolute;
+
+      width:
+        155px;
+
+      height:
+        155px;
+
+      right:
+        -50px;
+
+      top:
+        -55px;
+
+      border-radius:
+        50%;
+
+      background:
+        rgba(255,255,255,.08);
+    }
+
+
+    .hero-card-icon {
+
+      font-size:
+        40px;
+
+      position:
+        relative;
+
+      z-index:
+        2;
+    }
+
+
+    .hero-card-title {
+
+      margin-top:
+        20px;
+
+      font-size:
+        23px;
 
       font-weight:
-        bold;
+        850;
+
+      position:
+        relative;
+
+      z-index:
+        2;
+    }
+
+
+    .hero-card-text {
+
+      margin-top:
+        7px;
+
+      color:
+        rgba(255,255,255,.82);
+
+      font-size:
+        12px;
+
+      line-height:
+        1.55;
+
+      position:
+        relative;
+
+      z-index:
+        2;
+    }
+
+
+
+    /* =========================================
+       MAIN
+    ========================================= */
+
+    .page {
+
+      max-width:
+        1280px;
+
+      margin:
+        auto;
+
+      padding:
+        38px 24px 80px;
+    }
+
+
+    .section {
+
+      margin-bottom:
+        48px;
+    }
+
+
+    .section-title {
+
+      font-size:
+        22px;
+
+      font-weight:
+        850;
+    }
+
+
+    .section-description {
+
+      margin-top:
+        5px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        13px;
+    }
+
+
+
+    /* =========================================
+       PROFILE INFO
+    ========================================= */
+
+    .profile-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+      gap:
+        14px;
+
+      margin-bottom:
+        48px;
+    }
+
+
+    .info-card {
+
+      padding:
+        18px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        13px;
+
+      background:
+        white;
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        15px;
+    }
+
+
+    .info-icon {
+
+      width:
+        43px;
+
+      height:
+        43px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      flex-shrink:
+        0;
+
+      border-radius:
+        11px;
+
+      font-size:
+        20px;
+
+      background:
+        var(--green-soft);
+    }
+
+
+    .info-label {
+
+      color:
+        var(--muted);
+
+      font-size:
+        10px;
+    }
+
+
+    .info-value {
+
+      margin-top:
+        4px;
+
+      font-size:
+        13px;
+
+      font-weight:
+        800;
+    }
+
+
+
+    /* =========================================
+       BENEFITS PLACEHOLDER
+    ========================================= */
+
+    .coming-box {
+
+      padding:
+        48px 25px;
+
+      border:
+        1px dashed #cbdcd3;
+
+      border-radius:
+        19px;
+
+      background:
+        white;
+
+      text-align:
+        center;
+    }
+
+
+    .coming-icon {
+
+      font-size:
+        42px;
+    }
+
+
+    .coming-title {
+
+      margin-top:
+        13px;
+
+      font-size:
+        19px;
+
+      font-weight:
+        850;
+    }
+
+
+    .coming-text {
+
+      max-width:
+        500px;
+
+      margin:
+        8px auto 0;
+
+      color:
+        var(--muted);
+
+      font-size:
+        13px;
+
+      line-height:
+        1.6;
+    }
+
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media(max-width:800px) {
+
+      .hero-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .profile-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+    }
+
+
+    @media(max-width:600px) {
+
+      .header-inner {
+
+        padding:
+          10px 14px;
+
+        flex-wrap:
+          wrap;
+      }
+
+
+      .company-pill {
+
+        width:
+          100%;
+
+        justify-content:
+          space-between;
+      }
+
+
+      .hero-inner,
+      .page {
+
+        padding-left:
+          14px;
+
+        padding-right:
+          14px;
+      }
+
+
+      .hero-inner {
+
+        padding-top:
+          30px;
+
+        padding-bottom:
+          32px;
+      }
+
+
+      .hero-title {
+
+        font-size:
+          30px;
+      }
+
     }
 
   </style>
@@ -128,57 +835,334 @@
 <body>
 
 
-<div class="card">
 
-  <div style="font-size:40px;">
-    🎁
+<!-- =========================================
+     APP HEADER
+========================================= -->
+
+<header class="app-header">
+
+
+  <div class="header-inner">
+
+
+    <div
+      class="profile-avatar"
+      id="profileAvatar"
+    >
+      ANC
+    </div>
+
+
+    <div class="welcome-block">
+
+      <div
+        class="welcome-title"
+        id="welcomeTitle"
+      >
+        Salam 👋
+      </div>
+
+      <div class="welcome-subtitle">
+        Sənin üçün özəl imkanları kəşf et!
+      </div>
+
+    </div>
+
+
+    <div class="header-spacer">
+    </div>
+
+
+    <div class="company-pill">
+
+      <span id="headerCompany">
+        —
+      </span>
+
+
+      <button
+        class="change-button"
+        id="changeButton"
+      >
+        Dəyiş
+      </button>
+
+    </div>
+
+
   </div>
 
 
-  <h1>
-    Rahat Benefits Hub
-  </h1>
+</header>
 
 
-  <p>
-    Giriş sistemi uğurla işləyir.
-  </p>
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="hero">
 
 
-  <div
-    class="selection"
-    id="selection"
-  >
+  <div class="hero-inner">
+
+
+    <div class="hero-grid">
+
+
+      <div>
+
+
+        <div class="hero-kicker">
+          ✨ ANC Group Benefits Hub
+        </div>
+
+
+        <h1
+          class="hero-title"
+          id="heroTitle"
+        >
+          Sənin üçün özəl imkanlar
+        </h1>
+
+
+        <div class="hero-text">
+          ANC Group daxilində sənə təqdim olunan
+          əməkdaş imtiyazlarını, xüsusi endirimləri
+          və tərəfdaş təkliflərini bir yerdə kəşf et.
+        </div>
+
+
+        <div
+          class="hero-company"
+          id="heroCompany"
+        >
+        </div>
+
+
+      </div>
+
+
+
+      <div class="hero-card">
+
+
+        <div class="hero-card-icon">
+          🎁
+        </div>
+
+
+        <div class="hero-card-title">
+          Sənin Benefits Hub-ın
+        </div>
+
+
+        <div class="hero-card-text">
+          Şəxsi seçimlərinə uyğun benefitlər
+          növbəti mərhələdə burada görünəcək.
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
   </div>
 
 
-  <button
-    onclick="window.location.href='index.html'"
-  >
-    Seçimi dəyiş
-  </button>
+</section>
 
-</div>
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main class="page">
+
+
+  <!-- PROFILE DATA -->
+
+  <section class="profile-grid">
+
+
+    <div class="info-card">
+
+      <div class="info-icon">
+        👤
+      </div>
+
+      <div>
+
+        <div class="info-label">
+          Əməkdaş
+        </div>
+
+        <div
+          class="info-value"
+          id="employeeName"
+        >
+          —
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="info-card">
+
+      <div class="info-icon">
+        🏢
+      </div>
+
+      <div>
+
+        <div class="info-label">
+          Şirkət
+        </div>
+
+        <div
+          class="info-value"
+          id="companyName"
+        >
+          —
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="info-card">
+
+      <div class="info-icon">
+        👥
+      </div>
+
+      <div>
+
+        <div class="info-label">
+          İşçi kateqoriyası
+        </div>
+
+        <div
+          class="info-value"
+          id="workerCategoryName"
+        >
+          —
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- BENEFITS -->
+
+  <section class="section">
+
+
+    <div class="section-title">
+      Sənin imtiyazların
+    </div>
+
+
+    <div class="section-description">
+      Sənə uyğun olan bütün benefitlər burada göstəriləcək.
+    </div>
+
+
+    <div
+      class="coming-box"
+      style="margin-top:20px;"
+    >
+
+      <div class="coming-icon">
+        🎁
+      </div>
+
+      <div class="coming-title">
+        Növbəti addım: Benefitləri əlavə edirik
+      </div>
+
+      <div class="coming-text">
+        Rahat Market, Rahat Gourmet, Port Baku Bazar və
+        Pribaltika üçün benefit məlumatlarını əlavə etdikdən sonra
+        sistem avtomatik olaraq yalnız sənə uyğun imtiyazları göstərəcək.
+      </div>
+
+    </div>
+
+
+  </section>
+
+
+</main>
 
 
 
 <script>
 
+/* =========================================
+   READ USER DATA
+========================================= */
+
+const firstName =
+  localStorage.getItem(
+    "anc-first-name"
+  );
+
+
+const lastName =
+  localStorage.getItem(
+    "anc-last-name"
+  );
+
+
 const company =
   localStorage.getItem(
-    "rahat-selected-company-name"
+    "anc-selected-company"
   );
 
 
-const category =
+const companyName =
   localStorage.getItem(
-    "rahat-selected-worker-category-name"
+    "anc-selected-company-name"
   );
 
+
+const workerCategory =
+  localStorage.getItem(
+    "anc-selected-worker-category"
+  );
+
+
+const workerCategoryName =
+  localStorage.getItem(
+    "anc-selected-worker-category-name"
+  );
+
+
+
+/* =========================================
+   CHECK LOGIN DATA
+========================================= */
 
 if (
+  !firstName ||
+  !lastName ||
   !company ||
-  !category
+  !workerCategory
 ) {
 
   window.location.href =
@@ -187,14 +1171,120 @@ if (
 }
 
 
+
+/* =========================================
+   INITIALS
+========================================= */
+
+function getInitials() {
+
+  const first =
+    firstName
+      ? firstName.charAt(0)
+      : "";
+
+
+  const last =
+    lastName
+      ? lastName.charAt(0)
+      : "";
+
+
+  return (
+    first +
+    last
+  ).toUpperCase();
+
+}
+
+
+
+/* =========================================
+   RENDER PROFILE
+========================================= */
+
 document
   .getElementById(
-    "selection"
+    "profileAvatar"
   )
   .textContent =
-    company +
-    " • " +
-    category;
+    getInitials();
+
+
+document
+  .getElementById(
+    "welcomeTitle"
+  )
+  .textContent =
+    `Salam, ${firstName} 👋`;
+
+
+document
+  .getElementById(
+    "heroTitle"
+  )
+  .textContent =
+    `${firstName}, sənin üçün özəl imkanlar 🎁`;
+
+
+document
+  .getElementById(
+    "employeeName"
+  )
+  .textContent =
+    `${firstName} ${lastName}`;
+
+
+document
+  .getElementById(
+    "companyName"
+  )
+  .textContent =
+    companyName;
+
+
+document
+  .getElementById(
+    "workerCategoryName"
+  )
+  .textContent =
+    workerCategoryName;
+
+
+document
+  .getElementById(
+    "headerCompany"
+  )
+  .textContent =
+    `${companyName} • ${workerCategoryName}`;
+
+
+document
+  .getElementById(
+    "heroCompany"
+  )
+  .innerHTML =
+    `🏢 ${companyName} &nbsp; • &nbsp; 👥 ${workerCategoryName}`;
+
+
+
+/* =========================================
+   CHANGE PROFILE
+========================================= */
+
+document
+  .getElementById(
+    "changeButton"
+  )
+  .addEventListener(
+    "click",
+    function() {
+
+      window.location.href =
+        "index.html";
+
+    }
+  );
 
 </script>
 
