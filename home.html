@@ -1,1185 +1,1088 @@
 <!DOCTYPE html>
 <html lang="az">
-
 <head>
-
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ANC Group Benefits Hub</title>
 
-
   <style>
-
     * {
       box-sizing: border-box;
     }
 
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-
     :root {
+      --bg: #f7f8f7;
+      --card: #ffffff;
+      --soft-green: #e8f5ef;
+      --green: #4ea97a;
+      --green-dark: #2e7d5b;
 
-      --green: #149d63;
-      --green-dark: #087b4f;
-      --green-soft: #eaf8f1;
+      --soft-red: #fdeeed;
+      --red: #d86b63;
 
-      --orange: #ff7417;
-      --orange-soft: #fff2e8;
+      --soft-orange: #fff1e8;
+      --orange: #ef8f57;
 
-      --text: #16231d;
-      --muted: #78857e;
-
-      --border: #dee7e2;
-      --background: #f6faf8;
-
+      --text: #232323;
+      --muted: #8d8d8d;
+      --border: #ececec;
+      --shadow: 0 10px 30px rgba(0,0,0,.05);
+      --radius: 22px;
     }
-
 
     body {
-
       margin: 0;
-
-      font-family:
-        Inter,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Arial,
-        sans-serif;
-
-      background:
-        var(--background);
-
-      color:
-        var(--text);
+      background: var(--bg);
+      font-family: Inter, Arial, sans-serif;
+      color: var(--text);
+      padding-bottom: 90px;
     }
 
-
-    button {
-      font-family: inherit;
+    .app {
+      max-width: 520px;
+      margin: 0 auto;
+      min-height: 100vh;
+      background: var(--bg);
     }
 
-
-
-    /* =========================================
-       HEADER
-    ========================================= */
-
-    .app-header {
-
-      background:
-        rgba(255,255,255,.97);
-
-      border-bottom:
-        1px solid var(--border);
-
-      position: sticky;
-
-      top: 0;
-
-      z-index: 100;
-
-      backdrop-filter:
-        blur(10px);
+    .top-wrap {
+      padding: 18px 18px 8px;
+      background: linear-gradient(180deg, #fff1e8 0%, #f7f8f7 100%);
     }
 
-
-    .header-inner {
-
-      max-width:
-        1280px;
-
-      min-height:
-        80px;
-
-      margin:
-        auto;
-
-      padding:
-        0 24px;
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      gap:
-        14px;
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
     }
 
-
-    .profile-avatar {
-
-      width:
-        50px;
-
-      height:
-        50px;
-
-      flex-shrink:
-        0;
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        center;
-
-      border-radius:
-        50%;
-
-      background:
-        linear-gradient(
-          145deg,
-          #ff7417,
-          #ffa04f
-        );
-
-      color:
-        white;
-
-      font-size:
-        18px;
-
-      font-weight:
-        900;
-
-      box-shadow:
-        0 4px 13px rgba(50,60,50,.13);
+    .user-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
     }
 
-
-    .welcome-title {
-
-      font-size:
-        17px;
-
-      font-weight:
-        850;
+    .avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff9b61, #e96b42);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 20px;
+      flex-shrink: 0;
+      box-shadow: var(--shadow);
+      overflow: hidden;
     }
 
-
-    .welcome-subtitle {
-
-      margin-top:
-        4px;
-
-      color:
-        var(--muted);
-
-      font-size:
-        11px;
+    .avatar svg {
+      width: 34px;
+      height: 34px;
     }
 
-
-    .header-spacer {
-      flex: 1;
+    .greeting-wrap {
+      min-width: 0;
     }
 
-
-    .company-pill {
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      gap:
-        8px;
-
-      padding:
-        8px 8px 8px 12px;
-
-      border:
-        1px solid #dce9e2;
-
-      border-radius:
-        999px;
-
-      background:
-        #f8fcfa;
-
-      color:
-        #53655c;
-
-      font-size:
-        11px;
+    .greeting-title {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.05;
+      margin: 0;
+      color: #2b2b2b;
     }
 
-
-    .change-button {
-
-      border:
-        none;
-
-      border-radius:
-        999px;
-
-      padding:
-        7px 10px;
-
-      background:
-        white;
-
-      color:
-        var(--green);
-
-      font-size:
-        10px;
-
-      font-weight:
-        800;
-
-      cursor:
-        pointer;
+    .greeting-subtitle {
+      margin-top: 5px;
+      font-size: 14px;
+      color: #747474;
     }
 
-
-
-    /* =========================================
-       HERO
-    ========================================= */
-
-    .hero {
-
-      background:
-        radial-gradient(
-          circle at 90% 10%,
-          rgba(21,156,99,.12),
-          transparent 27%
-        ),
-        linear-gradient(
-          120deg,
-          #fbfdfc,
-          #eef9f3
-        );
-
-      border-bottom:
-        1px solid var(--border);
+    .notif-button {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      border: none;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      flex-shrink: 0;
     }
 
-
-    .hero-inner {
-
-      max-width:
-        1280px;
-
-      margin:
-        auto;
-
-      padding:
-        48px 24px;
+    .notif-button svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--green-dark);
     }
 
-
-    .hero-grid {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        minmax(0,1.3fr)
-        minmax(300px,.7fr);
-
-      gap:
-        28px;
-
-      align-items:
-        center;
+    .notif-badge {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      min-width: 22px;
+      height: 22px;
+      padding: 0 6px;
+      border-radius: 999px;
+      background: var(--red);
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid var(--bg);
     }
 
-
-    .hero-kicker {
-
-      display:
-        inline-flex;
-
-      padding:
-        7px 11px;
-
-      border:
-        1px solid #dcebe3;
-
-      border-radius:
-        999px;
-
-      background:
-        white;
-
-      color:
-        var(--green);
-
-      font-size:
-        11px;
-
-      font-weight:
-        800;
+    .search-box {
+      margin-top: 18px;
+      background: var(--card);
+      border-radius: 18px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
     }
 
-
-    .hero-title {
-
-      max-width:
-        700px;
-
-      margin:
-        14px 0 0;
-
-      font-size:
-        clamp(31px,4vw,45px);
-
-      line-height:
-        1.08;
-
-      letter-spacing:
-        -.8px;
-
-      font-weight:
-        850;
+    .search-box input {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: 15px;
+      background: transparent;
+      color: var(--text);
     }
 
-
-    .hero-text {
-
-      max-width:
-        650px;
-
-      margin-top:
-        12px;
-
-      color:
-        var(--muted);
-
-      font-size:
-        14px;
-
-      line-height:
-        1.65;
+    .search-box input::placeholder {
+      color: #9a9a9a;
     }
 
-
-    .hero-company {
-
-      margin-top:
-        19px;
-
-      display:
-        inline-flex;
-
-      gap:
-        8px;
-
-      align-items:
-        center;
-
-      padding:
-        9px 12px;
-
-      border-radius:
-        11px;
-
-      background:
-        white;
-
-      border:
-        1px solid #dee8e3;
-
-      color:
-        #53645b;
-
-      font-size:
-        12px;
+    .main-content {
+      padding: 10px 18px 30px;
     }
 
-
-    .hero-card {
-
-      min-height:
-        210px;
-
-      padding:
-        26px;
-
-      border-radius:
-        23px;
-
-      position:
-        relative;
-
-      overflow:
-        hidden;
-
-      color:
-        white;
-
-      background:
-        linear-gradient(
-          145deg,
-          #149d63,
-          #087b4f
-        );
-
-      box-shadow:
-        0 18px 45px rgba(8,123,79,.17);
+    .section {
+      margin-top: 22px;
     }
 
-
-    .hero-card::before {
-
-      content: "";
-
-      position:
-        absolute;
-
-      width:
-        155px;
-
-      height:
-        155px;
-
-      right:
-        -50px;
-
-      top:
-        -55px;
-
-      border-radius:
-        50%;
-
-      background:
-        rgba(255,255,255,.08);
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      gap: 12px;
     }
-
-
-    .hero-card-icon {
-
-      font-size:
-        40px;
-
-      position:
-        relative;
-
-      z-index:
-        2;
-    }
-
-
-    .hero-card-title {
-
-      margin-top:
-        20px;
-
-      font-size:
-        23px;
-
-      font-weight:
-        850;
-
-      position:
-        relative;
-
-      z-index:
-        2;
-    }
-
-
-    .hero-card-text {
-
-      margin-top:
-        7px;
-
-      color:
-        rgba(255,255,255,.82);
-
-      font-size:
-        12px;
-
-      line-height:
-        1.55;
-
-      position:
-        relative;
-
-      z-index:
-        2;
-    }
-
-
-
-    /* =========================================
-       MAIN
-    ========================================= */
-
-    .page {
-
-      max-width:
-        1280px;
-
-      margin:
-        auto;
-
-      padding:
-        38px 24px 80px;
-    }
-
-
-    .profile-grid {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        repeat(3,minmax(0,1fr));
-
-      gap:
-        14px;
-
-      margin-bottom:
-        48px;
-    }
-
-
-    .info-card {
-
-      padding:
-        18px;
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      gap:
-        13px;
-
-      background:
-        white;
-
-      border:
-        1px solid var(--border);
-
-      border-radius:
-        15px;
-    }
-
-
-    .info-icon {
-
-      width:
-        43px;
-
-      height:
-        43px;
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        center;
-
-      border-radius:
-        11px;
-
-      font-size:
-        20px;
-
-      background:
-        var(--green-soft);
-    }
-
-
-    .info-label {
-
-      color:
-        var(--muted);
-
-      font-size:
-        10px;
-    }
-
-
-    .info-value {
-
-      margin-top:
-        4px;
-
-      font-size:
-        13px;
-
-      font-weight:
-        800;
-    }
-
 
     .section-title {
-
-      font-size:
-        22px;
-
-      font-weight:
-        850;
+      font-size: 24px;
+      font-weight: 800;
+      margin: 0;
     }
 
-
-    .section-description {
-
-      margin-top:
-        5px;
-
-      color:
-        var(--muted);
-
-      font-size:
-        13px;
+    .section-link {
+      color: #8d8d8d;
+      font-size: 14px;
+      text-decoration: none;
+      white-space: nowrap;
+      cursor: pointer;
     }
 
-
-    .coming-box {
-
-      margin-top:
-        20px;
-
-      padding:
-        48px 25px;
-
-      border:
-        1px dashed #cbdcd3;
-
-      border-radius:
-        19px;
-
-      background:
-        white;
-
-      text-align:
-        center;
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
     }
 
-
-    .coming-icon {
-
-      font-size:
-        42px;
+    .category-card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 14px 8px 12px;
+      text-align: center;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: transform .15s ease;
     }
 
-
-    .coming-title {
-
-      margin-top:
-        13px;
-
-      font-size:
-        19px;
-
-      font-weight:
-        850;
+    .category-card:hover {
+      transform: translateY(-2px);
     }
 
-
-    .coming-text {
-
-      max-width:
-        500px;
-
-      margin:
-        8px auto 0;
-
-      color:
-        var(--muted);
-
-      font-size:
-        13px;
-
-      line-height:
-        1.6;
+    .category-icon {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 10px;
+      border-radius: 16px;
+      background: var(--soft-orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--orange);
+      font-size: 24px;
     }
 
+    .category-name {
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.25;
+      color: #444;
+    }
 
+    .cards-row {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scroll-snap-type: x proximity;
+    }
 
-    @media(max-width:800px) {
+    .cards-row::-webkit-scrollbar {
+      display: none;
+    }
 
-      .hero-grid,
-      .profile-grid {
+    .partner-card {
+      min-width: 250px;
+      background: var(--card);
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      scroll-snap-align: start;
+    }
 
-        grid-template-columns:
-          1fr;
+    .partner-banner {
+      height: 150px;
+      background: linear-gradient(135deg, var(--soft-green), #f6fbf8);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green-dark);
+      font-size: 48px;
+      font-weight: 900;
+    }
+
+    .discount-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: var(--red);
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+      border-radius: 12px;
+      padding: 6px 8px;
+    }
+
+    .partner-body {
+      padding: 16px;
+    }
+
+    .partner-title {
+      font-size: 20px;
+      font-weight: 800;
+      margin: 0 0 8px;
+      line-height: 1.2;
+    }
+
+    .partner-text {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.5;
+      min-height: 42px;
+    }
+
+    .partner-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .partner-chip {
+      background: var(--soft-green);
+      color: var(--green-dark);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 7px 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .partner-arrow {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #f3f5f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .nearby-list,
+    .partners-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .nearby-card,
+    .list-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+
+    .nearby-top,
+    .list-top {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .nearby-title,
+    .list-title {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .nearby-sub,
+    .list-sub {
+      margin-top: 4px;
+      font-size: 13px;
+      color: #777;
+      line-height: 1.45;
+    }
+
+    .distance-pill {
+      background: var(--soft-red);
+      color: var(--red);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .list-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      background: #f3f7f5;
+      color: #567;
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .action-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .soft-btn {
+      border: none;
+      background: var(--soft-green);
+      color: var(--green-dark);
+      padding: 11px 14px;
+      border-radius: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .soft-btn.red {
+      background: var(--soft-red);
+      color: var(--red);
+    }
+
+    .empty-note {
+      background: var(--card);
+      border: 1px dashed #d8dfdb;
+      padding: 18px;
+      border-radius: 18px;
+      color: #777;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      width: 100%;
+      max-width: 520px;
+      background: rgba(255,255,255,.97);
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 10px 8px calc(10px + env(safe-area-inset-bottom));
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-item {
+      border: none;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: #7b7b7b;
+      font-size: 12px;
+      cursor: pointer;
+      font-weight: 700;
+      padding: 8px 4px;
+      border-radius: 14px;
+    }
+
+    .nav-item.active {
+      color: var(--green-dark);
+      background: var(--soft-green);
+    }
+
+    .nav-icon {
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .notification-panel {
+      position: fixed;
+      top: 84px;
+      right: 16px;
+      left: 16px;
+      max-width: 488px;
+      margin: 0 auto;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.09);
+      z-index: 150;
+      padding: 16px;
+    }
+
+    .notification-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .notification-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .notification-title {
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .notification-text {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.45;
+    }
+
+    .notification-time {
+      margin-top: 6px;
+      font-size: 11px;
+      color: #999;
+    }
+
+    @media (max-width: 420px) {
+      .categories-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
       }
 
+      .category-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+      }
+
+      .greeting-title {
+        font-size: 24px;
+      }
+
+      .section-title {
+        font-size: 21px;
+      }
+
+      .partner-card {
+        min-width: 230px;
+      }
     }
-
-
-    @media(max-width:600px) {
-
-      .header-inner {
-
-        padding:
-          10px 14px;
-
-        flex-wrap:
-          wrap;
-      }
-
-
-      .company-pill {
-
-        width:
-          100%;
-
-        justify-content:
-          space-between;
-      }
-
-
-      .hero-inner,
-      .page {
-
-        padding-left:
-          14px;
-
-        padding-right:
-          14px;
-      }
-
-
-      .hero-inner {
-
-        padding-top:
-          30px;
-
-        padding-bottom:
-          32px;
-      }
-
-
-      .hero-title {
-
-        font-size:
-          30px;
-      }
-
-    }
-
   </style>
-
 </head>
-
-
 <body>
+  <div class="app">
 
+    <div class="top-wrap">
+      <div class="top-bar">
+        <div class="user-block">
+          <div class="avatar" id="avatarBox" aria-label="İstifadəçi avatarı">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="18" r="10" fill="currentColor" opacity=".95"/>
+              <path d="M14 52C16.5 42 23.5 36 32 36C40.5 36 47.5 42 50 52" fill="currentColor" opacity=".95"/>
+            </svg>
+          </div>
 
+          <div class="greeting-wrap">
+            <h1 class="greeting-title" id="greetingTitle">Salam, Leyla</h1>
+            <div class="greeting-subtitle">Özəl endirimləri kəşf edin!</div>
+          </div>
+        </div>
 
-<header class="app-header">
-
-  <div class="header-inner">
-
-
-    <div
-      class="profile-avatar"
-      id="profileAvatar"
-    >
-      A
-    </div>
-
-
-    <div>
-
-      <div
-        class="welcome-title"
-        id="welcomeTitle"
-      >
-        Salam 👋
+        <button class="notif-button" id="notifButton" aria-label="Bildirişlər">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+            <path d="M6 8a6 6 0 1 1 12 0c0 7 3 7 3 9H3c0-2 3-2 3-9"/>
+            <path d="M10 20a2 2 0 0 0 4 0"/>
+          </svg>
+          <div class="notif-badge" id="notifBadge">0</div>
+        </button>
       </div>
 
-      <div class="welcome-subtitle">
-        Özəl imkanları kəşf et!
+      <div class="search-box">
+        <span style="font-size:18px;">🔎</span>
+        <input type="text" id="searchInput" placeholder="Axtar" />
       </div>
-
     </div>
 
+    <div class="main-content">
 
-    <div class="header-spacer">
+      <!-- ƏSAS -->
+      <section id="screen-home">
+
+        <div class="section">
+          <div class="section-head">
+            <h2 class="section-title">Kateqoriyalar</h2>
+            <a class="section-link" id="seeAllCategories">Hamısı ›</a>
+          </div>
+
+          <div class="categories-grid" id="categoriesGrid"></div>
+        </div>
+
+        <div class="section">
+          <div class="section-head">
+            <h2 class="section-title">Yeni partnyorlar</h2>
+            <a class="section-link" id="seeAllNewPartners">Hamısı ›</a>
+          </div>
+
+          <div class="cards-row" id="newPartnersRow"></div>
+        </div>
+      </section>
+
+      <!-- YAXINLIQDA -->
+      <section id="screen-nearby" class="hidden">
+        <div class="section">
+          <div class="section-head">
+            <h2 class="section-title">Yaxınlıqda</h2>
+          </div>
+
+          <div class="empty-note" id="locationInfoBox">
+            Bu bölmə yaxınlıqdakı partnyorları göstərmək üçün sənin konumuna icazə istəyəcək.
+          </div>
+
+          <div class="nearby-list" id="nearbyList" style="margin-top:12px;"></div>
+        </div>
+      </section>
+
+      <!-- PARTNYORLAR -->
+      <section id="screen-partners" class="hidden">
+        <div class="section">
+          <div class="section-head">
+            <h2 class="section-title">Partnyorlar</h2>
+          </div>
+
+          <div class="partners-list" id="partnersList"></div>
+        </div>
+      </section>
+
     </div>
-
-
-    <div class="company-pill">
-
-      <span id="headerCompany">
-        —
-      </span>
-
-      <button
-        class="change-button"
-        id="changeButton"
-      >
-        Dəyiş
-      </button>
-
-    </div>
-
-
   </div>
 
-</header>
-
-
-
-<section class="hero">
-
-  <div class="hero-inner">
-
-    <div class="hero-grid">
-
-
-      <div>
-
-        <div class="hero-kicker">
-          ✨ ANC Group Benefits Hub
-        </div>
-
-
-        <h1
-          class="hero-title"
-          id="heroTitle"
-        >
-          Sənin üçün özəl imkanlar
-        </h1>
-
-
-        <div class="hero-text">
-          ANC Group daxilində sənə təqdim olunan
-          əməkdaş imtiyazlarını, xüsusi endirimləri
-          və tərəfdaş təkliflərini bir yerdə kəşf et.
-        </div>
-
-
-        <div
-          class="hero-company"
-          id="heroCompany"
-        >
-        </div>
-
-      </div>
-
-
-
-      <div class="hero-card">
-
-        <div class="hero-card-icon">
-          🎁
-        </div>
-
-        <div class="hero-card-title">
-          Sənin Benefits Hub-ın
-        </div>
-
-        <div class="hero-card-text">
-          Sənə uyğun bütün benefitlər və xüsusi
-          təkliflər burada görünəcək.
-        </div>
-
-      </div>
-
-
+  <div class="notification-panel hidden" id="notificationPanel">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+      <strong style="font-size:16px;">Bildirişlər</strong>
+      <button id="closeNotifPanel" style="border:none;background:transparent;font-size:18px;cursor:pointer;">✕</button>
     </div>
-
+    <div id="notificationList"></div>
   </div>
 
-</section>
-
-
-
-<main class="page">
-
-
-  <section class="profile-grid">
-
-
-    <div class="info-card">
-
-      <div class="info-icon">
-        👤
-      </div>
-
-      <div>
-
-        <div class="info-label">
-          Əməkdaş
-        </div>
-
-        <div
-          class="info-value"
-          id="employeeName"
-        >
-          —
-        </div>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="info-card">
-
-      <div class="info-icon">
-        🏢
-      </div>
-
-      <div>
-
-        <div class="info-label">
-          Şirkət
-        </div>
-
-        <div
-          class="info-value"
-          id="companyName"
-        >
-          —
-        </div>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="info-card">
-
-      <div class="info-icon">
-        👥
-      </div>
-
-      <div>
-
-        <div class="info-label">
-          İşçi kateqoriyası
-        </div>
-
-        <div
-          class="info-value"
-          id="workerCategoryName"
-        >
-          —
-        </div>
-
-      </div>
-
-    </div>
-
-
-  </section>
-
-
-
-  <section>
-
-    <div class="section-title">
-      Sənin imtiyazların
-    </div>
-
-    <div class="section-description">
-      Sənə uyğun olan bütün benefitlər burada göstəriləcək.
-    </div>
-
-
-    <div class="coming-box">
-
-      <div class="coming-icon">
-        🎁
-      </div>
-
-      <div class="coming-title">
-        Benefitlər növbəti mərhələdə əlavə olunacaq
-      </div>
-
-      <div class="coming-text">
-        Rahat Market, Rahat Gourmet, Port Baku Bazar və
-        Pribaltika üçün imtiyazları əlavə etdikdən sonra
-        sistem seçiminə uyğun benefitləri avtomatik göstərəcək.
-      </div>
-
-    </div>
-
-  </section>
-
-
-</main>
-
-
-
-<script>
-
-
-const firstName =
-  localStorage.getItem(
-    "anc-first-name"
-  );
-
-
-const company =
-  localStorage.getItem(
-    "anc-selected-company"
-  );
-
-
-const companyName =
-  localStorage.getItem(
-    "anc-selected-company-name"
-  );
-
-
-const workerCategory =
-  localStorage.getItem(
-    "anc-selected-worker-category"
-  );
-
-
-const workerCategoryName =
-  localStorage.getItem(
-    "anc-selected-worker-category-name"
-  );
-
-
-
-/* GİRİŞ MƏLUMATLARINI YOXLAYIRIQ */
-
-if (
-  !firstName ||
-  !company ||
-  !workerCategory
-) {
-
-  window.location.href =
-    "index.html";
-
-}
-
-
-
-/* AVATAR */
-
-const initial =
-  firstName
-    .charAt(0)
-    .toUpperCase();
-
-
-document
-  .getElementById(
-    "profileAvatar"
-  )
-  .textContent =
-    initial;
-
-
-
-/* SALAM */
-
-document
-  .getElementById(
-    "welcomeTitle"
-  )
-  .textContent =
-    `Salam, ${firstName} 👋`;
-
-
-
-/* HERO */
-
-document
-  .getElementById(
-    "heroTitle"
-  )
-  .textContent =
-    `${firstName}, sənin üçün özəl imkanlar 🎁`;
-
-
-
-/* PROFILE */
-
-document
-  .getElementById(
-    "employeeName"
-  )
-  .textContent =
-    firstName;
-
-
-document
-  .getElementById(
-    "companyName"
-  )
-  .textContent =
-    companyName;
-
-
-document
-  .getElementById(
-    "workerCategoryName"
-  )
-  .textContent =
-    workerCategoryName;
-
-
-
-/* HEADER */
-
-document
-  .getElementById(
-    "headerCompany"
-  )
-  .textContent =
-    `${companyName} • ${workerCategoryName}`;
-
-
-
-document
-  .getElementById(
-    "heroCompany"
-  )
-  .innerHTML =
-    `🏢 ${companyName} &nbsp; • &nbsp; 👥 ${workerCategoryName}`;
-
-
-
-/* DƏYİŞ */
-
-document
-  .getElementById(
-    "changeButton"
-  )
-  .addEventListener(
-    "click",
-    function() {
-
-      window.location.href =
-        "index.html";
-
+  <nav class="bottom-nav">
+    <button class="nav-item active" data-screen="home">
+      <span class="nav-icon">🏠</span>
+      <span>Əsas</span>
+    </button>
+
+    <button class="nav-item" data-screen="nearby">
+      <span class="nav-icon">📍</span>
+      <span>Yaxınlıqda</span>
+    </button>
+
+    <button class="nav-item" data-screen="partners">
+      <span class="nav-icon">🤝</span>
+      <span>Partnyorlar</span>
+    </button>
+  </nav>
+
+  <script>
+    /* =========================
+       USER INFO
+    ========================= */
+    const firstName =
+      localStorage.getItem("anc-first-name") || "Leyla";
+
+    const companyName =
+      localStorage.getItem("anc-selected-company-name") || "ANC Group";
+
+    const workerCategoryName =
+      localStorage.getItem("anc-selected-worker-category-name") || "Ofis əməkdaşı";
+
+    document.getElementById("greetingTitle").textContent = `Salam, ${firstName}`;
+
+    /* =========================
+       DATA
+    ========================= */
+    const categories = [
+      { id: "restoran-kafe", name: "Restoran / Kafe", icon: "☕" },
+      { id: "gozellik", name: "Gözəllik", icon: "💄" },
+      { id: "istirahet", name: "İstirahət mərkəzi", icon: "🏞️" },
+      { id: "tehsil", name: "Təhsil", icon: "🎓" },
+      { id: "seyahet", name: "Səyahət", icon: "✈️" },
+      { id: "usaq", name: "Uşaq", icon: "🧸" },
+      { id: "eylence", name: "Əyləncə", icon: "🎉" }
+    ];
+
+    /* 
+      Buradakı lat/lng sonradan sənin verəcəyin
+      Google Maps koordinatları ilə dəyişəcək.
+    */
+    const partners = [
+      {
+        id: 1,
+        name: "Friends Central Perk",
+        category: "Restoran / Kafe",
+        description: "Qəhvə, səhər yeməyi və menyuda xüsusi əməkdaş endirimləri.",
+        discount: "20%",
+        isNew: true,
+        lat: 40.4093,
+        lng: 49.8671,
+        address: "Bakı şəhəri",
+        company: "ANC Group"
+      },
+      {
+        id: 2,
+        name: "Beauty Point",
+        category: "Gözəllik",
+        description: "Saç, dırnaq və gözəllik xidmətlərində xüsusi qiymətlər.",
+        discount: "15%",
+        isNew: true,
+        lat: 40.4012,
+        lng: 49.8550,
+        address: "Nərimanov",
+        company: "ANC Group"
+      },
+      {
+        id: 3,
+        name: "Kids Planet",
+        category: "Uşaq",
+        description: "Uşaq əyləncə və inkişaf mərkəzində əməkdaş endirimi.",
+        discount: "25%",
+        isNew: false,
+        lat: 40.3945,
+        lng: 49.8821,
+        address: "28 May",
+        company: "ANC Group"
+      },
+      {
+        id: 4,
+        name: "TravelGo",
+        category: "Səyahət",
+        description: "Otellər və tur paketlərində xüsusi partnyor təklifləri.",
+        discount: "10%",
+        isNew: true,
+        lat: 40.3770,
+        lng: 49.8920,
+        address: "Ağ şəhər",
+        company: "ANC Group"
+      },
+      {
+        id: 5,
+        name: "EduLab",
+        category: "Təhsil",
+        description: "Kurslar, təlimlər və sertifikasiya proqramlarına endirim.",
+        discount: "18%",
+        isNew: false,
+        lat: 40.4180,
+        lng: 49.8400,
+        address: "Gənclik",
+        company: "ANC Group"
+      }
+    ];
+
+    const notifications = [
+      {
+        id: 1,
+        title: "Yeni imtiyaz əlavə edildi",
+        text: "Friends Central Perk artıq partnyorlarımız sırasındadır.",
+        time: "Bu gün"
+      },
+      {
+        id: 2,
+        title: "Yeni partnyor aktivdir",
+        text: "Beauty Point üzrə 15% endirim aktiv edildi.",
+        time: "Dünən"
+      }
+    ];
+
+    /* =========================
+       RENDER CATEGORIES
+    ========================= */
+    const categoriesGrid = document.getElementById("categoriesGrid");
+
+    function renderCategories(list) {
+      categoriesGrid.innerHTML = "";
+
+      list.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "category-card";
+        div.innerHTML = `
+          <div class="category-icon">${item.icon}</div>
+          <div class="category-name">${item.name}</div>
+        `;
+        div.addEventListener("click", () => {
+          openPartnersScreen(item.name);
+        });
+        categoriesGrid.appendChild(div);
+      });
     }
-  );
 
+    /* =========================
+       RENDER NEW PARTNERS
+    ========================= */
+    const newPartnersRow = document.getElementById("newPartnersRow");
 
-</script>
+    function renderNewPartners(list) {
+      newPartnersRow.innerHTML = "";
 
+      list.filter(x => x.isNew).forEach(item => {
+        const card = document.createElement("div");
+        card.className = "partner-card";
+        card.innerHTML = `
+          <div class="partner-banner">
+            ${item.name.split(" ")[0]}
+            <div class="discount-badge">${item.discount}</div>
+          </div>
+          <div class="partner-body">
+            <h3 class="partner-title">${item.name}</h3>
+            <div class="partner-text">${item.description}</div>
+            <div class="partner-meta">
+              <div class="partner-chip">${item.category}</div>
+              <div class="partner-arrow">→</div>
+            </div>
+          </div>
+        `;
+        newPartnersRow.appendChild(card);
+      });
+    }
 
+    /* =========================
+       RENDER PARTNERS LIST
+    ========================= */
+    const partnersList = document.getElementById("partnersList");
+
+    function renderPartnersList(list) {
+      partnersList.innerHTML = "";
+
+      if (!list.length) {
+        partnersList.innerHTML = `
+          <div class="empty-note">
+            Bu filtrə uyğun partnyor tapılmadı.
+          </div>
+        `;
+        return;
+      }
+
+      list.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "list-card";
+        card.innerHTML = `
+          <div class="list-top">
+            <div>
+              <h3 class="list-title">${item.name}</h3>
+              <div class="list-sub">${item.description}</div>
+            </div>
+            <div class="distance-pill">${item.discount}</div>
+          </div>
+
+          <div class="list-tags">
+            <span class="tag">${item.category}</span>
+            <span class="tag">${item.address}</span>
+            <span class="tag">${companyName}</span>
+          </div>
+
+          <div class="action-row">
+            <button class="soft-btn">Ətraflı</button>
+            <button class="soft-btn red">Maps</button>
+          </div>
+        `;
+        partnersList.appendChild(card);
+      });
+    }
+
+    /* =========================
+       NOTIFICATIONS
+    ========================= */
+    const notifBadge = document.getElementById("notifBadge");
+    const notifButton = document.getElementById("notifButton");
+    const notificationPanel = document.getElementById("notificationPanel");
+    const notificationList = document.getElementById("notificationList");
+
+    function renderNotifications() {
+      notifBadge.textContent = notifications.length;
+
+      if (!notifications.length) {
+        notificationList.innerHTML = `
+          <div class="empty-note">Hazırda yeni bildiriş yoxdur.</div>
+        `;
+        return;
+      }
+
+      notificationList.innerHTML = notifications.map(item => `
+        <div class="notification-item">
+          <div class="notification-title">${item.title}</div>
+          <div class="notification-text">${item.text}</div>
+          <div class="notification-time">${item.time}</div>
+        </div>
+      `).join("");
+    }
+
+    notifButton.addEventListener("click", () => {
+      notificationPanel.classList.toggle("hidden");
+    });
+
+    document.getElementById("closeNotifPanel").addEventListener("click", () => {
+      notificationPanel.classList.add("hidden");
+    });
+
+    /* =========================
+       BROWSER NOTIFICATION
+    ========================= */
+    function askNotificationPermission() {
+      if (!("Notification" in window)) return;
+
+      if (Notification.permission === "default") {
+        Notification.requestPermission();
+      }
+    }
+
+    function showWelcomeNotification() {
+      if (!("Notification" in window)) return;
+
+      if (Notification.permission === "granted") {
+        new Notification("ANC Group Benefits Hub", {
+          body: "Yeni imtiyaz və partnyor yeniliklərini buradan izləyə bilərsiniz."
+        });
+      }
+    }
+
+    /* =========================
+       NEARBY PARTNERS
+    ========================= */
+    const nearbyList = document.getElementById("nearbyList");
+    const locationInfoBox = document.getElementById("locationInfoBox");
+
+    function toRad(value) {
+      return value * Math.PI / 180;
+    }
+
+    function calcDistance(lat1, lon1, lat2, lon2) {
+      const R = 6371;
+      const dLat = toRad(lat2 - lat1);
+      const dLon = toRad(lon2 - lon1);
+
+      const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      return R * c;
+    }
+
+    function renderNearby(userLat, userLng) {
+      const enriched = partners.map(p => ({
+        ...p,
+        distance: calcDistance(userLat, userLng, p.lat, p.lng)
+      }))
+      .sort((a, b) => a.distance - b.distance);
+
+      nearbyList.innerHTML = "";
+
+      enriched.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "nearby-card";
+        card.innerHTML = `
+          <div class="nearby-top">
+            <div>
+              <h3 class="nearby-title">${item.name}</h3>
+              <div class="nearby-sub">${item.description}</div>
+              <div class="list-tags">
+                <span class="tag">${item.category}</span>
+                <span class="tag">${item.address}</span>
+              </div>
+            </div>
+
+            <div class="distance-pill">${item.distance.toFixed(1)} km</div>
+          </div>
+
+          <div class="action-row">
+            <button class="soft-btn">Ətraflı</button>
+            <button class="soft-btn red">Xəritədə aç</button>
+          </div>
+        `;
+        nearbyList.appendChild(card);
+      });
+    }
+
+    function requestLocationAndRender() {
+      if (!navigator.geolocation) {
+        locationInfoBox.innerHTML = "Bu cihaz geolocation funksiyasını dəstəkləmir.";
+        return;
+      }
+
+      locationInfoBox.innerHTML = "Konum icazəsi soruşulur...";
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          locationInfoBox.innerHTML = "Yaxın partnyorlar tapıldı.";
+          renderNearby(latitude, longitude);
+        },
+        () => {
+          locationInfoBox.innerHTML = "Konum icazəsi verilmədi. Yaxınlıqdakı partnyorları göstərmək üçün icazə vermək lazımdır.";
+        }
+      );
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+    const screens = {
+      home: document.getElementById("screen-home"),
+      nearby: document.getElementById("screen-nearby"),
+      partners: document.getElementById("screen-partners")
+    };
+
+    function openScreen(name) {
+      Object.values(screens).forEach(el => el.classList.add("hidden"));
+      screens[name].classList.remove("hidden");
+
+      document.querySelectorAll(".nav-item").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.screen === name);
+      });
+
+      if (name === "nearby") {
+        requestLocationAndRender();
+      }
+
+      if (name === "partners") {
+        renderPartnersList(partners);
+      }
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function openPartnersScreen(categoryName = null) {
+      openScreen("partners");
+
+      if (!categoryName) {
+        renderPartnersList(partners);
+        return;
+      }
+
+      const filtered = partners.filter(
+        item => item.category.toLowerCase() === categoryName.toLowerCase()
+      );
+
+      renderPartnersList(filtered);
+    }
+
+    document.querySelectorAll(".nav-item").forEach(btn => {
+      btn.addEventListener("click", () => {
+        openScreen(btn.dataset.screen);
+      });
+    });
+
+    document.getElementById("seeAllNewPartners").addEventListener("click", () => {
+      openPartnersScreen();
+    });
+
+    document.getElementById("seeAllCategories").addEventListener("click", () => {
+      openPartnersScreen();
+    });
+
+    /* =========================
+       SEARCH
+    ========================= */
+    document.getElementById("searchInput").addEventListener("input", function() {
+      const value = this.value.trim().toLowerCase();
+
+      if (!value) {
+        renderCategories(categories);
+        renderNewPartners(partners);
+        return;
+      }
+
+      const filteredPartners = partners.filter(item =>
+        item.name.toLowerCase().includes(value) ||
+        item.category.toLowerCase().includes(value) ||
+        item.description.toLowerCase().includes(value)
+      );
+
+      openPartnersScreen();
+      renderPartnersList(filteredPartners);
+    });
+
+    /* =========================
+       INIT
+    ========================= */
+    renderCategories(categories);
+    renderNewPartners(partners);
+    renderNotifications();
+    askNotificationPermission();
+
+    // İstəsən bunu aktiv saxlayarıq:
+    // showWelcomeNotification();
+  </script>
 </body>
-
 </html>
