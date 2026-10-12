@@ -10,7 +10,7 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>Rahat Benefits Hub</title>
+  <title>ANC Group Benefits Hub</title>
 
 
   <style>
@@ -88,7 +88,10 @@
     }
 
 
-    /* LEFT SIDE */
+
+    /* =========================================
+       LEFT SIDE
+    ========================================= */
 
     .intro-side {
 
@@ -162,7 +165,7 @@
 
     .logo-placeholder {
 
-      width: 66px;
+      width: 76px;
       height: 66px;
 
       display: flex;
@@ -177,8 +180,10 @@
 
       color: #159c63;
 
-      font-size: 25px;
-      font-weight: 850;
+      font-size: 18px;
+      font-weight: 900;
+
+      letter-spacing: -.3px;
 
       box-shadow:
         0 8px 20px rgba(0,0,0,.08);
@@ -199,7 +204,7 @@
 
     .intro-text {
 
-      max-width: 370px;
+      max-width: 380px;
 
       margin-top: 18px;
 
@@ -264,7 +269,10 @@
     }
 
 
-    /* RIGHT SIDE */
+
+    /* =========================================
+       RIGHT SIDE
+    ========================================= */
 
     .selection-side {
 
@@ -351,6 +359,11 @@
     }
 
 
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
     @media(max-width:760px) {
 
       .login-card {
@@ -401,7 +414,9 @@
   <div class="login-card">
 
 
-    <!-- LEFT -->
+    <!-- =====================================
+         LEFT
+    ====================================== -->
 
     <section class="intro-side">
 
@@ -410,18 +425,18 @@
 
 
         <div class="logo-placeholder">
-          R
+          ANC
         </div>
 
 
         <div class="intro-title">
-          Rahat Benefits Hub
+          ANC Group Benefits Hub
         </div>
 
 
         <div class="intro-text">
-          Sizin üçün təqdim olunan xüsusi əməkdaş
-          imtiyazlarını, endirimləri və imkanları
+          ANC Group əməkdaşları üçün təqdim olunan
+          xüsusi imtiyazları, endirimləri və imkanları
           bir yerdə kəşf edin.
         </div>
 
@@ -477,7 +492,9 @@
 
 
 
-    <!-- RIGHT -->
+    <!-- =====================================
+         RIGHT
+    ====================================== -->
 
     <section class="selection-side">
 
@@ -531,6 +548,11 @@ async function loadFilter() {
   try {
 
 
+    /*
+      filter.html index.html ilə
+      eyni qovluqdadır.
+    */
+
     const filterUrl =
       new URL(
         "filter.html",
@@ -565,6 +587,10 @@ async function loadFilter() {
       filterHtml;
 
 
+
+    /* =========================================
+       FILTER ELEMENTLƏRİ
+    ========================================= */
 
     const companyFilter =
       document.getElementById(
@@ -605,7 +631,9 @@ async function loadFilter() {
 
 
 
-    /* ƏVVƏLKİ SEÇİMLƏR */
+    /* =========================================
+       ƏVVƏLKİ SEÇİMLƏRİ YÜKLƏ
+    ========================================= */
 
     const savedCompany =
       localStorage.getItem(
@@ -635,6 +663,10 @@ async function loadFilter() {
     }
 
 
+
+    /* =========================================
+       DAVAM ET BUTTON
+    ========================================= */
 
     function updateContinueButton() {
 
@@ -678,6 +710,10 @@ async function loadFilter() {
     updateContinueButton();
 
 
+
+    /* =========================================
+       DAVAM ET
+    ========================================= */
 
     continueButton.addEventListener(
       "click",
@@ -724,6 +760,12 @@ async function loadFilter() {
 
 
 
+        /*
+          Hələlik bu key-ləri dəyişmirik.
+          home.html ilə uyğun işləməsi üçün
+          eyni saxlayırıq.
+        */
+
         localStorage.setItem(
           "rahat-selected-company",
           company
@@ -749,6 +791,10 @@ async function loadFilter() {
 
 
 
+        /* =========================================
+           HOME PAGE
+        ========================================= */
+
         const homeUrl =
           new URL(
             "home.html",
@@ -771,7 +817,7 @@ async function loadFilter() {
 
 
     console.error(
-      "Rahat Benefits filter error:",
+      "ANC Group Benefits filter error:",
       error
     );
 
