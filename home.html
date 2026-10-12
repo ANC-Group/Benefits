@@ -10,7 +10,7 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>ANC Group Benefits Hub</title>
+  <title>ANC Group İmtiyazlar Platforması</title>
 
 
   <style>
@@ -19,36 +19,44 @@
       box-sizing: border-box;
     }
 
+
     :root {
 
       --bg: #f7f8f7;
       --card: #ffffff;
 
-      --soft-green: #e8f5ef;
-      --green: #4ea97a;
-      --green-dark: #2e7d5b;
+      --green: #4db66b;
+      --green-dark: #337f4b;
+      --green-soft: #eaf7ee;
 
-      --soft-red: #fdeeed;
-      --red: #d86b63;
+      --red: #d96662;
+      --red-dark: #b94e4b;
+      --red-soft: #fdeeed;
 
-      --soft-orange: #fff1e8;
-      --orange: #ef8f57;
+      --orange-soft: #fff1e8;
 
-      --text: #232323;
-      --muted: #8d8d8d;
+      --text: #262626;
+      --muted: #848484;
 
       --border: #ececec;
 
       --shadow:
-        0 10px 30px rgba(0,0,0,.05);
+        0 10px 28px rgba(0,0,0,.055);
 
     }
+
 
     body {
 
       margin: 0;
 
-      background: var(--bg);
+      padding-bottom: 92px;
+
+      background:
+        var(--bg);
+
+      color:
+        var(--text);
 
       font-family:
         Inter,
@@ -58,48 +66,63 @@
         Arial,
         sans-serif;
 
-      color: var(--text);
-
-      padding-bottom: 95px;
-
     }
+
 
     button,
     input {
       font-family: inherit;
     }
 
+
+    button {
+      cursor: pointer;
+    }
+
+
     .app {
 
-      max-width: 520px;
+      width: 100%;
 
-      margin: 0 auto;
+      max-width: 540px;
 
       min-height: 100vh;
 
-      background: var(--bg);
+      margin: auto;
+
+      background:
+        var(--bg);
 
     }
 
 
-    /* ===============================
-       TOP
-    =============================== */
+    /* =========================================
+       HEADER
+    ========================================= */
 
-    .top-wrap {
+    .top {
 
-      padding: 18px 18px 8px;
+      padding:
+        18px 18px 10px;
 
       background:
+
+        radial-gradient(
+          circle at 90% 0%,
+          rgba(217,102,98,.10),
+          transparent 36%
+        ),
+
         linear-gradient(
           180deg,
-          #fff1e8 0%,
+          #fff4f2 0%,
           #f7f8f7 100%
         );
 
     }
 
-    .top-bar {
+
+    .top-row {
 
       display: flex;
 
@@ -107,27 +130,29 @@
 
       justify-content: space-between;
 
-      gap: 12px;
+      gap: 10px;
 
     }
 
-    .user-block {
+
+    .user-area {
 
       display: flex;
 
       align-items: center;
 
-      gap: 12px;
+      gap: 11px;
 
       min-width: 0;
 
     }
 
+
     .avatar {
 
-      width: 54px;
+      width: 49px;
 
-      height: 54px;
+      height: 49px;
 
       flex-shrink: 0;
 
@@ -141,57 +166,59 @@
 
       background:
         linear-gradient(
-          135deg,
-          #ff9b61,
-          #e96b42
+          145deg,
+          #dd7772,
+          #bf4d49
         );
 
       color: white;
 
-      box-shadow: var(--shadow);
+      box-shadow:
+        var(--shadow);
 
     }
+
 
     .avatar svg {
 
-      width: 34px;
+      width: 30px;
 
-      height: 34px;
+      height: 30px;
 
     }
 
-    .greeting-wrap {
+
+    .hello {
+
       min-width: 0;
+
     }
 
-    .greeting-title {
+
+    .hello-title {
 
       margin: 0;
 
-      font-size: 25px;
+      font-size: 21px;
 
-      font-weight: 800;
+      font-weight: 850;
 
-      line-height: 1.05;
-
-      color: #2b2b2b;
-
-    }
-
-    .greeting-subtitle {
-
-      margin-top: 5px;
-
-      font-size: 13px;
-
-      color: #747474;
+      line-height: 1.1;
 
     }
 
 
-    /* ===============================
-       TOP ACTIONS
-    =============================== */
+    .hello-subtitle {
+
+      margin-top: 4px;
+
+      color:
+        var(--muted);
+
+      font-size: 11px;
+
+    }
+
 
     .top-actions {
 
@@ -199,113 +226,112 @@
 
       align-items: center;
 
-      gap: 7px;
+      gap: 6px;
 
       flex-shrink: 0;
 
     }
 
-    .change-filter-button {
 
-      height: 44px;
+    .change-button {
 
-      padding: 0 11px;
+      min-height: 40px;
+
+      padding:
+        0 9px;
 
       border:
-        1px solid #d8e9df;
+        1px solid #d7eadf;
 
-      border-radius: 14px;
+      border-radius: 13px;
 
-      background: #eef8f3;
+      background:
+        var(--green-soft);
 
-      color: var(--green-dark);
+      color:
+        var(--green-dark);
 
-      font-size: 11px;
+      font-size: 9px;
 
       font-weight: 800;
-
-      cursor: pointer;
 
       white-space: nowrap;
 
     }
 
-    .notif-button {
+
+    .notification-button {
 
       position: relative;
 
-      width: 46px;
+      width: 42px;
 
-      height: 46px;
-
-      flex-shrink: 0;
+      height: 42px;
 
       border: none;
 
-      border-radius: 15px;
+      border-radius: 14px;
 
       background: white;
 
-      box-shadow: var(--shadow);
+      box-shadow:
+        var(--shadow);
 
-      cursor: pointer;
-
-    }
-
-    .notif-button svg {
-
-      width: 22px;
-
-      height: 22px;
-
-      stroke: var(--green-dark);
+      font-size: 19px;
 
     }
 
-    .notif-badge {
+
+    .notification-badge {
 
       position: absolute;
 
-      top: -4px;
+      top: -5px;
 
-      right: -4px;
+      right: -5px;
 
-      min-width: 22px;
+      min-width: 21px;
 
-      height: 22px;
+      height: 21px;
 
-      padding: 0 6px;
+      padding:
+        0 5px;
 
-      display: flex;
+      display: none;
 
       align-items: center;
 
       justify-content: center;
 
+      border:
+        3px solid #fff4f2;
+
       border-radius: 999px;
 
-      border: 3px solid var(--bg);
-
-      background: var(--red);
+      background:
+        var(--red);
 
       color: white;
 
-      font-size: 11px;
+      font-size: 9px;
 
-      font-weight: 800;
+      font-weight: 850;
 
     }
 
 
-    /* ===============================
+    /* =========================================
        SEARCH
-    =============================== */
+    ========================================= */
 
     .search-box {
 
+      height: 52px;
+
       margin-top: 18px;
 
-      padding: 14px 16px;
+      padding:
+        0 16px;
 
       display: flex;
 
@@ -316,13 +342,15 @@
       border:
         1px solid var(--border);
 
-      border-radius: 18px;
+      border-radius: 17px;
 
       background: white;
 
-      box-shadow: var(--shadow);
+      box-shadow:
+        var(--shadow);
 
     }
+
 
     .search-box input {
 
@@ -334,36 +362,47 @@
 
       background: transparent;
 
-      color: var(--text);
-
-      font-size: 15px;
-
-    }
-
-    .search-box input::placeholder {
-
-      color: #9a9a9a;
+      font-size: 14px;
 
     }
 
 
-    /* ===============================
+    .search-icon {
+
+      opacity: .6;
+
+    }
+
+
+    /* =========================================
        MAIN
-    =============================== */
+    ========================================= */
 
-    .main-content {
+    main {
 
-      padding: 10px 18px 30px;
+      padding:
+        5px 18px 30px;
 
     }
+
+
+    .screen.hidden {
+
+      display: none;
+
+    }
+
 
     .section {
 
-      margin-top: 22px;
+      margin-top: 23px;
 
     }
 
-    .section-head {
+
+    .section-header {
+
+      margin-bottom: 13px;
 
       display: flex;
 
@@ -371,75 +410,87 @@
 
       justify-content: space-between;
 
-      gap: 12px;
-
-      margin-bottom: 14px;
+      gap: 10px;
 
     }
+
 
     .section-title {
 
       margin: 0;
 
-      font-size: 23px;
+      font-size: 21px;
 
-      font-weight: 800;
+      font-weight: 850;
 
     }
+
 
     .section-link {
 
-      color: #8d8d8d;
+      border: none;
 
-      font-size: 13px;
+      background: transparent;
 
-      cursor: pointer;
+      color:
+        var(--muted);
+
+      font-size: 12px;
 
     }
 
 
-    /* ===============================
+    /* =========================================
        CATEGORIES
-    =============================== */
+    ========================================= */
 
-    .categories-grid {
+    .categories {
 
       display: grid;
 
       grid-template-columns:
-        repeat(4, 1fr);
+        repeat(4,1fr);
 
-      gap: 12px;
+      gap: 9px;
 
     }
 
+
     .category-card {
 
-      padding: 14px 8px 12px;
+      min-height: 102px;
 
-      text-align: center;
+      padding:
+        11px 5px 9px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: flex-start;
 
       border:
         1px solid var(--border);
 
-      border-radius: 20px;
+      border-radius: 19px;
 
       background: white;
 
-      box-shadow: var(--shadow);
-
-      cursor: pointer;
+      box-shadow:
+        var(--shadow);
 
     }
 
+
     .category-icon {
 
-      width: 52px;
+      width: 44px;
 
-      height: 52px;
+      height: 44px;
 
-      margin:
-        0 auto 10px;
+      margin-bottom: 8px;
 
       display: flex;
 
@@ -447,36 +498,40 @@
 
       justify-content: center;
 
-      border-radius: 16px;
+      border-radius: 14px;
 
-      background: var(--soft-orange);
+      background:
+        var(--orange-soft);
 
-      font-size: 24px;
+      font-size: 20px;
 
     }
+
 
     .category-name {
 
-      color: #444;
+      color: #464646;
 
-      font-size: 12px;
+      font-size: 10px;
 
-      font-weight: 700;
+      font-weight: 750;
 
-      line-height: 1.25;
+      line-height: 1.2;
+
+      text-align: center;
 
     }
 
 
-    /* ===============================
-       PARTNER CARDS
-    =============================== */
+    /* =========================================
+       FEATURED / NEW PARTNERS
+    ========================================= */
 
-    .cards-row {
+    .horizontal-cards {
 
       display: flex;
 
-      gap: 14px;
+      gap: 13px;
 
       overflow-x: auto;
 
@@ -484,36 +539,40 @@
 
     }
 
-    .cards-row::-webkit-scrollbar {
+
+    .horizontal-cards::-webkit-scrollbar {
+
       display: none;
+
     }
 
-    .partner-card {
 
-      min-width: 250px;
+    .featured-card {
+
+      min-width: 245px;
 
       overflow: hidden;
 
       border:
         1px solid var(--border);
 
-      border-radius: 24px;
+      border-radius: 22px;
 
       background: white;
 
-      box-shadow: var(--shadow);
-
-      cursor: pointer;
+      box-shadow:
+        var(--shadow);
 
     }
 
-    .partner-banner {
+
+    .featured-top {
 
       position: relative;
 
-      height: 150px;
+      height: 135px;
 
-      padding: 20px;
+      padding: 18px;
 
       display: flex;
 
@@ -521,55 +580,62 @@
 
       justify-content: center;
 
-      text-align: center;
-
       background:
+
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(217,102,98,.13),
+          transparent 35%
+        ),
+
         linear-gradient(
           135deg,
-          var(--soft-green),
-          #f6fbf8
+          #eff9f2,
+          #ffffff
         );
 
-      color: var(--green-dark);
+      color:
+        var(--green-dark);
 
-      font-size: 30px;
+      font-size: 27px;
 
       font-weight: 900;
 
+      text-align: center;
+
     }
+
 
     .discount-badge {
 
       position: absolute;
 
-      top: 14px;
+      top: 13px;
 
-      right: 14px;
+      right: 13px;
 
-      padding: 6px 8px;
+      padding:
+        6px 9px;
 
-      border-radius: 12px;
+      border-radius: 11px;
 
-      background: var(--red);
+      background:
+        var(--red);
 
       color: white;
 
-      font-size: 12px;
+      font-size: 11px;
 
-      font-weight: 800;
+      font-weight: 850;
 
     }
 
 
-    /* ===============================
-       FAVORITE BUTTON
-    =============================== */
-
     .favorite-button {
 
-      width: 38px;
+      width: 36px;
 
-      height: 38px;
+      height: 36px;
 
       display: flex;
 
@@ -584,83 +650,67 @@
 
       background: white;
 
-      color: var(--red);
+      color:
+        var(--red);
 
-      font-size: 21px;
-
-      cursor: pointer;
-
-      flex-shrink: 0;
-
-      transition:
-        transform .15s ease,
-        background .15s ease;
+      font-size: 20px;
 
     }
 
-    .favorite-button:hover {
-
-      transform: scale(1.06);
-
-    }
 
     .favorite-button.active {
 
-      background: var(--soft-red);
-
-      color: var(--red);
+      background:
+        var(--red-soft);
 
     }
 
-    .partner-banner .favorite-button {
+
+    .featured-top .favorite-button {
 
       position: absolute;
 
-      top: 14px;
+      top: 12px;
 
-      left: 14px;
-
-      z-index: 5;
+      left: 12px;
 
     }
 
 
-    /* ===============================
-       PARTNER BODY
-    =============================== */
+    .featured-body {
 
-    .partner-body {
-
-      padding: 16px;
+      padding: 15px;
 
     }
 
-    .partner-title {
 
-      margin:
-        0 0 8px;
+    .featured-name {
 
-      font-size: 19px;
+      font-size: 17px;
 
-      font-weight: 800;
+      font-weight: 850;
 
     }
 
-    .partner-text {
 
-      min-height: 42px;
+    .featured-description {
 
-      color: #666;
+      margin-top: 6px;
 
-      font-size: 13px;
+      min-height: 35px;
 
-      line-height: 1.5;
+      color: #727272;
+
+      font-size: 12px;
+
+      line-height: 1.45;
 
     }
 
-    .partner-meta {
 
-      margin-top: 14px;
+    .featured-bottom {
+
+      margin-top: 13px;
 
       display: flex;
 
@@ -672,53 +722,51 @@
 
     }
 
-    .partner-chip {
+
+    .category-chip {
 
       padding:
-        7px 10px;
+        6px 9px;
 
       border-radius: 999px;
 
-      background: var(--soft-green);
+      background:
+        var(--green-soft);
 
-      color: var(--green-dark);
+      color:
+        var(--green-dark);
 
-      font-size: 11px;
-
-      font-weight: 700;
-
-    }
-
-    .partner-arrow {
-
-      width: 38px;
-
-      height: 38px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      border-radius: 50%;
-
-      background: #f3f5f4;
-
-      color: #555;
+      font-size: 10px;
 
       font-weight: 800;
 
     }
 
 
-    /* ===============================
-       LIST
-    =============================== */
+    .open-button {
 
-    .nearby-list,
-    .partners-list,
-    .favorites-list {
+      width: 35px;
+
+      height: 35px;
+
+      border: none;
+
+      border-radius: 50%;
+
+      background: #f3f4f3;
+
+      color: #555;
+
+      font-size: 17px;
+
+    }
+
+
+    /* =========================================
+       STANDARD PARTNER LIST
+    ========================================= */
+
+    .partner-list {
 
       display: grid;
 
@@ -726,23 +774,25 @@
 
     }
 
-    .nearby-card,
-    .list-card {
+
+    .partner-card {
 
       padding: 16px;
 
       border:
         1px solid var(--border);
 
-      border-radius: 20px;
+      border-radius: 19px;
 
       background: white;
 
-      box-shadow: var(--shadow);
+      box-shadow:
+        var(--shadow);
 
     }
 
-    .list-top {
+
+    .partner-top {
 
       display: flex;
 
@@ -754,60 +804,108 @@
 
     }
 
-    .list-right {
+
+    .partner-info {
+
+      flex: 1;
+
+      min-width: 0;
+
+    }
+
+
+    .partner-name {
+
+      font-size: 17px;
+
+      font-weight: 850;
+
+    }
+
+
+    .partner-description {
+
+      margin-top: 5px;
+
+      color:
+        #757575;
+
+      font-size: 12px;
+
+      line-height: 1.5;
+
+      white-space: pre-line;
+
+    }
+
+
+    .right-actions {
 
       display: flex;
 
       align-items: center;
 
-      gap: 8px;
+      gap: 7px;
 
     }
 
-    .list-title {
 
-      margin: 0;
-
-      font-size: 18px;
-
-      font-weight: 800;
-
-    }
-
-    .list-sub {
-
-      margin-top: 4px;
-
-      color: #777;
-
-      font-size: 13px;
-
-      line-height: 1.45;
-
-    }
-
-    .distance-pill {
+    .small-discount {
 
       padding:
-        7px 10px;
+        6px 8px;
 
       border-radius: 999px;
 
-      background: var(--soft-red);
+      background:
+        var(--red-soft);
 
-      color: var(--red);
+      color:
+        var(--red-dark);
 
-      font-size: 12px;
+      font-size: 11px;
 
-      font-weight: 800;
+      font-weight: 850;
 
       white-space: nowrap;
 
     }
 
-    .list-tags {
+
+    .tags {
 
       margin-top: 12px;
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 7px;
+
+    }
+
+
+    .tag {
+
+      padding:
+        6px 9px;
+
+      border-radius: 999px;
+
+      background: #f3f7f5;
+
+      color: #5c6861;
+
+      font-size: 10px;
+
+      font-weight: 750;
+
+    }
+
+
+    .card-buttons {
+
+      margin-top: 13px;
 
       display: flex;
 
@@ -817,60 +915,52 @@
 
     }
 
-    .tag {
+
+    .soft-button {
 
       padding:
-        7px 10px;
-
-      border-radius: 999px;
-
-      background: #f3f7f5;
-
-      color: #567;
-
-      font-size: 12px;
-
-      font-weight: 700;
-
-    }
-
-    .action-row {
-
-      margin-top: 14px;
-
-      display: flex;
-
-      gap: 10px;
-
-    }
-
-    .soft-btn {
-
-      padding:
-        11px 14px;
+        10px 13px;
 
       border: none;
 
-      border-radius: 14px;
+      border-radius: 12px;
 
-      background: var(--soft-green);
+      background:
+        var(--green-soft);
 
-      color: var(--green-dark);
+      color:
+        var(--green-dark);
 
-      font-size: 13px;
+      font-size: 11px;
 
       font-weight: 800;
 
-      cursor: pointer;
+      text-decoration: none;
 
     }
 
-    .empty-note {
 
-      padding: 24px;
+    .soft-button.red {
+
+      background:
+        var(--red-soft);
+
+      color:
+        var(--red-dark);
+
+    }
+
+
+    /* =========================================
+       EMPTY
+    ========================================= */
+
+    .empty-box {
+
+      padding: 27px 20px;
 
       border:
-        1px dashed #d8dfdb;
+        1px dashed #d7dfda;
 
       border-radius: 18px;
 
@@ -878,7 +968,7 @@
 
       color: #777;
 
-      font-size: 14px;
+      font-size: 13px;
 
       line-height: 1.55;
 
@@ -886,34 +976,35 @@
 
     }
 
-    .empty-heart {
 
-      margin-bottom: 10px;
+    .empty-icon {
 
-      font-size: 38px;
+      margin-bottom: 8px;
+
+      font-size: 34px;
 
     }
 
 
-    /* ===============================
-       NOTIFICATION
-    =============================== */
+    /* =========================================
+       NOTIFICATION PANEL
+    ========================================= */
 
     .notification-panel {
 
       position: fixed;
 
-      top: 84px;
+      top: 78px;
 
       left: 16px;
 
       right: 16px;
 
-      z-index: 150;
+      z-index: 400;
 
-      max-width: 488px;
+      max-width: 500px;
 
-      margin: 0 auto;
+      margin: auto;
 
       padding: 16px;
 
@@ -925,51 +1016,390 @@
       background: white;
 
       box-shadow:
-        0 20px 50px rgba(0,0,0,.09);
+        0 20px 55px rgba(0,0,0,.13);
 
     }
 
+
+    .notification-panel.hidden {
+
+      display: none;
+
+    }
+
+
+    .notification-header {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 10px;
+
+      margin-bottom: 8px;
+
+    }
+
+
+    .close-button {
+
+      width: 32px;
+
+      height: 32px;
+
+      border: none;
+
+      border-radius: 50%;
+
+      background: #f4f4f4;
+
+      font-size: 16px;
+
+    }
+
+
     .notification-item {
 
-      padding: 12px 0;
+      padding:
+        11px 0;
 
       border-bottom:
         1px solid #f0f0f0;
 
     }
 
-    .notification-title {
 
-      font-size: 14px;
+    .notification-item:last-child {
 
-      font-weight: 800;
+      border-bottom: none;
 
     }
+
+
+    .notification-title {
+
+      font-size: 13px;
+
+      font-weight: 850;
+
+    }
+
 
     .notification-text {
 
       margin-top: 4px;
 
-      color: #666;
+      color: #6f6f6f;
 
-      font-size: 13px;
+      font-size: 12px;
+
+      line-height: 1.4;
 
     }
 
-    .notification-time {
 
-      margin-top: 6px;
+    /* =========================================
+       MODAL
+    ========================================= */
 
-      color: #999;
+    .modal-backdrop {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 600;
+
+      padding:
+        20px 14px;
+
+      display: flex;
+
+      align-items: flex-end;
+
+      justify-content: center;
+
+      background:
+        rgba(24,24,24,.43);
+
+    }
+
+
+    .modal-backdrop.hidden {
+
+      display: none;
+
+    }
+
+
+    .modal {
+
+      width: 100%;
+
+      max-width: 520px;
+
+      max-height: 87vh;
+
+      overflow-y: auto;
+
+      padding: 20px;
+
+      border-radius:
+        25px 25px 18px 18px;
+
+      background: white;
+
+      box-shadow:
+        0 25px 70px rgba(0,0,0,.20);
+
+    }
+
+
+    .modal-header {
+
+      display: flex;
+
+      align-items: flex-start;
+
+      justify-content: space-between;
+
+      gap: 12px;
+
+    }
+
+
+    .modal-title {
+
+      margin: 0;
+
+      font-size: 23px;
+
+      font-weight: 900;
+
+    }
+
+
+    .modal-category {
+
+      margin-top: 5px;
+
+      color:
+        var(--green-dark);
 
       font-size: 11px;
 
+      font-weight: 800;
+
     }
 
 
-    /* ===============================
+    .modal-section {
+
+      margin-top: 20px;
+
+    }
+
+
+    .modal-label {
+
+      margin-bottom: 7px;
+
+      color: #919191;
+
+      font-size: 10px;
+
+      font-weight: 850;
+
+      text-transform: uppercase;
+
+      letter-spacing: .6px;
+
+    }
+
+
+    .modal-content {
+
+      color: #484848;
+
+      font-size: 13px;
+
+      line-height: 1.65;
+
+      white-space: pre-line;
+
+    }
+
+
+    .discount-box {
+
+      margin-top: 16px;
+
+      padding:
+        14px 15px;
+
+      border-radius: 15px;
+
+      background:
+        var(--red-soft);
+
+      color:
+        var(--red-dark);
+
+    }
+
+
+    .discount-box strong {
+
+      font-size: 22px;
+
+    }
+
+
+    /* PROMO */
+
+    .promo-box {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 12px;
+
+      padding:
+        12px 14px;
+
+      border:
+        1px dashed #cde2d4;
+
+      border-radius: 14px;
+
+      background:
+        var(--green-soft);
+
+    }
+
+
+    .promo-code {
+
+      color:
+        var(--green-dark);
+
+      font-size: 18px;
+
+      font-weight: 900;
+
+      letter-spacing: .5px;
+
+    }
+
+
+    .copy-button {
+
+      padding:
+        8px 10px;
+
+      border: none;
+
+      border-radius: 10px;
+
+      background: white;
+
+      color:
+        var(--green-dark);
+
+      font-size: 10px;
+
+      font-weight: 850;
+
+    }
+
+
+    /* RELATED PERSON */
+
+    .contact-box {
+
+      padding: 15px;
+
+      border:
+        1px solid #d8e9df;
+
+      border-radius: 15px;
+
+      background:
+        #f5fbf7;
+
+    }
+
+
+    .contact-name {
+
+      color: #353535;
+
+      font-size: 14px;
+
+      font-weight: 850;
+
+    }
+
+
+    .contact-phone {
+
+      margin-top: 7px;
+
+    }
+
+
+    .phone-link {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 7px;
+
+      color:
+        var(--green-dark);
+
+      font-size: 14px;
+
+      font-weight: 850;
+
+      text-decoration: none;
+
+    }
+
+
+    .contact-help {
+
+      margin-top: 8px;
+
+      color: #888;
+
+      font-size: 10px;
+
+      line-height: 1.4;
+
+    }
+
+
+    .external-buttons {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+    }
+
+
+    /* =========================================
        BOTTOM NAV
-    =============================== */
+    ========================================= */
 
     .bottom-nav {
 
@@ -979,14 +1409,14 @@
 
       bottom: 0;
 
-      z-index: 100;
+      z-index: 300;
 
       transform:
         translateX(-50%);
 
       width: 100%;
 
-      max-width: 520px;
+      max-width: 540px;
 
       display: grid;
 
@@ -994,24 +1424,25 @@
         repeat(4,1fr);
 
       padding:
-        9px 5px
-        calc(9px + env(safe-area-inset-bottom));
+        8px 5px
+        calc(8px + env(safe-area-inset-bottom));
 
       border-top:
         1px solid var(--border);
 
       background:
-        rgba(255,255,255,.97);
+        rgba(255,255,255,.96);
 
       backdrop-filter:
-        blur(10px);
+        blur(12px);
 
     }
 
-    .nav-item {
+
+    .nav-button {
 
       padding:
-        8px 3px;
+        7px 2px;
 
       display: flex;
 
@@ -1019,50 +1450,45 @@
 
       align-items: center;
 
-      gap: 5px;
+      gap: 4px;
 
       border: none;
 
-      border-radius: 14px;
+      border-radius: 13px;
 
       background: transparent;
 
-      color: #7b7b7b;
+      color: #7e7e7e;
 
-      font-size: 11px;
+      font-size: 9px;
 
-      font-weight: 700;
-
-      cursor: pointer;
+      font-weight: 750;
 
     }
 
-    .nav-item.active {
 
-      background: var(--soft-green);
+    .nav-button.active {
 
-      color: var(--green-dark);
+      background:
+        var(--green-soft);
+
+      color:
+        var(--green-dark);
 
     }
+
 
     .nav-icon {
 
-      font-size: 20px;
-
-    }
-
-    .hidden {
-
-      display:
-        none !important;
+      font-size: 18px;
 
     }
 
 
     @media(max-width:420px) {
 
-      .top-wrap,
-      .main-content {
+      .top,
+      main {
 
         padding-left: 14px;
 
@@ -1070,77 +1496,64 @@
 
       }
 
+
+      .hello-title {
+
+        font-size: 18px;
+
+      }
+
+
       .avatar {
 
-        width: 46px;
+        width: 44px;
 
-        height: 46px;
-
-      }
-
-      .greeting-title {
-
-        font-size: 20px;
+        height: 44px;
 
       }
 
-      .greeting-subtitle {
 
-        font-size: 11px;
-
-      }
-
-      .change-filter-button {
-
-        height: 40px;
+      .change-button {
 
         padding:
-          0 7px;
+          0 6px;
 
-        font-size: 9px;
+        font-size: 8px;
 
       }
 
-      .notif-button {
+
+      .categories {
+
+        gap: 7px;
+
+      }
+
+
+      .category-card {
+
+        min-height: 94px;
+
+        padding:
+          10px 3px 7px;
+
+      }
+
+
+      .category-icon {
 
         width: 40px;
 
         height: 40px;
 
-      }
-
-      .categories-grid {
-
-        gap: 8px;
+        font-size: 18px;
 
       }
 
-      .category-card {
-
-        padding:
-          11px 4px 10px;
-
-      }
-
-      .category-icon {
-
-        width: 43px;
-
-        height: 43px;
-
-        font-size: 20px;
-
-      }
 
       .category-name {
 
-        font-size: 10px;
-
-      }
-
-      .nav-item {
-
-        font-size: 10px;
+        font-size: 9px;
 
       }
 
@@ -1157,13 +1570,15 @@
 <div class="app">
 
 
-  <div class="top-wrap">
+  <!-- HEADER -->
+
+  <header class="top">
 
 
-    <div class="top-bar">
+    <div class="top-row">
 
 
-      <div class="user-block">
+      <div class="user-area">
 
 
         <div class="avatar">
@@ -1190,18 +1605,19 @@
         </div>
 
 
-        <div class="greeting-wrap">
+        <div class="hello">
 
           <h1
-            class="greeting-title"
-            id="greetingTitle"
+            class="hello-title"
+            id="helloTitle"
           >
             Salam
           </h1>
 
-          <div class="greeting-subtitle">
 
-            Özəl endirimləri kəşf edin!
+          <div class="hello-subtitle">
+
+            Özəl imtiyazları kəşf edin!
 
           </div>
 
@@ -1216,8 +1632,8 @@
 
 
         <button
-          class="change-filter-button"
-          id="changeSelectionButton"
+          class="change-button"
+          id="changeButton"
         >
 
           Şirkət / kateqoriya
@@ -1226,18 +1642,17 @@
 
 
         <button
-          class="notif-button"
-          id="notifButton"
+          class="notification-button"
+          id="notificationButton"
         >
 
           🔔
 
-          <div
-            class="notif-badge"
-            id="notifBadge"
+          <span
+            class="notification-badge"
+            id="notificationBadge"
           >
-            0
-          </div>
+          </span>
 
         </button>
 
@@ -1251,51 +1666,61 @@
 
     <div class="search-box">
 
-      <span>🔎</span>
+      <span class="search-icon">
+        🔎
+      </span>
 
       <input
-        type="text"
         id="searchInput"
-        placeholder="Axtar"
+        type="text"
+        placeholder="Partnyor və ya kateqoriya axtar"
       >
 
     </div>
 
 
-  </div>
+  </header>
 
 
 
-  <div class="main-content">
+  <main>
 
 
-    <!-- ƏSAS -->
+    <!-- =====================================
+         HOME
+    ====================================== -->
 
-    <section id="screen-home">
+    <section
+      class="screen"
+      id="screen-home"
+    >
 
 
       <div class="section">
 
 
-        <div class="section-head">
+        <div class="section-header">
+
 
           <h2 class="section-title">
             Kateqoriyalar
           </h2>
 
-          <span
+
+          <button
             class="section-link"
-            id="seeAllCategories"
+            id="allCategoriesButton"
           >
             Hamısı ›
-          </span>
+          </button>
+
 
         </div>
 
 
         <div
-          class="categories-grid"
-          id="categoriesGrid"
+          class="categories"
+          id="categoriesContainer"
         >
         </div>
 
@@ -1307,25 +1732,28 @@
       <div class="section">
 
 
-        <div class="section-head">
+        <div class="section-header">
+
 
           <h2 class="section-title">
             Yeni partnyorlar
           </h2>
 
-          <span
+
+          <button
             class="section-link"
-            id="seeAllNewPartners"
+            id="allPartnersButton"
           >
             Hamısı ›
-          </span>
+          </button>
+
 
         </div>
 
 
         <div
-          class="cards-row"
-          id="newPartnersRow"
+          class="horizontal-cards"
+          id="newPartnersContainer"
         >
         </div>
 
@@ -1337,39 +1765,47 @@
 
 
 
-    <!-- YAXINLIQDA -->
+    <!-- =====================================
+         NEARBY
+    ====================================== -->
 
     <section
+      class="screen hidden"
       id="screen-nearby"
-      class="hidden"
     >
 
 
       <div class="section">
 
-        <h2 class="section-title">
-          Yaxınlıqda
-        </h2>
 
+        <div class="section-header">
 
-        <div
-          class="empty-note"
-          id="locationInfoBox"
-          style="margin-top:14px;"
-        >
-
-          Yaxınlıqdakı partnyorları göstərmək üçün konum icazəsi tələb olunur.
+          <h2 class="section-title">
+            Yaxınlıqda
+          </h2>
 
         </div>
 
 
         <div
-          class="nearby-list"
-          id="nearbyList"
+          class="empty-box"
+          id="locationMessage"
+        >
+
+          Yaxınlıqdakı partnyorları göstərmək üçün
+          konum icazəsi tələb olunur.
+
+        </div>
+
+
+        <div
+          class="partner-list"
+          id="nearbyContainer"
           style="margin-top:12px;"
         >
         </div>
 
+
       </div>
 
 
@@ -1377,22 +1813,26 @@
 
 
 
-    <!-- FAVORİLƏR -->
+    <!-- =====================================
+         FAVORITES
+    ====================================== -->
 
     <section
+      class="screen hidden"
       id="screen-favorites"
-      class="hidden"
     >
 
 
       <div class="section">
 
 
-        <div class="section-head">
+        <div class="section-header">
+
 
           <h2 class="section-title">
             Favorilər
           </h2>
+
 
           <span
             class="section-link"
@@ -1401,12 +1841,13 @@
             0 partnyor
           </span>
 
+
         </div>
 
 
         <div
-          class="favorites-list"
-          id="favoritesList"
+          class="partner-list"
+          id="favoritesContainer"
         >
         </div>
 
@@ -1418,26 +1859,36 @@
 
 
 
-    <!-- PARTNYORLAR -->
+    <!-- =====================================
+         PARTNERS
+    ====================================== -->
 
     <section
+      class="screen hidden"
       id="screen-partners"
-      class="hidden"
     >
 
 
       <div class="section">
 
 
-        <h2 class="section-title">
-          Partnyorlar
-        </h2>
+        <div class="section-header">
+
+
+          <h2
+            class="section-title"
+            id="partnersTitle"
+          >
+            Partnyorlar
+          </h2>
+
+
+        </div>
 
 
         <div
-          class="partners-list"
-          id="partnersList"
-          style="margin-top:14px;"
+          class="partner-list"
+          id="partnersContainer"
         >
         </div>
 
@@ -1448,14 +1899,16 @@
     </section>
 
 
-  </div>
+  </main>
 
 
 </div>
 
 
 
-<!-- NOTIFICATIONS -->
+<!-- =====================================
+     NOTIFICATIONS
+====================================== -->
 
 <div
   class="notification-panel hidden"
@@ -1463,14 +1916,7 @@
 >
 
 
-  <div
-    style="
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-bottom:10px;
-    "
-  >
+  <div class="notification-header">
 
     <strong>
       Bildirişlər
@@ -1478,13 +1924,8 @@
 
 
     <button
-      id="closeNotifPanel"
-      style="
-        border:none;
-        background:transparent;
-        font-size:18px;
-        cursor:pointer;
-      "
+      class="close-button"
+      id="closeNotificationButton"
     >
       ✕
     </button>
@@ -1492,7 +1933,7 @@
   </div>
 
 
-  <div id="notificationList">
+  <div id="notificationContainer">
   </div>
 
 
@@ -1500,13 +1941,71 @@
 
 
 
-<!-- BOTTOM NAV -->
+<!-- =====================================
+     PARTNER MODAL
+====================================== -->
+
+<div
+  class="modal-backdrop hidden"
+  id="modalBackdrop"
+>
+
+
+  <div class="modal">
+
+
+    <div class="modal-header">
+
+
+      <div>
+
+        <h2
+          class="modal-title"
+          id="modalTitle"
+        >
+        </h2>
+
+
+        <div
+          class="modal-category"
+          id="modalCategory"
+        >
+        </div>
+
+      </div>
+
+
+      <button
+        class="close-button"
+        id="closeModalButton"
+      >
+        ✕
+      </button>
+
+
+    </div>
+
+
+    <div id="modalBody">
+    </div>
+
+
+  </div>
+
+
+</div>
+
+
+
+<!-- =====================================
+     BOTTOM NAVIGATION
+====================================== -->
 
 <nav class="bottom-nav">
 
 
   <button
-    class="nav-item active"
+    class="nav-button active"
     data-screen="home"
   >
 
@@ -1523,7 +2022,7 @@
 
 
   <button
-    class="nav-item"
+    class="nav-button"
     data-screen="nearby"
   >
 
@@ -1540,7 +2039,7 @@
 
 
   <button
-    class="nav-item"
+    class="nav-button"
     data-screen="favorites"
   >
 
@@ -1557,7 +2056,7 @@
 
 
   <button
-    class="nav-item"
+    class="nav-button"
     data-screen="partners"
   >
 
@@ -1576,94 +2075,103 @@
 
 
 
+<!-- REAL PARTNER DATA -->
+
+<script src="partners.js"></script>
+
+
+
 <script>
 
 
-/* ===============================
+/* =========================================
    USER
-=============================== */
+========================================= */
 
 const firstName =
+
   localStorage.getItem(
     "anc-first-name"
   )
+
   ||
+
   "Əməkdaş";
-
-
-const companyName =
-  localStorage.getItem(
-    "anc-selected-company-name"
-  )
-  ||
-  "ANC Group";
 
 
 document
   .getElementById(
-    "greetingTitle"
+    "helloTitle"
   )
   .textContent =
+
     `Salam, ${firstName}`;
 
 
 
-/* ===============================
-   CATEGORIES
-=============================== */
+/* =========================================
+   DATA
+========================================= */
+
+const partners =
+
+  Array.isArray(
+    window.ANC_PARTNERS
+  )
+
+  ?
+
+  window.ANC_PARTNERS
+
+  :
+
+  [];
+
+
 
 const categories = [
 
   {
-    id: "restoran-kafe",
     name: "Restoran / Kafe",
     icon: "☕"
   },
 
   {
-    id: "alis-veris",
     name: "Alış-veriş",
     icon: "🛍️"
   },
 
   {
-    id: "saglamliq",
     name: "Sağlamlıq",
     icon: "🩺"
   },
 
   {
-    id: "gozellik",
     name: "Gözəllik",
     icon: "💄"
   },
 
   {
-    id: "istirahet",
     name: "İstirahət mərkəzi",
     icon: "🏞️"
   },
 
   {
-    id: "tehsil",
     name: "Təhsil",
     icon: "🎓"
   },
 
   {
-    id: "seyahet",
     name: "Səyahət",
     icon: "✈️"
   },
 
   {
-    id: "usaq",
     name: "Uşaq",
     icon: "🧸"
   },
 
   {
-    id: "eylence",
     name: "Əyləncə",
     icon: "🎉"
   }
@@ -1672,218 +2180,171 @@ const categories = [
 
 
 
-/* ===============================
-   TEST PARTNERS
-=============================== */
-
-const partners = [
-
-  {
-    id: 1,
-    name: "Friends Central Perk",
-    category: "Restoran / Kafe",
-    description:
-      "Qəhvə, səhər yeməyi və menyuda xüsusi əməkdaş endirimləri.",
-    discount: "20%",
-    isNew: true,
-    lat: 40.4093,
-    lng: 49.8671,
-    address: "Bakı şəhəri"
-  },
-
-  {
-    id: 2,
-    name: "Beauty Point",
-    category: "Gözəllik",
-    description:
-      "Saç və gözəllik xidmətlərində xüsusi əməkdaş qiymətləri.",
-    discount: "15%",
-    isNew: true,
-    lat: 40.4012,
-    lng: 49.8550,
-    address: "Nərimanov"
-  },
-
-  {
-    id: 3,
-    name: "Kids Planet",
-    category: "Uşaq",
-    description:
-      "Uşaq əyləncə və inkişaf mərkəzində əməkdaş endirimi.",
-    discount: "25%",
-    isNew: false,
-    lat: 40.3945,
-    lng: 49.8821,
-    address: "28 May"
-  },
-
-  {
-    id: 4,
-    name: "TravelGo",
-    category: "Səyahət",
-    description:
-      "Otellər və tur paketlərində xüsusi partnyor təklifləri.",
-    discount: "10%",
-    isNew: true,
-    lat: 40.3770,
-    lng: 49.8920,
-    address: "Ağ şəhər"
-  },
-
-  {
-    id: 5,
-    name: "EduLab",
-    category: "Təhsil",
-    description:
-      "Kurslar, təlimlər və sertifikasiya proqramlarına endirim.",
-    discount: "18%",
-    isNew: false,
-    lat: 40.4180,
-    lng: 49.8400,
-    address: "Gənclik"
-  }
-
-];
-
-
-
-/* ===============================
+/* =========================================
    FAVORITES
-=============================== */
+========================================= */
 
 let favoriteIds =
+
   JSON.parse(
+
     localStorage.getItem(
       "anc-favorite-partners"
     )
+
     ||
+
     "[]"
+
   );
+
 
 
 function isFavorite(id) {
 
-  return favoriteIds.includes(id);
+  return favoriteIds.includes(
+    id
+  );
 
 }
 
 
-function toggleFavorite(id) {
+
+function saveFavorites() {
+
+  localStorage.setItem(
+
+    "anc-favorite-partners",
+
+    JSON.stringify(
+      favoriteIds
+    )
+
+  );
+
+}
+
+
+
+function toggleFavorite(
+  id
+) {
+
 
   if (
-    favoriteIds.includes(id)
+    favoriteIds.includes(
+      id
+    )
   ) {
 
+
     favoriteIds =
+
       favoriteIds.filter(
-        favoriteId =>
-          favoriteId !== id
+
+        itemId =>
+          itemId !== id
+
       );
+
 
   }
 
   else {
 
-    favoriteIds.push(id);
+
+    favoriteIds.push(
+      id
+    );
+
 
   }
 
 
-  localStorage.setItem(
-    "anc-favorite-partners",
-    JSON.stringify(favoriteIds)
+  saveFavorites();
+
+
+  renderNewPartners();
+
+  renderPartners(
+    partners
   );
-
-
-  renderNewPartners(partners);
-
-  renderPartnersList(partners);
 
   renderFavorites();
 
 }
 
 
-function favoriteIcon(id) {
 
-  return isFavorite(id)
-    ? "♥"
-    : "♡";
+/* =========================================
+   CATEGORIES
+========================================= */
 
-}
+const categoriesContainer =
 
-
-function favoriteClass(id) {
-
-  return isFavorite(id)
-    ? "favorite-button active"
-    : "favorite-button";
-
-}
-
-
-
-/* ===============================
-   RENDER CATEGORIES
-=============================== */
-
-const categoriesGrid =
   document.getElementById(
-    "categoriesGrid"
+    "categoriesContainer"
   );
 
 
-function renderCategories(list) {
 
-  categoriesGrid.innerHTML =
+function renderCategories() {
+
+
+  categoriesContainer.innerHTML =
     "";
 
 
-  list.forEach(
-    function(item) {
+  categories.forEach(
+    function(category) {
 
-      const card =
+
+      const button =
+
         document.createElement(
-          "div"
+          "button"
         );
 
 
-      card.className =
+      button.className =
         "category-card";
 
 
-      card.innerHTML = `
+      button.innerHTML = `
 
         <div class="category-icon">
 
-          ${item.icon}
+          ${category.icon}
 
         </div>
 
         <div class="category-name">
 
-          ${item.name}
+          ${category.name}
 
         </div>
 
       `;
 
 
-      card.addEventListener(
+      button.addEventListener(
         "click",
         function() {
 
-          openPartnersScreen(
-            item.name
+
+          openPartnersByCategory(
+            category.name
           );
+
 
         }
       );
 
 
-      categoriesGrid.appendChild(
-        card
+      categoriesContainer.appendChild(
+        button
       );
+
 
     }
   );
@@ -1892,33 +2353,273 @@ function renderCategories(list) {
 
 
 
-/* ===============================
-   NEW PARTNERS
-=============================== */
+/* =========================================
+   HELPER
+========================================= */
 
-const newPartnersRow =
+function shortDescription(
+  partner
+) {
+
+
+  if (
+    partner.details
+  ) {
+
+    return partner.details;
+
+  }
+
+
+  if (
+    partner.discount
+  ) {
+
+    return `${partner.discount} endirim`;
+
+  }
+
+
+  return "ANC Group əməkdaşları üçün xüsusi imtiyaz.";
+
+}
+
+
+
+function favoriteButtonHTML(
+  partner
+) {
+
+
+  const active =
+
+    isFavorite(
+      partner.id
+    );
+
+
+  return `
+
+    <button
+      class="favorite-button ${active ? "active" : ""}"
+      onclick="
+        event.stopPropagation();
+        toggleFavorite('${partner.id}');
+      "
+      aria-label="Favori"
+    >
+
+      ${active ? "♥" : "♡"}
+
+    </button>
+
+  `;
+
+}
+
+
+
+/* =========================================
+   NEW PARTNERS
+========================================= */
+
+const newPartnersContainer =
+
   document.getElementById(
-    "newPartnersRow"
+    "newPartnersContainer"
   );
 
 
-function renderNewPartners(list) {
 
-  newPartnersRow.innerHTML =
+function renderNewPartners() {
+
+
+  newPartnersContainer.innerHTML =
     "";
 
 
   const newPartners =
-    list.filter(
-      item =>
-        item.isNew
+
+    partners.filter(
+
+      partner =>
+        partner.isNew
+
     );
 
 
+  if (
+    !newPartners.length
+  ) {
+
+
+    newPartnersContainer.innerHTML = `
+
+      <div class="empty-box">
+
+        Hazırda yeni partnyor yoxdur.
+
+      </div>
+
+    `;
+
+
+    return;
+
+  }
+
+
+
   newPartners.forEach(
-    function(item) {
+    function(partner) {
+
 
       const card =
+
+        document.createElement(
+          "div"
+        );
+
+
+      card.className =
+        "featured-card";
+
+
+      card.innerHTML = `
+
+        <div class="featured-top">
+
+          ${favoriteButtonHTML(partner)}
+
+          ${partner.name}
+
+          ${
+            partner.discount
+
+            ?
+
+            `
+              <div class="discount-badge">
+
+                ${partner.discount}
+
+              </div>
+            `
+
+            :
+
+            ""
+          }
+
+        </div>
+
+
+        <div class="featured-body">
+
+
+          <div class="featured-name">
+
+            ${partner.name}
+
+          </div>
+
+
+          <div class="featured-description">
+
+            ${shortDescription(partner)}
+
+          </div>
+
+
+          <div class="featured-bottom">
+
+
+            <span class="category-chip">
+
+              ${partner.category}
+
+            </span>
+
+
+            <button
+              class="open-button"
+              onclick="openPartner('${partner.id}')"
+            >
+
+              →
+
+            </button>
+
+
+          </div>
+
+
+        </div>
+
+      `;
+
+
+      newPartnersContainer.appendChild(
+        card
+      );
+
+
+    }
+  );
+
+}
+
+
+
+/* =========================================
+   PARTNER LIST
+========================================= */
+
+const partnersContainer =
+
+  document.getElementById(
+    "partnersContainer"
+  );
+
+
+
+function renderPartners(
+  list
+) {
+
+
+  partnersContainer.innerHTML =
+    "";
+
+
+  if (
+    !list.length
+  ) {
+
+
+    partnersContainer.innerHTML = `
+
+      <div class="empty-box">
+
+        Bu bölmədə hazırda partnyor yoxdur.
+
+      </div>
+
+    `;
+
+
+    return;
+
+  }
+
+
+
+  list.forEach(
+    function(partner) {
+
+
+      const card =
+
         document.createElement(
           "div"
         );
@@ -1930,215 +2631,117 @@ function renderNewPartners(list) {
 
       card.innerHTML = `
 
-        <div class="partner-banner">
+        <div class="partner-top">
+
+
+          <div class="partner-info">
+
+
+            <div class="partner-name">
+
+              ${partner.name}
+
+            </div>
+
+
+            <div class="partner-description">
+
+              ${shortDescription(partner)}
+
+            </div>
+
+
+          </div>
+
+
+          <div class="right-actions">
+
+
+            ${
+              partner.discount
+
+              ?
+
+              `
+                <span class="small-discount">
+
+                  ${partner.discount}
+
+                </span>
+              `
+
+              :
+
+              ""
+            }
+
+
+            ${favoriteButtonHTML(partner)}
+
+
+          </div>
+
+
+        </div>
+
+
+        <div class="tags">
+
+          <span class="tag">
+
+            ${partner.category}
+
+          </span>
+
+        </div>
+
+
+        <div class="card-buttons">
+
 
           <button
-            class="${favoriteClass(item.id)}"
-            onclick="
-              event.stopPropagation();
-              toggleFavorite(${item.id});
-            "
+            class="soft-button"
+            onclick="openPartner('${partner.id}')"
           >
-            ${favoriteIcon(item.id)}
-          </button>
-
-          ${item.name}
-
-          <div class="discount-badge">
-
-            ${item.discount}
-
-          </div>
-
-        </div>
-
-
-        <div class="partner-body">
-
-          <h3 class="partner-title">
-
-            ${item.name}
-
-          </h3>
-
-
-          <div class="partner-text">
-
-            ${item.description}
-
-          </div>
-
-
-          <div class="partner-meta">
-
-            <div class="partner-chip">
-
-              ${item.category}
-
-            </div>
-
-
-            <div class="partner-arrow">
-
-              →
-
-            </div>
-
-          </div>
-
-        </div>
-
-      `;
-
-
-      card.addEventListener(
-        "click",
-        function() {
-
-          openPartnersScreen(
-            item.category
-          );
-
-        }
-      );
-
-
-      newPartnersRow.appendChild(
-        card
-      );
-
-    }
-  );
-
-}
-
-
-
-/* ===============================
-   STANDARD PARTNER LIST
-=============================== */
-
-const partnersList =
-  document.getElementById(
-    "partnersList"
-  );
-
-
-function renderPartnersList(list) {
-
-  partnersList.innerHTML =
-    "";
-
-
-  if (!list.length) {
-
-    partnersList.innerHTML = `
-
-      <div class="empty-note">
-
-        Bu kateqoriyada hazırda partnyor yoxdur.
-
-      </div>
-
-    `;
-
-    return;
-
-  }
-
-
-  list.forEach(
-    function(item) {
-
-      const card =
-        document.createElement(
-          "div"
-        );
-
-
-      card.className =
-        "list-card";
-
-
-      card.innerHTML = `
-
-        <div class="list-top">
-
-          <div>
-
-            <h3 class="list-title">
-
-              ${item.name}
-
-            </h3>
-
-
-            <div class="list-sub">
-
-              ${item.description}
-
-            </div>
-
-          </div>
-
-
-          <div class="list-right">
-
-            <div class="distance-pill">
-
-              ${item.discount}
-
-            </div>
-
-
-            <button
-              class="${favoriteClass(item.id)}"
-              onclick="toggleFavorite(${item.id})"
-            >
-
-              ${favoriteIcon(item.id)}
-
-            </button>
-
-          </div>
-
-        </div>
-
-
-        <div class="list-tags">
-
-          <span class="tag">
-
-            ${item.category}
-
-          </span>
-
-
-          <span class="tag">
-
-            ${item.address}
-
-          </span>
-
-        </div>
-
-
-        <div class="action-row">
-
-          <button class="soft-btn">
 
             Ətraflı
 
           </button>
 
+
+          ${
+            partner.mapUrl
+
+            ?
+
+            `
+              <a
+                class="soft-button red"
+                href="${partner.mapUrl}"
+                target="_blank"
+                rel="noopener"
+              >
+
+                📍 Xəritədə aç
+
+              </a>
+            `
+
+            :
+
+            ""
+          }
+
+
         </div>
 
       `;
 
 
-      partnersList.appendChild(
+      partnersContainer.appendChild(
         card
       );
+
 
     }
   );
@@ -2147,24 +2750,31 @@ function renderPartnersList(list) {
 
 
 
-/* ===============================
-   FAVORITES SCREEN
-=============================== */
+/* =========================================
+   FAVORITES
+========================================= */
 
-const favoritesList =
+const favoritesContainer =
+
   document.getElementById(
-    "favoritesList"
+    "favoritesContainer"
   );
+
 
 
 function renderFavorites() {
 
+
   const favorites =
+
     partners.filter(
+
       partner =>
+
         favoriteIds.includes(
           partner.id
         )
+
     );
 
 
@@ -2177,118 +2787,137 @@ function renderFavorites() {
       `${favorites.length} partnyor`;
 
 
-  favoritesList.innerHTML =
+  favoritesContainer.innerHTML =
     "";
 
 
-  if (!favorites.length) {
+  if (
+    !favorites.length
+  ) {
 
-    favoritesList.innerHTML = `
 
-      <div class="empty-note">
+    favoritesContainer.innerHTML = `
 
-        <div class="empty-heart">
+      <div class="empty-box">
 
+        <div class="empty-icon">
           ♡
-
         </div>
 
-        Hələ heç bir partnyoru favorilərə əlavə etməmisiniz.
+        Hələ heç bir partnyoru favorilərə
+        əlavə etməmisiniz.
 
         <br><br>
 
-        Bəyəndiyiniz partnyorun yanında olan
-        ürək işarəsinə toxunun.
+        Bəyəndiyiniz və ya tez-tez istifadə etdiyiniz
+        partnyorun ürək işarəsinə toxunun.
 
       </div>
 
     `;
+
 
     return;
 
   }
 
 
+
   favorites.forEach(
-    function(item) {
+    function(partner) {
+
 
       const card =
+
         document.createElement(
           "div"
         );
 
 
       card.className =
-        "list-card";
+        "partner-card";
 
 
       card.innerHTML = `
 
-        <div class="list-top">
+        <div class="partner-top">
 
 
-          <div>
-
-            <h3 class="list-title">
-
-              ${item.name}
-
-            </h3>
+          <div class="partner-info">
 
 
-            <div class="list-sub">
+            <div class="partner-name">
 
-              ${item.description}
+              ${partner.name}
 
             </div>
+
+
+            <div class="partner-description">
+
+              ${shortDescription(partner)}
+
+            </div>
+
 
           </div>
 
 
-          <div class="list-right">
+          <div class="right-actions">
 
-            <div class="distance-pill">
 
-              ${item.discount}
+            ${
+              partner.discount
 
-            </div>
+              ?
+
+              `
+                <span class="small-discount">
+
+                  ${partner.discount}
+
+                </span>
+              `
+
+              :
+
+              ""
+            }
 
 
             <button
               class="favorite-button active"
-              onclick="toggleFavorite(${item.id})"
+              onclick="toggleFavorite('${partner.id}')"
             >
 
               ♥
 
             </button>
 
+
           </div>
 
+
         </div>
 
 
-        <div class="list-tags">
+        <div class="tags">
 
           <span class="tag">
 
-            ${item.category}
-
-          </span>
-
-
-          <span class="tag">
-
-            ${item.address}
+            ${partner.category}
 
           </span>
 
         </div>
 
 
-        <div class="action-row">
+        <div class="card-buttons">
 
-          <button class="soft-btn">
+          <button
+            class="soft-button"
+            onclick="openPartner('${partner.id}')"
+          >
 
             Ətraflı
 
@@ -2299,9 +2928,10 @@ function renderFavorites() {
       `;
 
 
-      favoritesList.appendChild(
+      favoritesContainer.appendChild(
         card
       );
+
 
     }
   );
@@ -2310,80 +2940,650 @@ function renderFavorites() {
 
 
 
-/* ===============================
-   NOTIFICATIONS
-=============================== */
+/* =========================================
+   PARTNER MODAL
+========================================= */
 
-const notifications = [
+const modalBackdrop =
 
-  {
-    title:
-      "Yeni imtiyaz əlavə edildi",
-    text:
-      "Friends Central Perk artıq partnyorlarımız sırasındadır.",
-    time:
-      "Bu gün"
-  },
-
-  {
-    title:
-      "Yeni partnyor aktivdir",
-    text:
-      "Beauty Point üzrə 15% endirim aktiv edildi.",
-    time:
-      "Dünən"
-  }
-
-];
-
-
-const notifBadge =
   document.getElementById(
-    "notifBadge"
+    "modalBackdrop"
   );
 
 
+const modalTitle =
+
+  document.getElementById(
+    "modalTitle"
+  );
+
+
+const modalCategory =
+
+  document.getElementById(
+    "modalCategory"
+  );
+
+
+const modalBody =
+
+  document.getElementById(
+    "modalBody"
+  );
+
+
+
+function cleanPhone(
+  number
+) {
+
+  return number.replace(
+    /[^\d+]/g,
+    ""
+  );
+
+}
+
+
+
+function openPartner(
+  partnerId
+) {
+
+
+  const partner =
+
+    partners.find(
+
+      item =>
+        item.id === partnerId
+
+    );
+
+
+  if (
+    !partner
+  ) {
+
+    return;
+
+  }
+
+
+  modalTitle.textContent =
+    partner.name;
+
+
+  modalCategory.textContent =
+    partner.category;
+
+
+  let html =
+    "";
+
+
+
+  /* ENDİRİM */
+
+  if (
+    partner.discount
+  ) {
+
+
+    html += `
+
+      <div class="discount-box">
+
+        <div class="modal-label">
+          Endirim
+        </div>
+
+        <strong>
+          ${partner.discount}
+        </strong>
+
+      </div>
+
+    `;
+
+  }
+
+
+
+  /* ƏTRAFLI MƏLUMAT */
+
+  if (
+    partner.details
+  ) {
+
+
+    html += `
+
+      <div class="modal-section">
+
+        <div class="modal-label">
+
+          Ətraflı məlumat
+
+        </div>
+
+        <div class="modal-content">
+
+          ${partner.details}
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+
+  /* İSTİFADƏ QAYDASI */
+
+  if (
+    partner.usage
+  ) {
+
+
+    html += `
+
+      <div class="modal-section">
+
+        <div class="modal-label">
+
+          İstifadə qaydası
+
+        </div>
+
+        <div class="modal-content">
+
+          ${partner.usage}
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+
+  /* PROMOKOD */
+
+  if (
+    partner.promoCode
+  ) {
+
+
+    html += `
+
+      <div class="modal-section">
+
+        <div class="modal-label">
+
+          Promokod
+
+        </div>
+
+
+        <div class="promo-box">
+
+
+          <div
+            class="promo-code"
+            id="currentPromoCode"
+          >
+
+            ${partner.promoCode}
+
+          </div>
+
+
+          <button
+            class="copy-button"
+            onclick="copyPromoCode('${partner.promoCode}')"
+          >
+
+            Kopyala
+
+          </button>
+
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+
+  /* ƏLAQƏLİ ŞƏXS */
+
+  if (
+    partner.relatedPerson
+    ||
+    partner.relatedPhone
+  ) {
+
+
+    html += `
+
+      <div class="modal-section">
+
+        <div class="modal-label">
+
+          Problem yarandıqda əlaqə
+
+        </div>
+
+
+        <div class="contact-box">
+
+
+          ${
+            partner.relatedPerson
+
+            ?
+
+            `
+              <div class="contact-name">
+
+                ${partner.relatedPerson}
+
+              </div>
+            `
+
+            :
+
+            ""
+          }
+
+
+          ${
+            partner.relatedPhone
+
+            ?
+
+            `
+              <div class="contact-phone">
+
+                <a
+                  class="phone-link"
+                  href="tel:${cleanPhone(partner.relatedPhone)}"
+                >
+
+                  📞 ${partner.relatedPhone}
+
+                </a>
+
+              </div>
+            `
+
+            :
+
+            ""
+          }
+
+
+          <div class="contact-help">
+
+            İmtiyazdan istifadə zamanı problem yaranarsa
+            əlaqə saxlaya bilərsiniz.
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+
+  /* LINKS */
+
+  if (
+    partner.mapUrl
+    ||
+    partner.facebook
+    ||
+    partner.instagram
+    ||
+    partner.whatsapp
+  ) {
+
+
+    html += `
+
+      <div class="modal-section">
+
+
+        <div class="modal-label">
+
+          Faydalı linklər
+
+        </div>
+
+
+        <div class="external-buttons">
+
+
+          ${
+            partner.mapUrl
+
+            ?
+
+            `
+              <a
+                class="soft-button"
+                href="${partner.mapUrl}"
+                target="_blank"
+                rel="noopener"
+              >
+
+                📍 Google Maps
+
+              </a>
+            `
+
+            :
+
+            ""
+          }
+
+
+          ${
+            partner.instagram
+
+            ?
+
+            `
+              <a
+                class="soft-button"
+                href="${partner.instagram}"
+                target="_blank"
+                rel="noopener"
+              >
+
+                Instagram
+
+              </a>
+            `
+
+            :
+
+            ""
+          }
+
+
+          ${
+            partner.facebook
+
+            ?
+
+            `
+              <a
+                class="soft-button"
+                href="${partner.facebook}"
+                target="_blank"
+                rel="noopener"
+              >
+
+                Facebook
+
+              </a>
+            `
+
+            :
+
+            ""
+          }
+
+
+          ${
+            partner.whatsapp
+
+            ?
+
+            `
+              <a
+                class="soft-button"
+                href="${partner.whatsapp}"
+                target="_blank"
+                rel="noopener"
+              >
+
+                WhatsApp
+
+              </a>
+            `
+
+            :
+
+            ""
+          }
+
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+
+  modalBody.innerHTML =
+    html;
+
+
+  modalBackdrop
+    .classList
+    .remove(
+      "hidden"
+    );
+
+}
+
+
+
+function closeModal() {
+
+  modalBackdrop
+    .classList
+    .add(
+      "hidden"
+    );
+
+}
+
+
+
+document
+  .getElementById(
+    "closeModalButton"
+  )
+  .addEventListener(
+    "click",
+    closeModal
+  );
+
+
+
+modalBackdrop.addEventListener(
+  "click",
+  function(event) {
+
+
+    if (
+      event.target ===
+      modalBackdrop
+    ) {
+
+
+      closeModal();
+
+
+    }
+
+
+  }
+);
+
+
+
+function copyPromoCode(
+  code
+) {
+
+
+  if (
+    navigator.clipboard
+  ) {
+
+
+    navigator.clipboard
+      .writeText(
+        code
+      );
+
+
+  }
+
+
+  alert(
+    "Promokod kopyalandı: " +
+    code
+  );
+
+}
+
+
+
+/* =========================================
+   NOTIFICATIONS
+========================================= */
+
 const notificationPanel =
+
   document.getElementById(
     "notificationPanel"
   );
 
 
-const notificationList =
+const notificationBadge =
+
   document.getElementById(
-    "notificationList"
+    "notificationBadge"
   );
+
+
+const notificationContainer =
+
+  document.getElementById(
+    "notificationContainer"
+  );
+
 
 
 function renderNotifications() {
 
-  notifBadge.textContent =
-    notifications.length;
+
+  const newPartners =
+
+    partners.filter(
+      partner =>
+        partner.isNew
+    );
 
 
-  notificationList.innerHTML =
+  if (
+    newPartners.length
+  ) {
 
-    notifications
+
+    notificationBadge.style.display =
+      "flex";
+
+
+    notificationBadge.textContent =
+      newPartners.length;
+
+
+  }
+
+  else {
+
+
+    notificationBadge.style.display =
+      "none";
+
+
+  }
+
+
+
+  if (
+    !newPartners.length
+  ) {
+
+
+    notificationContainer.innerHTML = `
+
+      <div class="empty-box">
+
+        Yeni bildiriş yoxdur.
+
+      </div>
+
+    `;
+
+
+    return;
+
+  }
+
+
+
+  notificationContainer.innerHTML =
+
+    newPartners
       .map(
-        item => `
+        partner => `
 
           <div class="notification-item">
 
             <div class="notification-title">
 
-              ${item.title}
+              Yeni partnyor əlavə edildi 🎉
 
             </div>
 
             <div class="notification-text">
 
-              ${item.text}
+              ${partner.name}
 
-            </div>
+              ${
+                partner.discount
 
-            <div class="notification-time">
+                ?
 
-              ${item.time}
+                ` — ${partner.discount} imtiyaz`
+
+                :
+
+                ""
+              }
 
             </div>
 
@@ -2396,13 +3596,15 @@ function renderNotifications() {
 }
 
 
+
 document
   .getElementById(
-    "notifButton"
+    "notificationButton"
   )
   .addEventListener(
     "click",
     function() {
+
 
       notificationPanel
         .classList
@@ -2410,17 +3612,20 @@ document
           "hidden"
         );
 
+
     }
   );
 
 
+
 document
   .getElementById(
-    "closeNotifPanel"
+    "closeNotificationButton"
   )
   .addEventListener(
     "click",
     function() {
+
 
       notificationPanel
         .classList
@@ -2428,314 +3633,302 @@ document
           "hidden"
         );
 
-    }
-  );
-
-
-
-/* ===============================
-   CHANGE COMPANY
-=============================== */
-
-document
-  .getElementById(
-    "changeSelectionButton"
-  )
-  .addEventListener(
-    "click",
-    function() {
-
-      window.location.href =
-        "index.html";
 
     }
   );
 
 
 
-/* ===============================
-   LOCATION
-=============================== */
+/* =========================================
+   NEARBY
+========================================= */
 
-const nearbyList =
+const nearbyContainer =
+
   document.getElementById(
-    "nearbyList"
+    "nearbyContainer"
   );
 
 
-const locationInfoBox =
+const locationMessage =
+
   document.getElementById(
-    "locationInfoBox"
+    "locationMessage"
   );
 
 
-function toRad(value) {
 
-  return value * Math.PI / 180;
-
-}
+function renderNearbyLinks() {
 
 
-function calcDistance(
-  lat1,
-  lon1,
-  lat2,
-  lon2
-) {
+  const partnersWithMap =
 
-  const R =
-    6371;
-
-
-  const dLat =
-    toRad(
-      lat2 - lat1
+    partners.filter(
+      partner =>
+        partner.mapUrl
     );
 
 
-  const dLon =
-    toRad(
-      lon2 - lon1
-    );
-
-
-  const a =
-
-    Math.sin(dLat / 2)
-    *
-    Math.sin(dLat / 2)
-
-    +
-
-    Math.cos(
-      toRad(lat1)
-    )
-    *
-    Math.cos(
-      toRad(lat2)
-    )
-    *
-    Math.sin(dLon / 2)
-    *
-    Math.sin(dLon / 2);
-
-
-  const c =
-
-    2
-    *
-    Math.atan2(
-      Math.sqrt(a),
-      Math.sqrt(1 - a)
-    );
-
-
-  return R * c;
-
-}
-
-
-
-function renderNearby(
-  userLat,
-  userLng
-) {
-
-  const enriched =
-
-    partners
-      .map(
-        partner => ({
-
-          ...partner,
-
-          distance:
-            calcDistance(
-              userLat,
-              userLng,
-              partner.lat,
-              partner.lng
-            )
-
-        })
-      )
-      .sort(
-        (a,b) =>
-          a.distance -
-          b.distance
-      );
-
-
-  nearbyList.innerHTML =
+  nearbyContainer.innerHTML =
     "";
 
 
-  enriched.forEach(
-    function(item) {
-
-      const card =
-        document.createElement(
-          "div"
-        );
-
-
-      card.className =
-        "nearby-card";
-
-
-      card.innerHTML = `
-
-        <div class="list-top">
-
-
-          <div>
-
-            <h3 class="list-title">
-
-              ${item.name}
-
-            </h3>
-
-
-            <div class="list-sub">
-
-              ${item.description}
-
-            </div>
-
-          </div>
-
-
-          <div class="list-right">
-
-            <div class="distance-pill">
-
-              ${item.distance.toFixed(1)} km
-
-            </div>
-
-
-            <button
-              class="${favoriteClass(item.id)}"
-              onclick="
-                toggleFavorite(${item.id});
-                requestLocationAndRender();
-              "
-            >
-
-              ${favoriteIcon(item.id)}
-
-            </button>
-
-          </div>
-
-        </div>
-
-
-        <div class="list-tags">
-
-          <span class="tag">
-
-            ${item.category}
-
-          </span>
-
-
-          <span class="tag">
-
-            ${item.address}
-
-          </span>
-
-        </div>
-
-      `;
-
-
-      nearbyList.appendChild(
-        card
-      );
-
-    }
-  );
-
-}
-
-
-
-function requestLocationAndRender() {
-
   if (
-    !navigator.geolocation
+    !partnersWithMap.length
   ) {
 
-    locationInfoBox.innerHTML =
-      "Bu cihaz konum funksiyasını dəstəkləmir.";
 
     return;
 
   }
 
 
-  locationInfoBox.innerHTML =
-    "📍 Konum icazəsi gözlənilir...";
+  partnersWithMap.forEach(
+    function(partner) {
 
 
-  navigator.geolocation
-    .getCurrentPosition(
+      const card =
 
-      function(position) {
-
-        locationInfoBox.innerHTML =
-          "✅ Yaxın partnyorlar məsafəyə görə sıralandı.";
-
-
-        renderNearby(
-
-          position.coords.latitude,
-
-          position.coords.longitude
-
+        document.createElement(
+          "div"
         );
 
-      },
+
+      card.className =
+        "partner-card";
 
 
-      function(error) {
+      card.innerHTML = `
 
-        if (
-          error.code === 1
-        ) {
+        <div class="partner-top">
 
-          locationInfoBox.innerHTML =
-            "📍 Konum icazəsi verilmədi.";
 
-        }
+          <div class="partner-info">
 
-        else {
 
-          locationInfoBox.innerHTML =
-            "Konum məlumatını əldə etmək mümkün olmadı.";
+            <div class="partner-name">
 
-        }
+              ${partner.name}
 
-      },
+            </div>
 
-      {
-        enableHighAccuracy: true,
-        timeout: 10000,
-        maximumAge: 300000
-      }
 
-    );
+            <div class="partner-description">
+
+              ${shortDescription(partner)}
+
+            </div>
+
+
+          </div>
+
+
+          ${
+            partner.discount
+
+            ?
+
+            `
+              <span class="small-discount">
+
+                ${partner.discount}
+
+              </span>
+            `
+
+            :
+
+            ""
+          }
+
+
+        </div>
+
+
+        <div class="card-buttons">
+
+
+          <a
+            class="soft-button"
+            href="${partner.mapUrl}"
+            target="_blank"
+            rel="noopener"
+          >
+
+            📍 Xəritədə aç
+
+          </a>
+
+
+          <button
+            class="soft-button red"
+            onclick="openPartner('${partner.id}')"
+          >
+
+            Ətraflı
+
+          </button>
+
+
+        </div>
+
+      `;
+
+
+      nearbyContainer.appendChild(
+        card
+      );
+
+
+    }
+  );
 
 }
 
 
 
-/* ===============================
+/*
+  DƏQİQ MƏSAFƏ ÜÇÜN:
+  Excel-də gələcəkdə hər partnyor üçün
+  latitude və longitude əlavə etmək kifayətdir.
+*/
+
+function requestLocation() {
+
+
+  if (
+    !navigator.geolocation
+  ) {
+
+
+    locationMessage.innerHTML =
+
+      "Bu cihaz konum funksiyasını dəstəkləmir.";
+
+
+    renderNearbyLinks();
+
+
+    return;
+
+  }
+
+
+
+  locationMessage.innerHTML =
+
+    "📍 Konum icazəsi gözlənilir...";
+
+
+
+  navigator.geolocation.getCurrentPosition(
+
+
+    function() {
+
+
+      const hasCoordinates =
+
+        partners.some(
+
+          partner =>
+
+            typeof partner.lat === "number"
+
+            &&
+
+            typeof partner.lng === "number"
+
+        );
+
+
+
+      if (
+        hasCoordinates
+      ) {
+
+
+        locationMessage.innerHTML =
+
+          "✅ Konum icazəsi verildi.";
+
+
+      }
+
+      else {
+
+
+        locationMessage.innerHTML =
+
+          `✅ Konum icazəsi verildi.
+
+          Partnyorların koordinatları əlavə olunduqca
+          məsafə burada avtomatik hesablanacaq.`;
+
+      }
+
+
+      renderNearbyLinks();
+
+
+    },
+
+
+    function(error) {
+
+
+      if (
+        error.code === 1
+      ) {
+
+
+        locationMessage.innerHTML =
+
+          "📍 Konum icazəsi verilmədi. Brauzer və ya telefon ayarlarından konum icazəsini aktiv edə bilərsiniz.";
+
+
+      }
+
+      else {
+
+
+        locationMessage.innerHTML =
+
+          "Konum məlumatını əldə etmək mümkün olmadı.";
+
+
+      }
+
+
+      renderNearbyLinks();
+
+
+    },
+
+
+    {
+
+      enableHighAccuracy:
+        true,
+
+      timeout:
+        10000,
+
+      maximumAge:
+        300000
+
+    }
+
+
+  );
+
+}
+
+
+
+/* =========================================
    NAVIGATION
-=============================== */
+========================================= */
 
 const screens = {
 
@@ -2762,82 +3955,116 @@ const screens = {
 };
 
 
-function openScreen(name) {
+
+function openScreen(
+  screenName
+) {
+
 
   Object
-    .values(screens)
+    .values(
+      screens
+    )
     .forEach(
       screen =>
-        screen.classList.add(
-          "hidden"
-        )
+
+        screen
+          .classList
+          .add(
+            "hidden"
+          )
+
     );
 
 
-  screens[name]
-    .classList
-    .remove(
-      "hidden"
-    );
+  screens[
+    screenName
+  ]
+  .classList
+  .remove(
+    "hidden"
+  );
+
 
 
   document
     .querySelectorAll(
-      ".nav-item"
+      ".nav-button"
     )
     .forEach(
       function(button) {
+
 
         button.classList.toggle(
 
           "active",
 
           button.dataset.screen ===
-          name
+          screenName
 
         );
+
 
       }
     );
 
 
-  if (
-    name ===
-    "nearby"
-  ) {
-
-    requestLocationAndRender();
-
-  }
-
 
   if (
-    name ===
+    screenName ===
     "favorites"
   ) {
 
+
     renderFavorites();
 
+
   }
+
 
 
   if (
-    name ===
+    screenName ===
     "partners"
   ) {
 
-    renderPartnersList(
+
+    document
+      .getElementById(
+        "partnersTitle"
+      )
+      .textContent =
+        "Partnyorlar";
+
+
+    renderPartners(
       partners
     );
 
+
   }
+
+
+
+  if (
+    screenName ===
+    "nearby"
+  ) {
+
+
+    requestLocation();
+
+
+  }
+
 
 
   window.scrollTo({
 
     top: 0,
 
-    behavior: "smooth"
+    behavior:
+      "smooth"
 
   });
 
@@ -2845,37 +4072,38 @@ function openScreen(name) {
 
 
 
-function openPartnersScreen(
-  categoryName = null
+function openPartnersByCategory(
+  categoryName
 ) {
+
 
   openScreen(
     "partners"
   );
 
 
-  if (!categoryName) {
+  document
+    .getElementById(
+      "partnersTitle"
+    )
+    .textContent =
+      categoryName;
 
-    renderPartnersList(
-      partners
-    );
-
-    return;
-
-  }
 
 
   const filtered =
 
     partners.filter(
-      item =>
-        item.category.toLowerCase()
-        ===
-        categoryName.toLowerCase()
+
+      partner =>
+
+        partner.category ===
+        categoryName
+
     );
 
 
-  renderPartnersList(
+  renderPartners(
     filtered
   );
 
@@ -2885,22 +4113,26 @@ function openPartnersScreen(
 
 document
   .querySelectorAll(
-    ".nav-item"
+    ".nav-button"
   )
   .forEach(
     function(button) {
+
 
       button.addEventListener(
         "click",
         function() {
 
+
           openScreen(
             button.dataset.screen
           );
 
+
         }
       );
 
+
     }
   );
 
@@ -2908,36 +4140,45 @@ document
 
 document
   .getElementById(
-    "seeAllCategories"
+    "allCategoriesButton"
   )
   .addEventListener(
     "click",
     function() {
 
-      openPartnersScreen();
+
+      openScreen(
+        "partners"
+      );
+
 
     }
   );
+
 
 
 document
   .getElementById(
-    "seeAllNewPartners"
+    "allPartnersButton"
   )
   .addEventListener(
     "click",
     function() {
 
-      openPartnersScreen();
+
+      openScreen(
+        "partners"
+      );
+
 
     }
   );
 
 
 
-/* ===============================
+/* =========================================
    SEARCH
-=============================== */
+========================================= */
 
 document
   .getElementById(
@@ -2947,44 +4188,60 @@ document
     "input",
     function() {
 
+
       const value =
+
         this.value
           .trim()
           .toLowerCase();
 
 
-      if (!value) {
+      if (
+        !value
+      ) {
+
 
         openScreen(
           "home"
         );
+
 
         return;
 
       }
 
 
-      const filteredPartners =
+
+      const results =
 
         partners.filter(
-          function(item) {
-
-            const searchText = `
-
-              ${item.name}
-              ${item.category}
-              ${item.description}
-              ${item.address}
-
-            `.toLowerCase();
+          function(partner) {
 
 
-            return searchText.includes(
+            const searchable = `
+
+              ${partner.name || ""}
+
+              ${partner.category || ""}
+
+              ${partner.discount || ""}
+
+              ${partner.details || ""}
+
+              ${partner.usage || ""}
+
+            `
+            .toLowerCase();
+
+
+            return searchable.includes(
               value
             );
 
+
           }
         );
+
 
 
       openScreen(
@@ -2992,30 +4249,61 @@ document
       );
 
 
-      renderPartnersList(
-        filteredPartners
+      document
+        .getElementById(
+          "partnersTitle"
+        )
+        .textContent =
+          "Axtarış nəticələri";
+
+
+      renderPartners(
+        results
       );
+
 
     }
   );
 
 
 
-/* ===============================
+/* =========================================
+   CHANGE LOGIN FILTER
+========================================= */
+
+document
+  .getElementById(
+    "changeButton"
+  )
+  .addEventListener(
+    "click",
+    function() {
+
+
+      window.location.href =
+        "index.html";
+
+
+    }
+  );
+
+
+
+/* =========================================
    START
-=============================== */
+========================================= */
 
-renderCategories(
-  categories
-);
+renderCategories();
 
-renderNewPartners(
+renderNewPartners();
+
+renderPartners(
   partners
 );
 
-renderNotifications();
-
 renderFavorites();
+
+renderNotifications();
 
 
 </script>
