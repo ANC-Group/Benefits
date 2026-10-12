@@ -13,6 +13,7 @@
     :root {
       --bg: #f7f8f7;
       --card: #ffffff;
+
       --soft-green: #e8f5ef;
       --green: #4ea97a;
       --green-dark: #2e7d5b;
@@ -25,59 +26,98 @@
 
       --text: #232323;
       --muted: #8d8d8d;
+
       --border: #ececec;
-      --shadow: 0 10px 30px rgba(0,0,0,.05);
+
+      --shadow:
+        0 10px 30px rgba(0,0,0,.05);
+
       --radius: 22px;
     }
 
     body {
       margin: 0;
+
       background: var(--bg);
-      font-family: Inter, Arial, sans-serif;
+
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
       color: var(--text);
+
       padding-bottom: 90px;
     }
 
     .app {
       max-width: 520px;
+
       margin: 0 auto;
+
       min-height: 100vh;
+
       background: var(--bg);
     }
 
+
+    /* =========================================
+       TOP
+    ========================================= */
+
     .top-wrap {
       padding: 18px 18px 8px;
-      background: linear-gradient(180deg, #fff1e8 0%, #f7f8f7 100%);
+
+      background:
+        linear-gradient(
+          180deg,
+          #fff1e8 0%,
+          #f7f8f7 100%
+        );
     }
 
     .top-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 14px;
+
+      gap: 12px;
     }
 
     .user-block {
       display: flex;
       align-items: center;
+
       gap: 12px;
+
       min-width: 0;
     }
 
     .avatar {
       width: 54px;
       height: 54px;
+
       border-radius: 50%;
-      background: linear-gradient(135deg, #ff9b61, #e96b42);
+
+      background:
+        linear-gradient(
+          135deg,
+          #ff9b61,
+          #e96b42
+        );
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       color: white;
-      font-weight: 800;
-      font-size: 20px;
+
       flex-shrink: 0;
+
       box-shadow: var(--shadow);
-      overflow: hidden;
     }
 
     .avatar svg {
@@ -90,79 +130,164 @@
     }
 
     .greeting-title {
-      font-size: 28px;
-      font-weight: 800;
-      line-height: 1.05;
       margin: 0;
+
+      font-size: 25px;
+      font-weight: 800;
+
+      line-height: 1.05;
+
       color: #2b2b2b;
     }
 
     .greeting-subtitle {
       margin-top: 5px;
-      font-size: 14px;
+
+      font-size: 13px;
+
       color: #747474;
+    }
+
+
+    /* =========================================
+       TOP ACTIONS
+    ========================================= */
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+
+      gap: 7px;
+
+      flex-shrink: 0;
+    }
+
+    .change-filter-button {
+      height: 44px;
+
+      padding: 0 11px;
+
+      border:
+        1px solid #d8e9df;
+
+      border-radius: 14px;
+
+      background: #eef8f3;
+
+      color: var(--green-dark);
+
+      font-size: 11px;
+      font-weight: 800;
+
+      cursor: pointer;
+
+      white-space: nowrap;
+    }
+
+    .change-filter-button:hover {
+      background: #e1f3e9;
     }
 
     .notif-button {
       position: relative;
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
+
+      width: 46px;
+      height: 46px;
+
+      border-radius: 15px;
+
       border: none;
+
       background: var(--card);
+
       box-shadow: var(--shadow);
+
       cursor: pointer;
+
       flex-shrink: 0;
     }
 
     .notif-button svg {
       width: 22px;
       height: 22px;
+
       stroke: var(--green-dark);
     }
 
     .notif-badge {
       position: absolute;
+
       top: -4px;
       right: -4px;
+
       min-width: 22px;
       height: 22px;
+
       padding: 0 6px;
+
       border-radius: 999px;
+
       background: var(--red);
+
       color: white;
+
       font-size: 11px;
       font-weight: 800;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       border: 3px solid var(--bg);
     }
 
+
+    /* =========================================
+       SEARCH
+    ========================================= */
+
     .search-box {
       margin-top: 18px;
+
       background: var(--card);
+
       border-radius: 18px;
+
       padding: 14px 16px;
+
       display: flex;
       align-items: center;
+
       gap: 10px;
+
       box-shadow: var(--shadow);
-      border: 1px solid var(--border);
+
+      border:
+        1px solid var(--border);
     }
 
     .search-box input {
       border: none;
+
       outline: none;
+
       width: 100%;
+
       font-size: 15px;
+
       background: transparent;
+
       color: var(--text);
     }
 
     .search-box input::placeholder {
       color: #9a9a9a;
     }
+
+
+    /* =========================================
+       MAIN
+    ========================================= */
 
     .main-content {
       padding: 10px 18px 30px;
@@ -176,71 +301,118 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       margin-bottom: 14px;
+
       gap: 12px;
     }
 
     .section-title {
-      font-size: 24px;
+      font-size: 23px;
+
       font-weight: 800;
+
       margin: 0;
     }
 
     .section-link {
       color: #8d8d8d;
-      font-size: 14px;
+
+      font-size: 13px;
+
       text-decoration: none;
+
       white-space: nowrap;
+
       cursor: pointer;
     }
 
+
+    /* =========================================
+       CATEGORIES
+    ========================================= */
+
     .categories-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
       gap: 12px;
     }
 
     .category-card {
       background: var(--card);
+
       border-radius: 20px;
+
       padding: 14px 8px 12px;
+
       text-align: center;
-      border: 1px solid var(--border);
+
+      border:
+        1px solid var(--border);
+
       box-shadow: var(--shadow);
+
       cursor: pointer;
-      transition: transform .15s ease;
+
+      transition:
+        transform .15s ease;
     }
 
     .category-card:hover {
-      transform: translateY(-2px);
+      transform:
+        translateY(-2px);
     }
 
     .category-icon {
       width: 52px;
       height: 52px;
-      margin: 0 auto 10px;
+
+      margin:
+        0 auto 10px;
+
       border-radius: 16px;
-      background: var(--soft-orange);
+
+      background:
+        var(--soft-orange);
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       color: var(--orange);
+
       font-size: 24px;
     }
 
     .category-name {
       font-size: 12px;
+
       font-weight: 700;
+
       line-height: 1.25;
+
       color: #444;
     }
 
+
+    /* =========================================
+       PARTNER CARDS
+    ========================================= */
+
     .cards-row {
       display: flex;
+
       gap: 14px;
+
       overflow-x: auto;
+
       padding-bottom: 6px;
-      scroll-snap-type: x proximity;
+
+      scroll-snap-type:
+        x proximity;
     }
 
     .cards-row::-webkit-scrollbar {
@@ -249,35 +421,62 @@
 
     .partner-card {
       min-width: 250px;
+
       background: var(--card);
+
       border-radius: 24px;
-      border: 1px solid var(--border);
+
+      border:
+        1px solid var(--border);
+
       box-shadow: var(--shadow);
+
       overflow: hidden;
+
       scroll-snap-align: start;
     }
 
     .partner-banner {
       height: 150px;
-      background: linear-gradient(135deg, var(--soft-green), #f6fbf8);
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--soft-green),
+          #f6fbf8
+        );
+
       position: relative;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       color: var(--green-dark);
-      font-size: 48px;
+
+      font-size: 38px;
       font-weight: 900;
+
+      text-align: center;
+
+      padding: 20px;
     }
 
     .discount-badge {
       position: absolute;
+
       top: 14px;
       right: 14px;
+
       background: var(--red);
+
       color: white;
+
       font-size: 12px;
       font-weight: 800;
+
       border-radius: 12px;
+
       padding: 6px 8px;
     }
 
@@ -286,16 +485,23 @@
     }
 
     .partner-title {
-      font-size: 20px;
+      font-size: 19px;
+
       font-weight: 800;
-      margin: 0 0 8px;
+
+      margin:
+        0 0 8px;
+
       line-height: 1.2;
     }
 
     .partner-text {
-      font-size: 14px;
+      font-size: 13px;
+
       color: #666;
+
       line-height: 1.5;
+
       min-height: 42px;
     }
 
@@ -303,233 +509,426 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 8px;
+
       margin-top: 14px;
     }
 
     .partner-chip {
-      background: var(--soft-green);
-      color: var(--green-dark);
-      font-size: 12px;
+      background:
+        var(--soft-green);
+
+      color:
+        var(--green-dark);
+
+      font-size: 11px;
       font-weight: 700;
-      padding: 7px 10px;
+
+      padding:
+        7px 10px;
+
       border-radius: 999px;
+
       display: inline-flex;
       align-items: center;
+
       gap: 6px;
     }
 
     .partner-arrow {
       width: 38px;
       height: 38px;
+
       border-radius: 50%;
+
       background: #f3f5f4;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       color: #555;
+
       font-weight: 800;
+
       cursor: pointer;
     }
+
+
+    /* =========================================
+       LISTS
+    ========================================= */
 
     .nearby-list,
     .partners-list {
       display: grid;
+
       gap: 12px;
     }
 
     .nearby-card,
     .list-card {
       background: var(--card);
-      border: 1px solid var(--border);
+
+      border:
+        1px solid var(--border);
+
       border-radius: 20px;
+
       box-shadow: var(--shadow);
+
       padding: 16px;
     }
 
     .nearby-top,
     .list-top {
       display: flex;
+
       align-items: start;
       justify-content: space-between;
+
       gap: 12px;
     }
 
     .nearby-title,
     .list-title {
       margin: 0;
+
       font-size: 18px;
+
       font-weight: 800;
     }
 
     .nearby-sub,
     .list-sub {
       margin-top: 4px;
+
       font-size: 13px;
+
       color: #777;
+
       line-height: 1.45;
     }
 
     .distance-pill {
-      background: var(--soft-red);
-      color: var(--red);
-      padding: 7px 10px;
+      background:
+        var(--soft-red);
+
+      color:
+        var(--red);
+
+      padding:
+        7px 10px;
+
       border-radius: 999px;
+
       font-size: 12px;
       font-weight: 800;
+
       white-space: nowrap;
     }
 
     .list-tags {
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 8px;
+
       margin-top: 12px;
     }
 
     .tag {
       background: #f3f7f5;
+
       color: #567;
+
       border-radius: 999px;
-      padding: 7px 10px;
+
+      padding:
+        7px 10px;
+
       font-size: 12px;
       font-weight: 700;
     }
 
     .action-row {
       display: flex;
+
       gap: 10px;
+
       margin-top: 14px;
     }
 
     .soft-btn {
       border: none;
-      background: var(--soft-green);
-      color: var(--green-dark);
-      padding: 11px 14px;
+
+      background:
+        var(--soft-green);
+
+      color:
+        var(--green-dark);
+
+      padding:
+        11px 14px;
+
       border-radius: 14px;
+
       font-weight: 800;
+
       cursor: pointer;
+
       font-size: 13px;
     }
 
     .soft-btn.red {
-      background: var(--soft-red);
-      color: var(--red);
+      background:
+        var(--soft-red);
+
+      color:
+        var(--red);
     }
 
     .empty-note {
       background: var(--card);
-      border: 1px dashed #d8dfdb;
+
+      border:
+        1px dashed #d8dfdb;
+
       padding: 18px;
+
       border-radius: 18px;
+
       color: #777;
+
       font-size: 14px;
+
       line-height: 1.55;
     }
 
-    .bottom-nav {
-      position: fixed;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 0;
-      width: 100%;
-      max-width: 520px;
-      background: rgba(255,255,255,.97);
-      border-top: 1px solid var(--border);
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      padding: 10px 8px calc(10px + env(safe-area-inset-bottom));
-      z-index: 100;
-      backdrop-filter: blur(10px);
-    }
 
-    .nav-item {
-      border: none;
-      background: transparent;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      color: #7b7b7b;
-      font-size: 12px;
-      cursor: pointer;
-      font-weight: 700;
-      padding: 8px 4px;
-      border-radius: 14px;
-    }
-
-    .nav-item.active {
-      color: var(--green-dark);
-      background: var(--soft-green);
-    }
-
-    .nav-icon {
-      font-size: 20px;
-      line-height: 1;
-    }
-
-    .hidden {
-      display: none !important;
-    }
+    /* =========================================
+       NOTIFICATIONS
+    ========================================= */
 
     .notification-panel {
       position: fixed;
+
       top: 84px;
+
       right: 16px;
       left: 16px;
+
       max-width: 488px;
+
       margin: 0 auto;
+
       background: white;
-      border: 1px solid var(--border);
+
+      border:
+        1px solid var(--border);
+
       border-radius: 20px;
-      box-shadow: 0 20px 50px rgba(0,0,0,.09);
+
+      box-shadow:
+        0 20px 50px rgba(0,0,0,.09);
+
       z-index: 150;
+
       padding: 16px;
     }
 
     .notification-item {
       padding: 12px 0;
-      border-bottom: 1px solid #f0f0f0;
+
+      border-bottom:
+        1px solid #f0f0f0;
     }
 
     .notification-item:last-child {
       border-bottom: none;
+
       padding-bottom: 0;
     }
 
     .notification-title {
       font-size: 14px;
+
       font-weight: 800;
+
       margin-bottom: 4px;
     }
 
     .notification-text {
       font-size: 13px;
+
       color: #666;
+
       line-height: 1.45;
     }
 
     .notification-time {
       margin-top: 6px;
+
       font-size: 11px;
+
       color: #999;
     }
 
-    @media (max-width: 420px) {
-      .categories-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
+
+    /* =========================================
+       BOTTOM NAV
+    ========================================= */
+
+    .bottom-nav {
+      position: fixed;
+
+      left: 50%;
+
+      transform:
+        translateX(-50%);
+
+      bottom: 0;
+
+      width: 100%;
+
+      max-width: 520px;
+
+      background:
+        rgba(255,255,255,.97);
+
+      border-top:
+        1px solid var(--border);
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      padding:
+        10px 8px
+        calc(10px + env(safe-area-inset-bottom));
+
+      z-index: 100;
+
+      backdrop-filter:
+        blur(10px);
+    }
+
+    .nav-item {
+      border: none;
+
+      background: transparent;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      gap: 6px;
+
+      color: #7b7b7b;
+
+      font-size: 12px;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      padding:
+        8px 4px;
+
+      border-radius: 14px;
+    }
+
+    .nav-item.active {
+      color:
+        var(--green-dark);
+
+      background:
+        var(--soft-green);
+    }
+
+    .nav-icon {
+      font-size: 20px;
+
+      line-height: 1;
+    }
+
+
+    /* =========================================
+       UTILITIES
+    ========================================= */
+
+    .hidden {
+      display:
+        none !important;
+    }
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media(max-width:420px) {
+
+      .top-wrap {
+        padding-left: 14px;
+        padding-right: 14px;
       }
 
-      .category-icon {
-        width: 48px;
-        height: 48px;
-        font-size: 22px;
+      .main-content {
+        padding-left: 14px;
+        padding-right: 14px;
       }
 
       .greeting-title {
-        font-size: 24px;
+        font-size: 21px;
+      }
+
+      .greeting-subtitle {
+        font-size: 11px;
+      }
+
+      .avatar {
+        width: 48px;
+        height: 48px;
+      }
+
+      .change-filter-button {
+        height: 42px;
+
+        padding:
+          0 8px;
+
+        font-size: 10px;
+      }
+
+      .notif-button {
+        width: 42px;
+        height: 42px;
+      }
+
+      .categories-grid {
+        grid-template-columns:
+          repeat(4,1fr);
+
+        gap: 8px;
+      }
+
+      .category-card {
+        padding:
+          12px 5px 10px;
+      }
+
+      .category-icon {
+        width: 44px;
+        height: 44px;
+
+        font-size: 20px;
+      }
+
+      .category-name {
+        font-size: 10px;
       }
 
       .section-title {
@@ -539,550 +938,1812 @@
       .partner-card {
         min-width: 230px;
       }
+
     }
+
   </style>
 </head>
+
+
 <body>
-  <div class="app">
 
-    <div class="top-wrap">
-      <div class="top-bar">
-        <div class="user-block">
-          <div class="avatar" id="avatarBox" aria-label="İstifadəçi avatarı">
-            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="32" cy="18" r="10" fill="currentColor" opacity=".95"/>
-              <path d="M14 52C16.5 42 23.5 36 32 36C40.5 36 47.5 42 50 52" fill="currentColor" opacity=".95"/>
-            </svg>
-          </div>
 
-          <div class="greeting-wrap">
-            <h1 class="greeting-title" id="greetingTitle">Salam, Leyla</h1>
-            <div class="greeting-subtitle">Özəl endirimləri kəşf edin!</div>
-          </div>
-        </div>
+<div class="app">
 
-        <button class="notif-button" id="notifButton" aria-label="Bildirişlər">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
-            <path d="M6 8a6 6 0 1 1 12 0c0 7 3 7 3 9H3c0-2 3-2 3-9"/>
-            <path d="M10 20a2 2 0 0 0 4 0"/>
+
+  <!-- =========================================
+       TOP
+  ========================================= -->
+
+  <div class="top-wrap">
+
+
+    <div class="top-bar">
+
+
+      <div class="user-block">
+
+
+        <div
+          class="avatar"
+          id="avatarBox"
+          aria-label="İstifadəçi avatarı"
+        >
+
+          <svg
+            viewBox="0 0 64 64"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+
+            <circle
+              cx="32"
+              cy="18"
+              r="10"
+              fill="currentColor"
+              opacity=".95"
+            />
+
+            <path
+              d="M14 52C16.5 42 23.5 36 32 36C40.5 36 47.5 42 50 52"
+              fill="currentColor"
+              opacity=".95"
+            />
+
           </svg>
-          <div class="notif-badge" id="notifBadge">0</div>
+
+        </div>
+
+
+        <div class="greeting-wrap">
+
+          <h1
+            class="greeting-title"
+            id="greetingTitle"
+          >
+            Salam
+          </h1>
+
+          <div class="greeting-subtitle">
+            Özəl endirimləri kəşf edin!
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- DƏYİŞ + BİLDİRİŞ -->
+
+      <div class="top-actions">
+
+
+        <button
+          class="change-filter-button"
+          id="changeSelectionButton"
+        >
+          ⚙️ Dəyiş
         </button>
+
+
+        <button
+          class="notif-button"
+          id="notifButton"
+          aria-label="Bildirişlər"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke-width="2"
+          >
+
+            <path
+              d="M6 8a6 6 0 1 1 12 0c0 7 3 7 3 9H3c0-2 3-2 3-9"
+            />
+
+            <path
+              d="M10 20a2 2 0 0 0 4 0"
+            />
+
+          </svg>
+
+
+          <div
+            class="notif-badge"
+            id="notifBadge"
+          >
+            0
+          </div>
+
+
+        </button>
+
+
       </div>
 
-      <div class="search-box">
-        <span style="font-size:18px;">🔎</span>
-        <input type="text" id="searchInput" placeholder="Axtar" />
+
+    </div>
+
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+      <span style="font-size:18px;">
+        🔎
+      </span>
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Axtar"
+      >
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- =========================================
+       MAIN
+  ========================================= -->
+
+  <div class="main-content">
+
+
+    <!-- ƏSAS -->
+
+    <section id="screen-home">
+
+
+      <!-- KATEQORİYALAR -->
+
+      <div class="section">
+
+
+        <div class="section-head">
+
+          <h2 class="section-title">
+            Kateqoriyalar
+          </h2>
+
+          <a
+            class="section-link"
+            id="seeAllCategories"
+          >
+            Hamısı ›
+          </a>
+
+        </div>
+
+
+        <div
+          class="categories-grid"
+          id="categoriesGrid"
+        >
+        </div>
+
+
       </div>
-    </div>
 
-    <div class="main-content">
 
-      <!-- ƏSAS -->
-      <section id="screen-home">
 
-        <div class="section">
-          <div class="section-head">
-            <h2 class="section-title">Kateqoriyalar</h2>
-            <a class="section-link" id="seeAllCategories">Hamısı ›</a>
-          </div>
+      <!-- YENİ PARTNYORLAR -->
 
-          <div class="categories-grid" id="categoriesGrid"></div>
+      <div class="section">
+
+
+        <div class="section-head">
+
+          <h2 class="section-title">
+            Yeni partnyorlar
+          </h2>
+
+          <a
+            class="section-link"
+            id="seeAllNewPartners"
+          >
+            Hamısı ›
+          </a>
+
         </div>
 
-        <div class="section">
-          <div class="section-head">
-            <h2 class="section-title">Yeni partnyorlar</h2>
-            <a class="section-link" id="seeAllNewPartners">Hamısı ›</a>
-          </div>
 
-          <div class="cards-row" id="newPartnersRow"></div>
+        <div
+          class="cards-row"
+          id="newPartnersRow"
+        >
         </div>
-      </section>
 
-      <!-- YAXINLIQDA -->
-      <section id="screen-nearby" class="hidden">
-        <div class="section">
-          <div class="section-head">
-            <h2 class="section-title">Yaxınlıqda</h2>
-          </div>
 
-          <div class="empty-note" id="locationInfoBox">
-            Bu bölmə yaxınlıqdakı partnyorları göstərmək üçün sənin konumuna icazə istəyəcək.
-          </div>
+      </div>
 
-          <div class="nearby-list" id="nearbyList" style="margin-top:12px;"></div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         YAXINLIQDA
+    ========================================= -->
+
+    <section
+      id="screen-nearby"
+      class="hidden"
+    >
+
+
+      <div class="section">
+
+
+        <div class="section-head">
+
+          <h2 class="section-title">
+            Yaxınlıqda
+          </h2>
+
         </div>
-      </section>
 
-      <!-- PARTNYORLAR -->
-      <section id="screen-partners" class="hidden">
-        <div class="section">
-          <div class="section-head">
-            <h2 class="section-title">Partnyorlar</h2>
-          </div>
 
-          <div class="partners-list" id="partnersList"></div>
+        <div
+          class="empty-note"
+          id="locationInfoBox"
+        >
+          Yaxınlıqdakı partnyorları göstərmək üçün
+          konum icazəsi tələb olunur.
         </div>
-      </section>
 
-    </div>
+
+        <div
+          class="nearby-list"
+          id="nearbyList"
+          style="margin-top:12px;"
+        >
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         PARTNYORLAR
+    ========================================= -->
+
+    <section
+      id="screen-partners"
+      class="hidden"
+    >
+
+
+      <div class="section">
+
+
+        <div class="section-head">
+
+          <h2 class="section-title">
+            Partnyorlar
+          </h2>
+
+        </div>
+
+
+        <div
+          class="partners-list"
+          id="partnersList"
+        >
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
   </div>
 
-  <div class="notification-panel hidden" id="notificationPanel">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-      <strong style="font-size:16px;">Bildirişlər</strong>
-      <button id="closeNotifPanel" style="border:none;background:transparent;font-size:18px;cursor:pointer;">✕</button>
-    </div>
-    <div id="notificationList"></div>
+
+</div>
+
+
+
+<!-- =========================================
+     NOTIFICATION PANEL
+========================================= -->
+
+<div
+  class="notification-panel hidden"
+  id="notificationPanel"
+>
+
+
+  <div
+    style="
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:10px;
+    "
+  >
+
+    <strong style="font-size:16px;">
+      Bildirişlər
+    </strong>
+
+
+    <button
+      id="closeNotifPanel"
+      style="
+        border:none;
+        background:transparent;
+        font-size:18px;
+        cursor:pointer;
+      "
+    >
+      ✕
+    </button>
+
+
   </div>
 
-  <nav class="bottom-nav">
-    <button class="nav-item active" data-screen="home">
-      <span class="nav-icon">🏠</span>
-      <span>Əsas</span>
-    </button>
 
-    <button class="nav-item" data-screen="nearby">
-      <span class="nav-icon">📍</span>
-      <span>Yaxınlıqda</span>
-    </button>
+  <div id="notificationList">
+  </div>
 
-    <button class="nav-item" data-screen="partners">
-      <span class="nav-icon">🤝</span>
-      <span>Partnyorlar</span>
-    </button>
-  </nav>
 
-  <script>
-    /* =========================
-       USER INFO
-    ========================= */
-    const firstName =
-      localStorage.getItem("anc-first-name") || "Leyla";
+</div>
 
-    const companyName =
-      localStorage.getItem("anc-selected-company-name") || "ANC Group";
 
-    const workerCategoryName =
-      localStorage.getItem("anc-selected-worker-category-name") || "Ofis əməkdaşı";
 
-    document.getElementById("greetingTitle").textContent = `Salam, ${firstName}`;
+<!-- =========================================
+     BOTTOM NAV
+========================================= -->
 
-    /* =========================
-       DATA
-    ========================= */
-    const categories = [
-      { id: "restoran-kafe", name: "Restoran / Kafe", icon: "☕" },
-      { id: "gozellik", name: "Gözəllik", icon: "💄" },
-      { id: "istirahet", name: "İstirahət mərkəzi", icon: "🏞️" },
-      { id: "tehsil", name: "Təhsil", icon: "🎓" },
-      { id: "seyahet", name: "Səyahət", icon: "✈️" },
-      { id: "usaq", name: "Uşaq", icon: "🧸" },
-      { id: "eylence", name: "Əyləncə", icon: "🎉" }
-    ];
+<nav class="bottom-nav">
 
-    /* 
-      Buradakı lat/lng sonradan sənin verəcəyin
-      Google Maps koordinatları ilə dəyişəcək.
-    */
-    const partners = [
-      {
-        id: 1,
-        name: "Friends Central Perk",
-        category: "Restoran / Kafe",
-        description: "Qəhvə, səhər yeməyi və menyuda xüsusi əməkdaş endirimləri.",
-        discount: "20%",
-        isNew: true,
-        lat: 40.4093,
-        lng: 49.8671,
-        address: "Bakı şəhəri",
-        company: "ANC Group"
-      },
-      {
-        id: 2,
-        name: "Beauty Point",
-        category: "Gözəllik",
-        description: "Saç, dırnaq və gözəllik xidmətlərində xüsusi qiymətlər.",
-        discount: "15%",
-        isNew: true,
-        lat: 40.4012,
-        lng: 49.8550,
-        address: "Nərimanov",
-        company: "ANC Group"
-      },
-      {
-        id: 3,
-        name: "Kids Planet",
-        category: "Uşaq",
-        description: "Uşaq əyləncə və inkişaf mərkəzində əməkdaş endirimi.",
-        discount: "25%",
-        isNew: false,
-        lat: 40.3945,
-        lng: 49.8821,
-        address: "28 May",
-        company: "ANC Group"
-      },
-      {
-        id: 4,
-        name: "TravelGo",
-        category: "Səyahət",
-        description: "Otellər və tur paketlərində xüsusi partnyor təklifləri.",
-        discount: "10%",
-        isNew: true,
-        lat: 40.3770,
-        lng: 49.8920,
-        address: "Ağ şəhər",
-        company: "ANC Group"
-      },
-      {
-        id: 5,
-        name: "EduLab",
-        category: "Təhsil",
-        description: "Kurslar, təlimlər və sertifikasiya proqramlarına endirim.",
-        discount: "18%",
-        isNew: false,
-        lat: 40.4180,
-        lng: 49.8400,
-        address: "Gənclik",
-        company: "ANC Group"
-      }
-    ];
 
-    const notifications = [
-      {
-        id: 1,
-        title: "Yeni imtiyaz əlavə edildi",
-        text: "Friends Central Perk artıq partnyorlarımız sırasındadır.",
-        time: "Bu gün"
-      },
-      {
-        id: 2,
-        title: "Yeni partnyor aktivdir",
-        text: "Beauty Point üzrə 15% endirim aktiv edildi.",
-        time: "Dünən"
-      }
-    ];
+  <button
+    class="nav-item active"
+    data-screen="home"
+  >
 
-    /* =========================
-       RENDER CATEGORIES
-    ========================= */
-    const categoriesGrid = document.getElementById("categoriesGrid");
+    <span class="nav-icon">
+      🏠
+    </span>
 
-    function renderCategories(list) {
-      categoriesGrid.innerHTML = "";
+    <span>
+      Əsas
+    </span>
 
-      list.forEach(item => {
-        const div = document.createElement("div");
-        div.className = "category-card";
-        div.innerHTML = `
-          <div class="category-icon">${item.icon}</div>
-          <div class="category-name">${item.name}</div>
-        `;
-        div.addEventListener("click", () => {
-          openPartnersScreen(item.name);
-        });
-        categoriesGrid.appendChild(div);
-      });
-    }
+  </button>
 
-    /* =========================
-       RENDER NEW PARTNERS
-    ========================= */
-    const newPartnersRow = document.getElementById("newPartnersRow");
 
-    function renderNewPartners(list) {
-      newPartnersRow.innerHTML = "";
 
-      list.filter(x => x.isNew).forEach(item => {
-        const card = document.createElement("div");
-        card.className = "partner-card";
-        card.innerHTML = `
-          <div class="partner-banner">
-            ${item.name.split(" ")[0]}
-            <div class="discount-badge">${item.discount}</div>
-          </div>
-          <div class="partner-body">
-            <h3 class="partner-title">${item.name}</h3>
-            <div class="partner-text">${item.description}</div>
-            <div class="partner-meta">
-              <div class="partner-chip">${item.category}</div>
-              <div class="partner-arrow">→</div>
-            </div>
-          </div>
-        `;
-        newPartnersRow.appendChild(card);
-      });
-    }
+  <button
+    class="nav-item"
+    data-screen="nearby"
+  >
 
-    /* =========================
-       RENDER PARTNERS LIST
-    ========================= */
-    const partnersList = document.getElementById("partnersList");
+    <span class="nav-icon">
+      📍
+    </span>
 
-    function renderPartnersList(list) {
-      partnersList.innerHTML = "";
+    <span>
+      Yaxınlıqda
+    </span>
 
-      if (!list.length) {
-        partnersList.innerHTML = `
-          <div class="empty-note">
-            Bu filtrə uyğun partnyor tapılmadı.
-          </div>
-        `;
-        return;
-      }
+  </button>
 
-      list.forEach(item => {
-        const card = document.createElement("div");
-        card.className = "list-card";
-        card.innerHTML = `
-          <div class="list-top">
-            <div>
-              <h3 class="list-title">${item.name}</h3>
-              <div class="list-sub">${item.description}</div>
-            </div>
-            <div class="distance-pill">${item.discount}</div>
-          </div>
 
-          <div class="list-tags">
-            <span class="tag">${item.category}</span>
-            <span class="tag">${item.address}</span>
-            <span class="tag">${companyName}</span>
-          </div>
 
-          <div class="action-row">
-            <button class="soft-btn">Ətraflı</button>
-            <button class="soft-btn red">Maps</button>
-          </div>
-        `;
-        partnersList.appendChild(card);
-      });
-    }
+  <button
+    class="nav-item"
+    data-screen="partners"
+  >
 
-    /* =========================
-       NOTIFICATIONS
-    ========================= */
-    const notifBadge = document.getElementById("notifBadge");
-    const notifButton = document.getElementById("notifButton");
-    const notificationPanel = document.getElementById("notificationPanel");
-    const notificationList = document.getElementById("notificationList");
+    <span class="nav-icon">
+      🤝
+    </span>
 
-    function renderNotifications() {
-      notifBadge.textContent = notifications.length;
+    <span>
+      Partnyorlar
+    </span>
 
-      if (!notifications.length) {
-        notificationList.innerHTML = `
-          <div class="empty-note">Hazırda yeni bildiriş yoxdur.</div>
-        `;
-        return;
-      }
+  </button>
 
-      notificationList.innerHTML = notifications.map(item => `
-        <div class="notification-item">
-          <div class="notification-title">${item.title}</div>
-          <div class="notification-text">${item.text}</div>
-          <div class="notification-time">${item.time}</div>
+
+</nav>
+
+
+
+<script>
+
+
+/* =========================================
+   USER INFO
+========================================= */
+
+const firstName =
+  localStorage.getItem(
+    "anc-first-name"
+  )
+  ||
+  "Əməkdaş";
+
+
+const companyName =
+  localStorage.getItem(
+    "anc-selected-company-name"
+  )
+  ||
+  "ANC Group";
+
+
+const workerCategoryName =
+  localStorage.getItem(
+    "anc-selected-worker-category-name"
+  )
+  ||
+  "";
+
+
+document
+  .getElementById(
+    "greetingTitle"
+  )
+  .textContent =
+    `Salam, ${firstName}`;
+
+
+
+/* =========================================
+   CATEGORIES
+========================================= */
+
+const categories = [
+
+  {
+    id: "restoran-kafe",
+    name: "Restoran / Kafe",
+    icon: "☕"
+  },
+
+  {
+    id: "gozellik",
+    name: "Gözəllik",
+    icon: "💄"
+  },
+
+  {
+    id: "istirahet",
+    name: "İstirahət mərkəzi",
+    icon: "🏞️"
+  },
+
+  {
+    id: "tehsil",
+    name: "Təhsil",
+    icon: "🎓"
+  },
+
+  {
+    id: "seyahet",
+    name: "Səyahət",
+    icon: "✈️"
+  },
+
+  {
+    id: "usaq",
+    name: "Uşaq",
+    icon: "🧸"
+  },
+
+  {
+    id: "eylence",
+    name: "Əyləncə",
+    icon: "🎉"
+  }
+
+];
+
+
+
+/* =========================================
+   TEST PARTNERS
+   SONRADAN REAL DATA İLƏ ƏVƏZ EDƏCƏYİK
+========================================= */
+
+const partners = [
+
+  {
+    id: 1,
+    name: "Friends Central Perk",
+    category: "Restoran / Kafe",
+    description:
+      "Qəhvə, səhər yeməyi və menyuda xüsusi əməkdaş endirimləri.",
+    discount: "20%",
+    isNew: true,
+
+    lat: 40.4093,
+    lng: 49.8671,
+
+    address: "Bakı şəhəri"
+  },
+
+
+  {
+    id: 2,
+    name: "Beauty Point",
+    category: "Gözəllik",
+    description:
+      "Saç, dırnaq və gözəllik xidmətlərində xüsusi qiymətlər.",
+    discount: "15%",
+    isNew: true,
+
+    lat: 40.4012,
+    lng: 49.8550,
+
+    address: "Nərimanov"
+  },
+
+
+  {
+    id: 3,
+    name: "Kids Planet",
+    category: "Uşaq",
+    description:
+      "Uşaq əyləncə və inkişaf mərkəzində əməkdaş endirimi.",
+    discount: "25%",
+    isNew: false,
+
+    lat: 40.3945,
+    lng: 49.8821,
+
+    address: "28 May"
+  },
+
+
+  {
+    id: 4,
+    name: "TravelGo",
+    category: "Səyahət",
+    description:
+      "Otellər və tur paketlərində xüsusi partnyor təklifləri.",
+    discount: "10%",
+    isNew: true,
+
+    lat: 40.3770,
+    lng: 49.8920,
+
+    address: "Ağ şəhər"
+  },
+
+
+  {
+    id: 5,
+    name: "EduLab",
+    category: "Təhsil",
+    description:
+      "Kurslar, təlimlər və sertifikasiya proqramlarına endirim.",
+    discount: "18%",
+    isNew: false,
+
+    lat: 40.4180,
+    lng: 49.8400,
+
+    address: "Gənclik"
+  }
+
+];
+
+
+
+/* =========================================
+   NOTIFICATIONS
+========================================= */
+
+const notifications = [
+
+  {
+    id: 1,
+    title:
+      "Yeni imtiyaz əlavə edildi",
+    text:
+      "Friends Central Perk artıq partnyorlarımız sırasındadır.",
+    time:
+      "Bu gün"
+  },
+
+
+  {
+    id: 2,
+    title:
+      "Yeni partnyor aktivdir",
+    text:
+      "Beauty Point üzrə 15% endirim aktiv edildi.",
+    time:
+      "Dünən"
+  }
+
+];
+
+
+
+/* =========================================
+   CATEGORIES RENDER
+========================================= */
+
+const categoriesGrid =
+  document.getElementById(
+    "categoriesGrid"
+  );
+
+
+function renderCategories(
+  list
+) {
+
+
+  categoriesGrid.innerHTML =
+    "";
+
+
+  list.forEach(
+    function(item) {
+
+
+      const div =
+        document.createElement(
+          "div"
+        );
+
+
+      div.className =
+        "category-card";
+
+
+      div.innerHTML = `
+
+        <div class="category-icon">
+
+          ${item.icon}
+
         </div>
-      `).join("");
-    }
 
-    notifButton.addEventListener("click", () => {
-      notificationPanel.classList.toggle("hidden");
-    });
+        <div class="category-name">
 
-    document.getElementById("closeNotifPanel").addEventListener("click", () => {
-      notificationPanel.classList.add("hidden");
-    });
+          ${item.name}
 
-    /* =========================
-       BROWSER NOTIFICATION
-    ========================= */
-    function askNotificationPermission() {
-      if (!("Notification" in window)) return;
+        </div>
 
-      if (Notification.permission === "default") {
-        Notification.requestPermission();
-      }
-    }
+      `;
 
-    function showWelcomeNotification() {
-      if (!("Notification" in window)) return;
 
-      if (Notification.permission === "granted") {
-        new Notification("ANC Group Benefits Hub", {
-          body: "Yeni imtiyaz və partnyor yeniliklərini buradan izləyə bilərsiniz."
-        });
-      }
-    }
+      div.addEventListener(
+        "click",
+        function() {
 
-    /* =========================
-       NEARBY PARTNERS
-    ========================= */
-    const nearbyList = document.getElementById("nearbyList");
-    const locationInfoBox = document.getElementById("locationInfoBox");
+          openPartnersScreen(
+            item.name
+          );
 
-    function toRad(value) {
-      return value * Math.PI / 180;
-    }
-
-    function calcDistance(lat1, lon1, lat2, lon2) {
-      const R = 6371;
-      const dLat = toRad(lat2 - lat1);
-      const dLon = toRad(lon2 - lon1);
-
-      const a =
-        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-        Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
-        Math.sin(dLon / 2) * Math.sin(dLon / 2);
-
-      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-      return R * c;
-    }
-
-    function renderNearby(userLat, userLng) {
-      const enriched = partners.map(p => ({
-        ...p,
-        distance: calcDistance(userLat, userLng, p.lat, p.lng)
-      }))
-      .sort((a, b) => a.distance - b.distance);
-
-      nearbyList.innerHTML = "";
-
-      enriched.forEach(item => {
-        const card = document.createElement("div");
-        card.className = "nearby-card";
-        card.innerHTML = `
-          <div class="nearby-top">
-            <div>
-              <h3 class="nearby-title">${item.name}</h3>
-              <div class="nearby-sub">${item.description}</div>
-              <div class="list-tags">
-                <span class="tag">${item.category}</span>
-                <span class="tag">${item.address}</span>
-              </div>
-            </div>
-
-            <div class="distance-pill">${item.distance.toFixed(1)} km</div>
-          </div>
-
-          <div class="action-row">
-            <button class="soft-btn">Ətraflı</button>
-            <button class="soft-btn red">Xəritədə aç</button>
-          </div>
-        `;
-        nearbyList.appendChild(card);
-      });
-    }
-
-    function requestLocationAndRender() {
-      if (!navigator.geolocation) {
-        locationInfoBox.innerHTML = "Bu cihaz geolocation funksiyasını dəstəkləmir.";
-        return;
-      }
-
-      locationInfoBox.innerHTML = "Konum icazəsi soruşulur...";
-
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          locationInfoBox.innerHTML = "Yaxın partnyorlar tapıldı.";
-          renderNearby(latitude, longitude);
-        },
-        () => {
-          locationInfoBox.innerHTML = "Konum icazəsi verilmədi. Yaxınlıqdakı partnyorları göstərmək üçün icazə vermək lazımdır.";
         }
       );
-    }
 
-    /* =========================
-       NAVIGATION
-    ========================= */
-    const screens = {
-      home: document.getElementById("screen-home"),
-      nearby: document.getElementById("screen-nearby"),
-      partners: document.getElementById("screen-partners")
-    };
 
-    function openScreen(name) {
-      Object.values(screens).forEach(el => el.classList.add("hidden"));
-      screens[name].classList.remove("hidden");
-
-      document.querySelectorAll(".nav-item").forEach(btn => {
-        btn.classList.toggle("active", btn.dataset.screen === name);
-      });
-
-      if (name === "nearby") {
-        requestLocationAndRender();
-      }
-
-      if (name === "partners") {
-        renderPartnersList(partners);
-      }
-
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-
-    function openPartnersScreen(categoryName = null) {
-      openScreen("partners");
-
-      if (!categoryName) {
-        renderPartnersList(partners);
-        return;
-      }
-
-      const filtered = partners.filter(
-        item => item.category.toLowerCase() === categoryName.toLowerCase()
+      categoriesGrid.appendChild(
+        div
       );
 
-      renderPartnersList(filtered);
+
+    }
+  );
+
+}
+
+
+
+/* =========================================
+   NEW PARTNERS
+========================================= */
+
+const newPartnersRow =
+  document.getElementById(
+    "newPartnersRow"
+  );
+
+
+function renderNewPartners(
+  list
+) {
+
+
+  newPartnersRow.innerHTML =
+    "";
+
+
+  const newPartners =
+    list.filter(
+      item =>
+        item.isNew
+    );
+
+
+  if (!newPartners.length) {
+
+    newPartnersRow.innerHTML = `
+
+      <div class="empty-note">
+
+        Hazırda yeni partnyor yoxdur.
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  newPartners.forEach(
+    function(item) {
+
+
+      const card =
+        document.createElement(
+          "div"
+        );
+
+
+      card.className =
+        "partner-card";
+
+
+      card.innerHTML = `
+
+        <div class="partner-banner">
+
+          ${item.name}
+
+          <div class="discount-badge">
+
+            ${item.discount}
+
+          </div>
+
+        </div>
+
+
+        <div class="partner-body">
+
+          <h3 class="partner-title">
+
+            ${item.name}
+
+          </h3>
+
+          <div class="partner-text">
+
+            ${item.description}
+
+          </div>
+
+
+          <div class="partner-meta">
+
+            <div class="partner-chip">
+
+              ${item.category}
+
+            </div>
+
+            <div class="partner-arrow">
+
+              →
+
+            </div>
+
+          </div>
+
+        </div>
+
+      `;
+
+
+      card.addEventListener(
+        "click",
+        function() {
+
+          openPartnersScreen(
+            item.category
+          );
+
+        }
+      );
+
+
+      newPartnersRow.appendChild(
+        card
+      );
+
+
+    }
+  );
+
+}
+
+
+
+/* =========================================
+   PARTNERS LIST
+========================================= */
+
+const partnersList =
+  document.getElementById(
+    "partnersList"
+  );
+
+
+function renderPartnersList(
+  list
+) {
+
+
+  partnersList.innerHTML =
+    "";
+
+
+  if (!list.length) {
+
+    partnersList.innerHTML = `
+
+      <div class="empty-note">
+
+        Bu filtrə uyğun partnyor tapılmadı.
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  list.forEach(
+    function(item) {
+
+
+      const card =
+        document.createElement(
+          "div"
+        );
+
+
+      card.className =
+        "list-card";
+
+
+      card.innerHTML = `
+
+        <div class="list-top">
+
+          <div>
+
+            <h3 class="list-title">
+
+              ${item.name}
+
+            </h3>
+
+            <div class="list-sub">
+
+              ${item.description}
+
+            </div>
+
+          </div>
+
+
+          <div class="distance-pill">
+
+            ${item.discount}
+
+          </div>
+
+        </div>
+
+
+        <div class="list-tags">
+
+          <span class="tag">
+
+            ${item.category}
+
+          </span>
+
+          <span class="tag">
+
+            ${item.address}
+
+          </span>
+
+          <span class="tag">
+
+            ${companyName}
+
+          </span>
+
+        </div>
+
+
+        <div class="action-row">
+
+          <button class="soft-btn">
+
+            Ətraflı
+
+          </button>
+
+        </div>
+
+      `;
+
+
+      partnersList.appendChild(
+        card
+      );
+
+
+    }
+  );
+
+}
+
+
+
+/* =========================================
+   NOTIFICATION PANEL
+========================================= */
+
+const notifBadge =
+  document.getElementById(
+    "notifBadge"
+  );
+
+
+const notifButton =
+  document.getElementById(
+    "notifButton"
+  );
+
+
+const notificationPanel =
+  document.getElementById(
+    "notificationPanel"
+  );
+
+
+const notificationList =
+  document.getElementById(
+    "notificationList"
+  );
+
+
+function renderNotifications() {
+
+
+  if (
+    notifications.length
+  ) {
+
+    notifBadge.textContent =
+      notifications.length;
+
+
+    notifBadge.style.display =
+      "flex";
+
+  }
+
+  else {
+
+    notifBadge.style.display =
+      "none";
+
+  }
+
+
+  if (
+    !notifications.length
+  ) {
+
+    notificationList.innerHTML = `
+
+      <div class="empty-note">
+
+        Hazırda yeni bildiriş yoxdur.
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  notificationList.innerHTML =
+
+    notifications
+      .map(
+        function(item) {
+
+          return `
+
+            <div class="notification-item">
+
+              <div class="notification-title">
+
+                ${item.title}
+
+              </div>
+
+              <div class="notification-text">
+
+                ${item.text}
+
+              </div>
+
+              <div class="notification-time">
+
+                ${item.time}
+
+              </div>
+
+            </div>
+
+          `;
+
+        }
+      )
+      .join("");
+
+}
+
+
+notifButton.addEventListener(
+  "click",
+  function() {
+
+    notificationPanel.classList.toggle(
+      "hidden"
+    );
+
+  }
+);
+
+
+document
+  .getElementById(
+    "closeNotifPanel"
+  )
+  .addEventListener(
+    "click",
+    function() {
+
+      notificationPanel.classList.add(
+        "hidden"
+      );
+
+    }
+  );
+
+
+
+/* =========================================
+   CHANGE SELECTION
+========================================= */
+
+document
+  .getElementById(
+    "changeSelectionButton"
+  )
+  .addEventListener(
+    "click",
+    function() {
+
+      /*
+        Seçimləri SİLMİRİK.
+
+        index.html onları localStorage-dan
+        oxuyacaq və əvvəlki seçimləri
+        avtomatik göstərəcək.
+      */
+
+      window.location.href =
+        "index.html";
+
+    }
+  );
+
+
+
+/* =========================================
+   BROWSER NOTIFICATION PERMISSION
+========================================= */
+
+function askNotificationPermission() {
+
+
+  if (
+    !("Notification" in window)
+  ) {
+
+    return;
+
+  }
+
+
+  if (
+    Notification.permission ===
+    "default"
+  ) {
+
+    Notification.requestPermission();
+
+  }
+
+}
+
+
+
+/* =========================================
+   LOCATION
+========================================= */
+
+const nearbyList =
+  document.getElementById(
+    "nearbyList"
+  );
+
+
+const locationInfoBox =
+  document.getElementById(
+    "locationInfoBox"
+  );
+
+
+function toRad(
+  value
+) {
+
+  return (
+    value *
+    Math.PI /
+    180
+  );
+
+}
+
+
+function calcDistance(
+  lat1,
+  lon1,
+  lat2,
+  lon2
+) {
+
+
+  const R =
+    6371;
+
+
+  const dLat =
+    toRad(
+      lat2 - lat1
+    );
+
+
+  const dLon =
+    toRad(
+      lon2 - lon1
+    );
+
+
+  const a =
+
+    Math.sin(
+      dLat / 2
+    )
+    *
+    Math.sin(
+      dLat / 2
+    )
+
+    +
+
+    Math.cos(
+      toRad(lat1)
+    )
+    *
+    Math.cos(
+      toRad(lat2)
+    )
+    *
+    Math.sin(
+      dLon / 2
+    )
+    *
+    Math.sin(
+      dLon / 2
+    );
+
+
+  const c =
+
+    2 *
+    Math.atan2(
+
+      Math.sqrt(a),
+
+      Math.sqrt(
+        1 - a
+      )
+
+    );
+
+
+  return (
+    R * c
+  );
+
+}
+
+
+
+function renderNearby(
+  userLat,
+  userLng
+) {
+
+
+  const enriched =
+
+    partners
+      .map(
+        function(partner) {
+
+          return {
+
+            ...partner,
+
+            distance:
+              calcDistance(
+                userLat,
+                userLng,
+                partner.lat,
+                partner.lng
+              )
+
+          };
+
+        }
+      )
+
+      .sort(
+        function(a,b) {
+
+          return (
+            a.distance -
+            b.distance
+          );
+
+        }
+      );
+
+
+  nearbyList.innerHTML =
+    "";
+
+
+  enriched.forEach(
+    function(item) {
+
+
+      const card =
+        document.createElement(
+          "div"
+        );
+
+
+      card.className =
+        "nearby-card";
+
+
+      card.innerHTML = `
+
+        <div class="nearby-top">
+
+          <div>
+
+            <h3 class="nearby-title">
+
+              ${item.name}
+
+            </h3>
+
+            <div class="nearby-sub">
+
+              ${item.description}
+
+            </div>
+
+
+            <div class="list-tags">
+
+              <span class="tag">
+
+                ${item.category}
+
+              </span>
+
+              <span class="tag">
+
+                ${item.address}
+
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="distance-pill">
+
+            ${item.distance.toFixed(1)} km
+
+          </div>
+
+        </div>
+
+
+        <div class="action-row">
+
+          <button class="soft-btn">
+
+            Ətraflı
+
+          </button>
+
+        </div>
+
+      `;
+
+
+      nearbyList.appendChild(
+        card
+      );
+
+
+    }
+  );
+
+}
+
+
+
+function requestLocationAndRender() {
+
+
+  if (
+    !navigator.geolocation
+  ) {
+
+    locationInfoBox.innerHTML =
+      "Bu cihaz konum funksiyasını dəstəkləmir.";
+
+    return;
+
+  }
+
+
+  locationInfoBox.innerHTML =
+    "📍 Konum icazəsi gözlənilir...";
+
+
+  navigator.geolocation.getCurrentPosition(
+
+    function(position) {
+
+
+      const latitude =
+        position.coords.latitude;
+
+
+      const longitude =
+        position.coords.longitude;
+
+
+      locationInfoBox.innerHTML =
+        "✅ Yaxınlıqdakı partnyorlar məsafəyə görə sıralandı.";
+
+
+      renderNearby(
+        latitude,
+        longitude
+      );
+
+
+    },
+
+
+    function(error) {
+
+
+      let message =
+        "Konum məlumatını əldə etmək mümkün olmadı.";
+
+
+      if (
+        error.code ===
+        1
+      ) {
+
+        message =
+          "📍 Konum icazəsi verilmədi. Yaxın partnyorları görmək üçün brauzerdən konum icazəsi verin.";
+
+      }
+
+
+      locationInfoBox.innerHTML =
+        message;
+
+
+    },
+
+
+    {
+      enableHighAccuracy: true,
+      timeout: 10000,
+      maximumAge: 300000
     }
 
-    document.querySelectorAll(".nav-item").forEach(btn => {
-      btn.addEventListener("click", () => {
-        openScreen(btn.dataset.screen);
-      });
-    });
+  );
 
-    document.getElementById("seeAllNewPartners").addEventListener("click", () => {
+}
+
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+const screens = {
+
+  home:
+    document.getElementById(
+      "screen-home"
+    ),
+
+  nearby:
+    document.getElementById(
+      "screen-nearby"
+    ),
+
+  partners:
+    document.getElementById(
+      "screen-partners"
+    )
+
+};
+
+
+function openScreen(
+  name
+) {
+
+
+  Object
+    .values(
+      screens
+    )
+    .forEach(
+      function(screen) {
+
+        screen.classList.add(
+          "hidden"
+        );
+
+      }
+    );
+
+
+  screens[
+    name
+  ]
+  .classList.remove(
+    "hidden"
+  );
+
+
+  document
+    .querySelectorAll(
+      ".nav-item"
+    )
+    .forEach(
+      function(button) {
+
+        button.classList.toggle(
+
+          "active",
+
+          button.dataset.screen ===
+          name
+
+        );
+
+      }
+    );
+
+
+  if (
+    name ===
+    "nearby"
+  ) {
+
+    requestLocationAndRender();
+
+  }
+
+
+  if (
+    name ===
+    "partners"
+  ) {
+
+    renderPartnersList(
+      partners
+    );
+
+  }
+
+
+  window.scrollTo({
+
+    top: 0,
+
+    behavior:
+      "smooth"
+
+  });
+
+}
+
+
+
+function openPartnersScreen(
+  categoryName = null
+) {
+
+
+  openScreen(
+    "partners"
+  );
+
+
+  if (
+    !categoryName
+  ) {
+
+    renderPartnersList(
+      partners
+    );
+
+    return;
+
+  }
+
+
+  const filtered =
+
+    partners.filter(
+      function(item) {
+
+        return (
+
+          item.category
+            .toLowerCase()
+
+          ===
+
+          categoryName
+            .toLowerCase()
+
+        );
+
+      }
+    );
+
+
+  renderPartnersList(
+    filtered
+  );
+
+}
+
+
+
+document
+  .querySelectorAll(
+    ".nav-item"
+  )
+  .forEach(
+    function(button) {
+
+      button.addEventListener(
+        "click",
+        function() {
+
+          openScreen(
+            button.dataset.screen
+          );
+
+        }
+      );
+
+    }
+  );
+
+
+
+document
+  .getElementById(
+    "seeAllNewPartners"
+  )
+  .addEventListener(
+    "click",
+    function() {
+
       openPartnersScreen();
-    });
 
-    document.getElementById("seeAllCategories").addEventListener("click", () => {
+    }
+  );
+
+
+
+document
+  .getElementById(
+    "seeAllCategories"
+  )
+  .addEventListener(
+    "click",
+    function() {
+
       openPartnersScreen();
-    });
 
-    /* =========================
-       SEARCH
-    ========================= */
-    document.getElementById("searchInput").addEventListener("input", function() {
-      const value = this.value.trim().toLowerCase();
+    }
+  );
+
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+document
+  .getElementById(
+    "searchInput"
+  )
+  .addEventListener(
+    "input",
+    function() {
+
+
+      const value =
+        this.value
+          .trim()
+          .toLowerCase();
+
 
       if (!value) {
-        renderCategories(categories);
-        renderNewPartners(partners);
+
+        openScreen(
+          "home"
+        );
+
+        renderCategories(
+          categories
+        );
+
+        renderNewPartners(
+          partners
+        );
+
         return;
+
       }
 
-      const filteredPartners = partners.filter(item =>
-        item.name.toLowerCase().includes(value) ||
-        item.category.toLowerCase().includes(value) ||
-        item.description.toLowerCase().includes(value)
-      );
+
+      const filteredPartners =
+
+        partners.filter(
+          function(item) {
+
+
+            const searchText = `
+
+              ${item.name}
+              ${item.category}
+              ${item.description}
+              ${item.address}
+
+            `.toLowerCase();
+
+
+            return searchText.includes(
+              value
+            );
+
+
+          }
+        );
+
 
       openPartnersScreen();
-      renderPartnersList(filteredPartners);
-    });
 
-    /* =========================
-       INIT
-    ========================= */
-    renderCategories(categories);
-    renderNewPartners(partners);
-    renderNotifications();
-    askNotificationPermission();
 
-    // İstəsən bunu aktiv saxlayarıq:
-    // showWelcomeNotification();
-  </script>
+      renderPartnersList(
+        filteredPartners
+      );
+
+
+    }
+  );
+
+
+
+/* =========================================
+   START
+========================================= */
+
+renderCategories(
+  categories
+);
+
+
+renderNewPartners(
+  partners
+);
+
+
+renderNotifications();
+
+
+/*
+  Bildiriş icazəsini ilk səhifə açılan kimi
+  istəmək əvəzinə sonradan daha yaxşı UX ilə
+  aktivləşdirə bilərik.
+
+  Hələlik işləməsi üçün saxlayırıq.
+*/
+
+askNotificationPermission();
+
+
+</script>
+
+
 </body>
 </html>
