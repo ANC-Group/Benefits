@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="az">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
   <title>ANC Group Benefits Hub</title>
 
+
   <style>
+
     * {
       box-sizing: border-box;
     }
 
     :root {
+
       --bg: #f7f8f7;
       --card: #ffffff;
 
@@ -32,10 +42,10 @@
       --shadow:
         0 10px 30px rgba(0,0,0,.05);
 
-      --radius: 22px;
     }
 
     body {
+
       margin: 0;
 
       background: var(--bg);
@@ -50,10 +60,17 @@
 
       color: var(--text);
 
-      padding-bottom: 90px;
+      padding-bottom: 95px;
+
+    }
+
+    button,
+    input {
+      font-family: inherit;
     }
 
     .app {
+
       max-width: 520px;
 
       margin: 0 auto;
@@ -61,14 +78,16 @@
       min-height: 100vh;
 
       background: var(--bg);
+
     }
 
 
-    /* =========================================
+    /* ===============================
        TOP
-    ========================================= */
+    =============================== */
 
     .top-wrap {
+
       padding: 18px 18px 8px;
 
       background:
@@ -77,28 +96,46 @@
           #fff1e8 0%,
           #f7f8f7 100%
         );
+
     }
 
     .top-bar {
+
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
       gap: 12px;
+
     }
 
     .user-block {
+
       display: flex;
+
       align-items: center;
 
       gap: 12px;
 
       min-width: 0;
+
     }
 
     .avatar {
+
       width: 54px;
+
       height: 54px;
+
+      flex-shrink: 0;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
 
       border-radius: 50%;
 
@@ -109,20 +146,18 @@
           #e96b42
         );
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
       color: white;
 
-      flex-shrink: 0;
-
       box-shadow: var(--shadow);
+
     }
 
     .avatar svg {
+
       width: 34px;
+
       height: 34px;
+
     }
 
     .greeting-wrap {
@@ -130,39 +165,48 @@
     }
 
     .greeting-title {
+
       margin: 0;
 
       font-size: 25px;
+
       font-weight: 800;
 
       line-height: 1.05;
 
       color: #2b2b2b;
+
     }
 
     .greeting-subtitle {
+
       margin-top: 5px;
 
       font-size: 13px;
 
       color: #747474;
+
     }
 
 
-    /* =========================================
+    /* ===============================
        TOP ACTIONS
-    ========================================= */
+    =============================== */
 
     .top-actions {
+
       display: flex;
+
       align-items: center;
 
       gap: 7px;
 
       flex-shrink: 0;
+
     }
 
     .change-filter-button {
+
       height: 44px;
 
       padding: 0 11px;
@@ -177,174 +221,199 @@
       color: var(--green-dark);
 
       font-size: 11px;
+
       font-weight: 800;
 
       cursor: pointer;
 
       white-space: nowrap;
-    }
 
-    .change-filter-button:hover {
-      background: #e1f3e9;
     }
 
     .notif-button {
+
       position: relative;
 
       width: 46px;
+
       height: 46px;
 
-      border-radius: 15px;
+      flex-shrink: 0;
 
       border: none;
 
-      background: var(--card);
+      border-radius: 15px;
+
+      background: white;
 
       box-shadow: var(--shadow);
 
       cursor: pointer;
 
-      flex-shrink: 0;
     }
 
     .notif-button svg {
+
       width: 22px;
+
       height: 22px;
 
       stroke: var(--green-dark);
+
     }
 
     .notif-badge {
+
       position: absolute;
 
       top: -4px;
+
       right: -4px;
 
       min-width: 22px;
+
       height: 22px;
 
       padding: 0 6px;
 
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
       border-radius: 999px;
+
+      border: 3px solid var(--bg);
 
       background: var(--red);
 
       color: white;
 
       font-size: 11px;
+
       font-weight: 800;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border: 3px solid var(--bg);
     }
 
 
-    /* =========================================
+    /* ===============================
        SEARCH
-    ========================================= */
+    =============================== */
 
     .search-box {
+
       margin-top: 18px;
-
-      background: var(--card);
-
-      border-radius: 18px;
 
       padding: 14px 16px;
 
       display: flex;
+
       align-items: center;
 
       gap: 10px;
 
-      box-shadow: var(--shadow);
-
       border:
         1px solid var(--border);
+
+      border-radius: 18px;
+
+      background: white;
+
+      box-shadow: var(--shadow);
+
     }
 
     .search-box input {
+
+      width: 100%;
+
       border: none;
 
       outline: none;
 
-      width: 100%;
-
-      font-size: 15px;
-
       background: transparent;
 
       color: var(--text);
+
+      font-size: 15px;
+
     }
 
     .search-box input::placeholder {
+
       color: #9a9a9a;
+
     }
 
 
-    /* =========================================
+    /* ===============================
        MAIN
-    ========================================= */
+    =============================== */
 
     .main-content {
+
       padding: 10px 18px 30px;
+
     }
 
     .section {
+
       margin-top: 22px;
+
     }
 
     .section-head {
+
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
+
+      gap: 12px;
 
       margin-bottom: 14px;
 
-      gap: 12px;
     }
 
     .section-title {
+
+      margin: 0;
+
       font-size: 23px;
 
       font-weight: 800;
 
-      margin: 0;
     }
 
     .section-link {
+
       color: #8d8d8d;
 
       font-size: 13px;
 
-      text-decoration: none;
-
-      white-space: nowrap;
-
       cursor: pointer;
+
     }
 
 
-    /* =========================================
+    /* ===============================
        CATEGORIES
-    ========================================= */
+    =============================== */
 
     .categories-grid {
+
       display: grid;
 
       grid-template-columns:
         repeat(4, 1fr);
 
       gap: 12px;
+
     }
 
     .category-card {
-      background: var(--card);
-
-      border-radius: 20px;
 
       padding: 14px 8px 12px;
 
@@ -353,56 +422,58 @@
       border:
         1px solid var(--border);
 
+      border-radius: 20px;
+
+      background: white;
+
       box-shadow: var(--shadow);
 
       cursor: pointer;
 
-      transition:
-        transform .15s ease;
-    }
-
-    .category-card:hover {
-      transform:
-        translateY(-2px);
     }
 
     .category-icon {
+
       width: 52px;
+
       height: 52px;
 
       margin:
         0 auto 10px;
 
-      border-radius: 16px;
-
-      background:
-        var(--soft-orange);
-
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
-      color: var(--orange);
+      border-radius: 16px;
+
+      background: var(--soft-orange);
 
       font-size: 24px;
+
     }
 
     .category-name {
+
+      color: #444;
+
       font-size: 12px;
 
       font-weight: 700;
 
       line-height: 1.25;
 
-      color: #444;
     }
 
 
-    /* =========================================
+    /* ===============================
        PARTNER CARDS
-    ========================================= */
+    =============================== */
 
     .cards-row {
+
       display: flex;
 
       gap: 14px;
@@ -411,8 +482,6 @@
 
       padding-bottom: 6px;
 
-      scroll-snap-type:
-        x proximity;
     }
 
     .cards-row::-webkit-scrollbar {
@@ -420,24 +489,39 @@
     }
 
     .partner-card {
+
       min-width: 250px;
 
-      background: var(--card);
-
-      border-radius: 24px;
+      overflow: hidden;
 
       border:
         1px solid var(--border);
 
+      border-radius: 24px;
+
+      background: white;
+
       box-shadow: var(--shadow);
 
-      overflow: hidden;
+      cursor: pointer;
 
-      scroll-snap-align: start;
     }
 
     .partner-banner {
+
+      position: relative;
+
       height: 150px;
+
+      padding: 20px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
 
       background:
         linear-gradient(
@@ -446,502 +530,624 @@
           #f6fbf8
         );
 
-      position: relative;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
       color: var(--green-dark);
 
-      font-size: 38px;
+      font-size: 30px;
+
       font-weight: 900;
 
-      text-align: center;
-
-      padding: 20px;
     }
 
     .discount-badge {
+
       position: absolute;
 
       top: 14px;
+
       right: 14px;
+
+      padding: 6px 8px;
+
+      border-radius: 12px;
 
       background: var(--red);
 
       color: white;
 
       font-size: 12px;
+
       font-weight: 800;
 
-      border-radius: 12px;
-
-      padding: 6px 8px;
     }
 
+
+    /* ===============================
+       FAVORITE BUTTON
+    =============================== */
+
+    .favorite-button {
+
+      width: 38px;
+
+      height: 38px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border:
+        1px solid #f0dddd;
+
+      border-radius: 50%;
+
+      background: white;
+
+      color: var(--red);
+
+      font-size: 21px;
+
+      cursor: pointer;
+
+      flex-shrink: 0;
+
+      transition:
+        transform .15s ease,
+        background .15s ease;
+
+    }
+
+    .favorite-button:hover {
+
+      transform: scale(1.06);
+
+    }
+
+    .favorite-button.active {
+
+      background: var(--soft-red);
+
+      color: var(--red);
+
+    }
+
+    .partner-banner .favorite-button {
+
+      position: absolute;
+
+      top: 14px;
+
+      left: 14px;
+
+      z-index: 5;
+
+    }
+
+
+    /* ===============================
+       PARTNER BODY
+    =============================== */
+
     .partner-body {
+
       padding: 16px;
+
     }
 
     .partner-title {
-      font-size: 19px;
-
-      font-weight: 800;
 
       margin:
         0 0 8px;
 
-      line-height: 1.2;
+      font-size: 19px;
+
+      font-weight: 800;
+
     }
 
     .partner-text {
-      font-size: 13px;
+
+      min-height: 42px;
 
       color: #666;
 
+      font-size: 13px;
+
       line-height: 1.5;
 
-      min-height: 42px;
     }
 
     .partner-meta {
+
+      margin-top: 14px;
+
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
       gap: 8px;
 
-      margin-top: 14px;
     }
 
     .partner-chip {
-      background:
-        var(--soft-green);
-
-      color:
-        var(--green-dark);
-
-      font-size: 11px;
-      font-weight: 700;
 
       padding:
         7px 10px;
 
       border-radius: 999px;
 
-      display: inline-flex;
-      align-items: center;
+      background: var(--soft-green);
 
-      gap: 6px;
+      color: var(--green-dark);
+
+      font-size: 11px;
+
+      font-weight: 700;
+
     }
 
     .partner-arrow {
+
       width: 38px;
+
       height: 38px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
 
       border-radius: 50%;
 
       background: #f3f5f4;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
       color: #555;
 
       font-weight: 800;
 
-      cursor: pointer;
     }
 
 
-    /* =========================================
-       LISTS
-    ========================================= */
+    /* ===============================
+       LIST
+    =============================== */
 
     .nearby-list,
-    .partners-list {
+    .partners-list,
+    .favorites-list {
+
       display: grid;
 
       gap: 12px;
+
     }
 
     .nearby-card,
     .list-card {
-      background: var(--card);
+
+      padding: 16px;
 
       border:
         1px solid var(--border);
 
       border-radius: 20px;
 
+      background: white;
+
       box-shadow: var(--shadow);
 
-      padding: 16px;
     }
 
-    .nearby-top,
     .list-top {
+
       display: flex;
 
-      align-items: start;
+      align-items: flex-start;
+
       justify-content: space-between;
 
       gap: 12px;
+
     }
 
-    .nearby-title,
+    .list-right {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+    }
+
     .list-title {
+
       margin: 0;
 
       font-size: 18px;
 
       font-weight: 800;
+
     }
 
-    .nearby-sub,
     .list-sub {
-      margin-top: 4px;
 
-      font-size: 13px;
+      margin-top: 4px;
 
       color: #777;
 
+      font-size: 13px;
+
       line-height: 1.45;
+
     }
 
     .distance-pill {
-      background:
-        var(--soft-red);
-
-      color:
-        var(--red);
 
       padding:
         7px 10px;
 
       border-radius: 999px;
 
+      background: var(--soft-red);
+
+      color: var(--red);
+
       font-size: 12px;
+
       font-weight: 800;
 
       white-space: nowrap;
+
     }
 
     .list-tags {
+
+      margin-top: 12px;
+
       display: flex;
 
       flex-wrap: wrap;
 
       gap: 8px;
 
-      margin-top: 12px;
     }
 
     .tag {
-      background: #f3f7f5;
-
-      color: #567;
-
-      border-radius: 999px;
 
       padding:
         7px 10px;
 
+      border-radius: 999px;
+
+      background: #f3f7f5;
+
+      color: #567;
+
       font-size: 12px;
+
       font-weight: 700;
+
     }
 
     .action-row {
+
+      margin-top: 14px;
+
       display: flex;
 
       gap: 10px;
 
-      margin-top: 14px;
     }
 
     .soft-btn {
-      border: none;
-
-      background:
-        var(--soft-green);
-
-      color:
-        var(--green-dark);
 
       padding:
         11px 14px;
 
+      border: none;
+
       border-radius: 14px;
+
+      background: var(--soft-green);
+
+      color: var(--green-dark);
+
+      font-size: 13px;
 
       font-weight: 800;
 
       cursor: pointer;
 
-      font-size: 13px;
-    }
-
-    .soft-btn.red {
-      background:
-        var(--soft-red);
-
-      color:
-        var(--red);
     }
 
     .empty-note {
-      background: var(--card);
+
+      padding: 24px;
 
       border:
         1px dashed #d8dfdb;
 
-      padding: 18px;
-
       border-radius: 18px;
+
+      background: white;
 
       color: #777;
 
       font-size: 14px;
 
       line-height: 1.55;
+
+      text-align: center;
+
+    }
+
+    .empty-heart {
+
+      margin-bottom: 10px;
+
+      font-size: 38px;
+
     }
 
 
-    /* =========================================
-       NOTIFICATIONS
-    ========================================= */
+    /* ===============================
+       NOTIFICATION
+    =============================== */
 
     .notification-panel {
+
       position: fixed;
 
       top: 84px;
 
-      right: 16px;
       left: 16px;
+
+      right: 16px;
+
+      z-index: 150;
 
       max-width: 488px;
 
       margin: 0 auto;
 
-      background: white;
+      padding: 16px;
 
       border:
         1px solid var(--border);
 
       border-radius: 20px;
 
+      background: white;
+
       box-shadow:
         0 20px 50px rgba(0,0,0,.09);
 
-      z-index: 150;
-
-      padding: 16px;
     }
 
     .notification-item {
+
       padding: 12px 0;
 
       border-bottom:
         1px solid #f0f0f0;
-    }
 
-    .notification-item:last-child {
-      border-bottom: none;
-
-      padding-bottom: 0;
     }
 
     .notification-title {
+
       font-size: 14px;
 
       font-weight: 800;
 
-      margin-bottom: 4px;
     }
 
     .notification-text {
-      font-size: 13px;
+
+      margin-top: 4px;
 
       color: #666;
 
-      line-height: 1.45;
+      font-size: 13px;
+
     }
 
     .notification-time {
+
       margin-top: 6px;
+
+      color: #999;
 
       font-size: 11px;
 
-      color: #999;
     }
 
 
-    /* =========================================
+    /* ===============================
        BOTTOM NAV
-    ========================================= */
+    =============================== */
 
     .bottom-nav {
+
       position: fixed;
 
       left: 50%;
 
+      bottom: 0;
+
+      z-index: 100;
+
       transform:
         translateX(-50%);
-
-      bottom: 0;
 
       width: 100%;
 
       max-width: 520px;
 
-      background:
-        rgba(255,255,255,.97);
+      display: grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      padding:
+        9px 5px
+        calc(9px + env(safe-area-inset-bottom));
 
       border-top:
         1px solid var(--border);
 
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      padding:
-        10px 8px
-        calc(10px + env(safe-area-inset-bottom));
-
-      z-index: 100;
+      background:
+        rgba(255,255,255,.97);
 
       backdrop-filter:
         blur(10px);
+
     }
 
     .nav-item {
+
+      padding:
+        8px 3px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      gap: 5px;
+
       border: none;
+
+      border-radius: 14px;
 
       background: transparent;
 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      gap: 6px;
-
       color: #7b7b7b;
 
-      font-size: 12px;
+      font-size: 11px;
+
       font-weight: 700;
 
       cursor: pointer;
 
-      padding:
-        8px 4px;
-
-      border-radius: 14px;
     }
 
     .nav-item.active {
-      color:
-        var(--green-dark);
 
-      background:
-        var(--soft-green);
+      background: var(--soft-green);
+
+      color: var(--green-dark);
+
     }
 
     .nav-icon {
+
       font-size: 20px;
 
-      line-height: 1;
     }
-
-
-    /* =========================================
-       UTILITIES
-    ========================================= */
 
     .hidden {
+
       display:
         none !important;
+
     }
 
-
-    /* =========================================
-       MOBILE
-    ========================================= */
 
     @media(max-width:420px) {
 
-      .top-wrap {
-        padding-left: 14px;
-        padding-right: 14px;
-      }
-
+      .top-wrap,
       .main-content {
+
         padding-left: 14px;
+
         padding-right: 14px;
-      }
 
-      .greeting-title {
-        font-size: 21px;
-      }
-
-      .greeting-subtitle {
-        font-size: 11px;
       }
 
       .avatar {
-        width: 48px;
-        height: 48px;
+
+        width: 46px;
+
+        height: 46px;
+
+      }
+
+      .greeting-title {
+
+        font-size: 20px;
+
+      }
+
+      .greeting-subtitle {
+
+        font-size: 11px;
+
       }
 
       .change-filter-button {
-        height: 42px;
+
+        height: 40px;
 
         padding:
-          0 8px;
+          0 7px;
 
-        font-size: 10px;
+        font-size: 9px;
+
       }
 
       .notif-button {
-        width: 42px;
-        height: 42px;
+
+        width: 40px;
+
+        height: 40px;
+
       }
 
       .categories-grid {
-        grid-template-columns:
-          repeat(4,1fr);
 
         gap: 8px;
+
       }
 
       .category-card {
+
         padding:
-          12px 5px 10px;
+          11px 4px 10px;
+
       }
 
       .category-icon {
-        width: 44px;
-        height: 44px;
+
+        width: 43px;
+
+        height: 43px;
 
         font-size: 20px;
+
       }
 
       .category-name {
+
         font-size: 10px;
+
       }
 
-      .section-title {
-        font-size: 21px;
-      }
+      .nav-item {
 
-      .partner-card {
-        min-width: 230px;
+        font-size: 10px;
+
       }
 
     }
 
   </style>
+
 </head>
 
 
@@ -950,10 +1156,6 @@
 
 <div class="app">
 
-
-  <!-- =========================================
-       TOP
-  ========================================= -->
 
   <div class="top-wrap">
 
@@ -964,16 +1166,11 @@
       <div class="user-block">
 
 
-        <div
-          class="avatar"
-          id="avatarBox"
-          aria-label="İstifadəçi avatarı"
-        >
+        <div class="avatar">
 
           <svg
             viewBox="0 0 64 64"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg"
           >
 
             <circle
@@ -981,13 +1178,11 @@
               cy="18"
               r="10"
               fill="currentColor"
-              opacity=".95"
             />
 
             <path
               d="M14 52C16.5 42 23.5 36 32 36C40.5 36 47.5 42 50 52"
               fill="currentColor"
-              opacity=".95"
             />
 
           </svg>
@@ -1005,7 +1200,9 @@
           </h1>
 
           <div class="greeting-subtitle">
+
             Özəl endirimləri kəşf edin!
+
           </div>
 
         </div>
@@ -1015,41 +1212,25 @@
 
 
 
-      <!-- DƏYİŞ + BİLDİRİŞ -->
-
       <div class="top-actions">
 
 
         <button
-  class="change-filter-button"
-  id="changeSelectionButton"
->
-  Şirkət / kateqoriya
-</button>
+          class="change-filter-button"
+          id="changeSelectionButton"
+        >
+
+          Şirkət / kateqoriya
+
+        </button>
 
 
         <button
           class="notif-button"
           id="notifButton"
-          aria-label="Bildirişlər"
         >
 
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke-width="2"
-          >
-
-            <path
-              d="M6 8a6 6 0 1 1 12 0c0 7 3 7 3 9H3c0-2 3-2 3-9"
-            />
-
-            <path
-              d="M10 20a2 2 0 0 0 4 0"
-            />
-
-          </svg>
-
+          🔔
 
           <div
             class="notif-badge"
@@ -1057,7 +1238,6 @@
           >
             0
           </div>
-
 
         </button>
 
@@ -1069,13 +1249,9 @@
 
 
 
-    <!-- SEARCH -->
-
     <div class="search-box">
 
-      <span style="font-size:18px;">
-        🔎
-      </span>
+      <span>🔎</span>
 
       <input
         type="text"
@@ -1090,10 +1266,6 @@
 
 
 
-  <!-- =========================================
-       MAIN
-  ========================================= -->
-
   <div class="main-content">
 
 
@@ -1101,8 +1273,6 @@
 
     <section id="screen-home">
 
-
-      <!-- KATEQORİYALAR -->
 
       <div class="section">
 
@@ -1113,12 +1283,12 @@
             Kateqoriyalar
           </h2>
 
-          <a
+          <span
             class="section-link"
             id="seeAllCategories"
           >
             Hamısı ›
-          </a>
+          </span>
 
         </div>
 
@@ -1134,8 +1304,6 @@
 
 
 
-      <!-- YENİ PARTNYORLAR -->
-
       <div class="section">
 
 
@@ -1145,12 +1313,12 @@
             Yeni partnyorlar
           </h2>
 
-          <a
+          <span
             class="section-link"
             id="seeAllNewPartners"
           >
             Hamısı ›
-          </a>
+          </span>
 
         </div>
 
@@ -1169,12 +1337,50 @@
 
 
 
-    <!-- =========================================
-         YAXINLIQDA
-    ========================================= -->
+    <!-- YAXINLIQDA -->
 
     <section
       id="screen-nearby"
+      class="hidden"
+    >
+
+
+      <div class="section">
+
+        <h2 class="section-title">
+          Yaxınlıqda
+        </h2>
+
+
+        <div
+          class="empty-note"
+          id="locationInfoBox"
+          style="margin-top:14px;"
+        >
+
+          Yaxınlıqdakı partnyorları göstərmək üçün konum icazəsi tələb olunur.
+
+        </div>
+
+
+        <div
+          class="nearby-list"
+          id="nearbyList"
+          style="margin-top:12px;"
+        >
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- FAVORİLƏR -->
+
+    <section
+      id="screen-favorites"
       class="hidden"
     >
 
@@ -1185,25 +1391,22 @@
         <div class="section-head">
 
           <h2 class="section-title">
-            Yaxınlıqda
+            Favorilər
           </h2>
 
+          <span
+            class="section-link"
+            id="favoriteCount"
+          >
+            0 partnyor
+          </span>
+
         </div>
 
 
         <div
-          class="empty-note"
-          id="locationInfoBox"
-        >
-          Yaxınlıqdakı partnyorları göstərmək üçün
-          konum icazəsi tələb olunur.
-        </div>
-
-
-        <div
-          class="nearby-list"
-          id="nearbyList"
-          style="margin-top:12px;"
+          class="favorites-list"
+          id="favoritesList"
         >
         </div>
 
@@ -1215,9 +1418,7 @@
 
 
 
-    <!-- =========================================
-         PARTNYORLAR
-    ========================================= -->
+    <!-- PARTNYORLAR -->
 
     <section
       id="screen-partners"
@@ -1228,18 +1429,15 @@
       <div class="section">
 
 
-        <div class="section-head">
-
-          <h2 class="section-title">
-            Partnyorlar
-          </h2>
-
-        </div>
+        <h2 class="section-title">
+          Partnyorlar
+        </h2>
 
 
         <div
           class="partners-list"
           id="partnersList"
+          style="margin-top:14px;"
         >
         </div>
 
@@ -1257,9 +1455,7 @@
 
 
 
-<!-- =========================================
-     NOTIFICATION PANEL
-========================================= -->
+<!-- NOTIFICATIONS -->
 
 <div
   class="notification-panel hidden"
@@ -1276,7 +1472,7 @@
     "
   >
 
-    <strong style="font-size:16px;">
+    <strong>
       Bildirişlər
     </strong>
 
@@ -1293,7 +1489,6 @@
       ✕
     </button>
 
-
   </div>
 
 
@@ -1305,9 +1500,7 @@
 
 
 
-<!-- =========================================
-     BOTTOM NAV
-========================================= -->
+<!-- BOTTOM NAV -->
 
 <nav class="bottom-nav">
 
@@ -1348,6 +1541,23 @@
 
   <button
     class="nav-item"
+    data-screen="favorites"
+  >
+
+    <span class="nav-icon">
+      ♥
+    </span>
+
+    <span>
+      Favorilər
+    </span>
+
+  </button>
+
+
+
+  <button
+    class="nav-item"
     data-screen="partners"
   >
 
@@ -1369,9 +1579,9 @@
 <script>
 
 
-/* =========================================
-   USER INFO
-========================================= */
+/* ===============================
+   USER
+=============================== */
 
 const firstName =
   localStorage.getItem(
@@ -1389,14 +1599,6 @@ const companyName =
   "ANC Group";
 
 
-const workerCategoryName =
-  localStorage.getItem(
-    "anc-selected-worker-category-name"
-  )
-  ||
-  "";
-
-
 document
   .getElementById(
     "greetingTitle"
@@ -1406,9 +1608,9 @@ document
 
 
 
-/* =========================================
+/* ===============================
    CATEGORIES
-========================================= */
+=============================== */
 
 const categories = [
 
@@ -1419,8 +1621,8 @@ const categories = [
   },
 
   {
-    id: "magaza",
-    name: "Mağaza",
+    id: "alis-veris",
+    name: "Alış-veriş",
     icon: "🛍️"
   },
 
@@ -1470,10 +1672,9 @@ const categories = [
 
 
 
-/* =========================================
+/* ===============================
    TEST PARTNERS
-   SONRADAN REAL DATA İLƏ ƏVƏZ EDƏCƏYİK
-========================================= */
+=============================== */
 
 const partners = [
 
@@ -1485,29 +1686,23 @@ const partners = [
       "Qəhvə, səhər yeməyi və menyuda xüsusi əməkdaş endirimləri.",
     discount: "20%",
     isNew: true,
-
     lat: 40.4093,
     lng: 49.8671,
-
     address: "Bakı şəhəri"
   },
-
 
   {
     id: 2,
     name: "Beauty Point",
     category: "Gözəllik",
     description:
-      "Saç, dırnaq və gözəllik xidmətlərində xüsusi qiymətlər.",
+      "Saç və gözəllik xidmətlərində xüsusi əməkdaş qiymətləri.",
     discount: "15%",
     isNew: true,
-
     lat: 40.4012,
     lng: 49.8550,
-
     address: "Nərimanov"
   },
-
 
   {
     id: 3,
@@ -1517,13 +1712,10 @@ const partners = [
       "Uşaq əyləncə və inkişaf mərkəzində əməkdaş endirimi.",
     discount: "25%",
     isNew: false,
-
     lat: 40.3945,
     lng: 49.8821,
-
     address: "28 May"
   },
-
 
   {
     id: 4,
@@ -1533,13 +1725,10 @@ const partners = [
       "Otellər və tur paketlərində xüsusi partnyor təklifləri.",
     discount: "10%",
     isNew: true,
-
     lat: 40.3770,
     lng: 49.8920,
-
     address: "Ağ şəhər"
   },
-
 
   {
     id: 5,
@@ -1549,10 +1738,8 @@ const partners = [
       "Kurslar, təlimlər və sertifikasiya proqramlarına endirim.",
     discount: "18%",
     isNew: false,
-
     lat: 40.4180,
     lng: 49.8400,
-
     address: "Gənclik"
   }
 
@@ -1560,40 +1747,85 @@ const partners = [
 
 
 
-/* =========================================
-   NOTIFICATIONS
-========================================= */
+/* ===============================
+   FAVORITES
+=============================== */
 
-const notifications = [
-
-  {
-    id: 1,
-    title:
-      "Yeni imtiyaz əlavə edildi",
-    text:
-      "Friends Central Perk artıq partnyorlarımız sırasındadır.",
-    time:
-      "Bu gün"
-  },
+let favoriteIds =
+  JSON.parse(
+    localStorage.getItem(
+      "anc-favorite-partners"
+    )
+    ||
+    "[]"
+  );
 
 
-  {
-    id: 2,
-    title:
-      "Yeni partnyor aktivdir",
-    text:
-      "Beauty Point üzrə 15% endirim aktiv edildi.",
-    time:
-      "Dünən"
+function isFavorite(id) {
+
+  return favoriteIds.includes(id);
+
+}
+
+
+function toggleFavorite(id) {
+
+  if (
+    favoriteIds.includes(id)
+  ) {
+
+    favoriteIds =
+      favoriteIds.filter(
+        favoriteId =>
+          favoriteId !== id
+      );
+
   }
 
-];
+  else {
+
+    favoriteIds.push(id);
+
+  }
+
+
+  localStorage.setItem(
+    "anc-favorite-partners",
+    JSON.stringify(favoriteIds)
+  );
+
+
+  renderNewPartners(partners);
+
+  renderPartnersList(partners);
+
+  renderFavorites();
+
+}
+
+
+function favoriteIcon(id) {
+
+  return isFavorite(id)
+    ? "♥"
+    : "♡";
+
+}
+
+
+function favoriteClass(id) {
+
+  return isFavorite(id)
+    ? "favorite-button active"
+    : "favorite-button";
+
+}
 
 
 
-/* =========================================
-   CATEGORIES RENDER
-========================================= */
+/* ===============================
+   RENDER CATEGORIES
+=============================== */
 
 const categoriesGrid =
   document.getElementById(
@@ -1601,10 +1833,7 @@ const categoriesGrid =
   );
 
 
-function renderCategories(
-  list
-) {
-
+function renderCategories(list) {
 
   categoriesGrid.innerHTML =
     "";
@@ -1613,18 +1842,17 @@ function renderCategories(
   list.forEach(
     function(item) {
 
-
-      const div =
+      const card =
         document.createElement(
           "div"
         );
 
 
-      div.className =
+      card.className =
         "category-card";
 
 
-      div.innerHTML = `
+      card.innerHTML = `
 
         <div class="category-icon">
 
@@ -1641,7 +1869,7 @@ function renderCategories(
       `;
 
 
-      div.addEventListener(
+      card.addEventListener(
         "click",
         function() {
 
@@ -1654,9 +1882,8 @@ function renderCategories(
 
 
       categoriesGrid.appendChild(
-        div
+        card
       );
-
 
     }
   );
@@ -1665,9 +1892,9 @@ function renderCategories(
 
 
 
-/* =========================================
+/* ===============================
    NEW PARTNERS
-========================================= */
+=============================== */
 
 const newPartnersRow =
   document.getElementById(
@@ -1675,10 +1902,7 @@ const newPartnersRow =
   );
 
 
-function renderNewPartners(
-  list
-) {
-
+function renderNewPartners(list) {
 
   newPartnersRow.innerHTML =
     "";
@@ -1691,26 +1915,8 @@ function renderNewPartners(
     );
 
 
-  if (!newPartners.length) {
-
-    newPartnersRow.innerHTML = `
-
-      <div class="empty-note">
-
-        Hazırda yeni partnyor yoxdur.
-
-      </div>
-
-    `;
-
-    return;
-
-  }
-
-
   newPartners.forEach(
     function(item) {
-
 
       const card =
         document.createElement(
@@ -1725,6 +1931,16 @@ function renderNewPartners(
       card.innerHTML = `
 
         <div class="partner-banner">
+
+          <button
+            class="${favoriteClass(item.id)}"
+            onclick="
+              event.stopPropagation();
+              toggleFavorite(${item.id});
+            "
+          >
+            ${favoriteIcon(item.id)}
+          </button>
 
           ${item.name}
 
@@ -1745,6 +1961,7 @@ function renderNewPartners(
 
           </h3>
 
+
           <div class="partner-text">
 
             ${item.description}
@@ -1759,6 +1976,7 @@ function renderNewPartners(
               ${item.category}
 
             </div>
+
 
             <div class="partner-arrow">
 
@@ -1789,7 +2007,6 @@ function renderNewPartners(
         card
       );
 
-
     }
   );
 
@@ -1797,9 +2014,9 @@ function renderNewPartners(
 
 
 
-/* =========================================
-   PARTNERS LIST
-========================================= */
+/* ===============================
+   STANDARD PARTNER LIST
+=============================== */
 
 const partnersList =
   document.getElementById(
@@ -1807,10 +2024,7 @@ const partnersList =
   );
 
 
-function renderPartnersList(
-  list
-) {
-
+function renderPartnersList(list) {
 
   partnersList.innerHTML =
     "";
@@ -1822,7 +2036,7 @@ function renderPartnersList(
 
       <div class="empty-note">
 
-        Bu filtrə uyğun partnyor tapılmadı.
+        Bu kateqoriyada hazırda partnyor yoxdur.
 
       </div>
 
@@ -1835,7 +2049,6 @@ function renderPartnersList(
 
   list.forEach(
     function(item) {
-
 
       const card =
         document.createElement(
@@ -1859,6 +2072,7 @@ function renderPartnersList(
 
             </h3>
 
+
             <div class="list-sub">
 
               ${item.description}
@@ -1868,9 +2082,23 @@ function renderPartnersList(
           </div>
 
 
-          <div class="distance-pill">
+          <div class="list-right">
 
-            ${item.discount}
+            <div class="distance-pill">
+
+              ${item.discount}
+
+            </div>
+
+
+            <button
+              class="${favoriteClass(item.id)}"
+              onclick="toggleFavorite(${item.id})"
+            >
+
+              ${favoriteIcon(item.id)}
+
+            </button>
 
           </div>
 
@@ -1885,15 +2113,10 @@ function renderPartnersList(
 
           </span>
 
+
           <span class="tag">
 
             ${item.address}
-
-          </span>
-
-          <span class="tag">
-
-            ${companyName}
 
           </span>
 
@@ -1917,6 +2140,168 @@ function renderPartnersList(
         card
       );
 
+    }
+  );
+
+}
+
+
+
+/* ===============================
+   FAVORITES SCREEN
+=============================== */
+
+const favoritesList =
+  document.getElementById(
+    "favoritesList"
+  );
+
+
+function renderFavorites() {
+
+  const favorites =
+    partners.filter(
+      partner =>
+        favoriteIds.includes(
+          partner.id
+        )
+    );
+
+
+  document
+    .getElementById(
+      "favoriteCount"
+    )
+    .textContent =
+
+      `${favorites.length} partnyor`;
+
+
+  favoritesList.innerHTML =
+    "";
+
+
+  if (!favorites.length) {
+
+    favoritesList.innerHTML = `
+
+      <div class="empty-note">
+
+        <div class="empty-heart">
+
+          ♡
+
+        </div>
+
+        Hələ heç bir partnyoru favorilərə əlavə etməmisiniz.
+
+        <br><br>
+
+        Bəyəndiyiniz partnyorun yanında olan
+        ürək işarəsinə toxunun.
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  favorites.forEach(
+    function(item) {
+
+      const card =
+        document.createElement(
+          "div"
+        );
+
+
+      card.className =
+        "list-card";
+
+
+      card.innerHTML = `
+
+        <div class="list-top">
+
+
+          <div>
+
+            <h3 class="list-title">
+
+              ${item.name}
+
+            </h3>
+
+
+            <div class="list-sub">
+
+              ${item.description}
+
+            </div>
+
+          </div>
+
+
+          <div class="list-right">
+
+            <div class="distance-pill">
+
+              ${item.discount}
+
+            </div>
+
+
+            <button
+              class="favorite-button active"
+              onclick="toggleFavorite(${item.id})"
+            >
+
+              ♥
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="list-tags">
+
+          <span class="tag">
+
+            ${item.category}
+
+          </span>
+
+
+          <span class="tag">
+
+            ${item.address}
+
+          </span>
+
+        </div>
+
+
+        <div class="action-row">
+
+          <button class="soft-btn">
+
+            Ətraflı
+
+          </button>
+
+        </div>
+
+      `;
+
+
+      favoritesList.appendChild(
+        card
+      );
 
     }
   );
@@ -1925,19 +2310,36 @@ function renderPartnersList(
 
 
 
-/* =========================================
-   NOTIFICATION PANEL
-========================================= */
+/* ===============================
+   NOTIFICATIONS
+=============================== */
+
+const notifications = [
+
+  {
+    title:
+      "Yeni imtiyaz əlavə edildi",
+    text:
+      "Friends Central Perk artıq partnyorlarımız sırasındadır.",
+    time:
+      "Bu gün"
+  },
+
+  {
+    title:
+      "Yeni partnyor aktivdir",
+    text:
+      "Beauty Point üzrə 15% endirim aktiv edildi.",
+    time:
+      "Dünən"
+  }
+
+];
+
 
 const notifBadge =
   document.getElementById(
     "notifBadge"
-  );
-
-
-const notifButton =
-  document.getElementById(
-    "notifButton"
   );
 
 
@@ -1955,96 +2357,61 @@ const notificationList =
 
 function renderNotifications() {
 
-
-  if (
-    notifications.length
-  ) {
-
-    notifBadge.textContent =
-      notifications.length;
-
-
-    notifBadge.style.display =
-      "flex";
-
-  }
-
-  else {
-
-    notifBadge.style.display =
-      "none";
-
-  }
-
-
-  if (
-    !notifications.length
-  ) {
-
-    notificationList.innerHTML = `
-
-      <div class="empty-note">
-
-        Hazırda yeni bildiriş yoxdur.
-
-      </div>
-
-    `;
-
-    return;
-
-  }
+  notifBadge.textContent =
+    notifications.length;
 
 
   notificationList.innerHTML =
 
     notifications
       .map(
-        function(item) {
+        item => `
 
-          return `
+          <div class="notification-item">
 
-            <div class="notification-item">
+            <div class="notification-title">
 
-              <div class="notification-title">
-
-                ${item.title}
-
-              </div>
-
-              <div class="notification-text">
-
-                ${item.text}
-
-              </div>
-
-              <div class="notification-time">
-
-                ${item.time}
-
-              </div>
+              ${item.title}
 
             </div>
 
-          `;
+            <div class="notification-text">
 
-        }
+              ${item.text}
+
+            </div>
+
+            <div class="notification-time">
+
+              ${item.time}
+
+            </div>
+
+          </div>
+
+        `
       )
       .join("");
 
 }
 
 
-notifButton.addEventListener(
-  "click",
-  function() {
+document
+  .getElementById(
+    "notifButton"
+  )
+  .addEventListener(
+    "click",
+    function() {
 
-    notificationPanel.classList.toggle(
-      "hidden"
-    );
+      notificationPanel
+        .classList
+        .toggle(
+          "hidden"
+        );
 
-  }
-);
+    }
+  );
 
 
 document
@@ -2055,18 +2422,20 @@ document
     "click",
     function() {
 
-      notificationPanel.classList.add(
-        "hidden"
-      );
+      notificationPanel
+        .classList
+        .add(
+          "hidden"
+        );
 
     }
   );
 
 
 
-/* =========================================
-   CHANGE SELECTION
-========================================= */
+/* ===============================
+   CHANGE COMPANY
+=============================== */
 
 document
   .getElementById(
@@ -2076,14 +2445,6 @@ document
     "click",
     function() {
 
-      /*
-        Seçimləri SİLMİRİK.
-
-        index.html onları localStorage-dan
-        oxuyacaq və əvvəlki seçimləri
-        avtomatik göstərəcək.
-      */
-
       window.location.href =
         "index.html";
 
@@ -2092,38 +2453,9 @@ document
 
 
 
-/* =========================================
-   BROWSER NOTIFICATION PERMISSION
-========================================= */
-
-function askNotificationPermission() {
-
-
-  if (
-    !("Notification" in window)
-  ) {
-
-    return;
-
-  }
-
-
-  if (
-    Notification.permission ===
-    "default"
-  ) {
-
-    Notification.requestPermission();
-
-  }
-
-}
-
-
-
-/* =========================================
+/* ===============================
    LOCATION
-========================================= */
+=============================== */
 
 const nearbyList =
   document.getElementById(
@@ -2137,15 +2469,9 @@ const locationInfoBox =
   );
 
 
-function toRad(
-  value
-) {
+function toRad(value) {
 
-  return (
-    value *
-    Math.PI /
-    180
-  );
+  return value * Math.PI / 180;
 
 }
 
@@ -2156,7 +2482,6 @@ function calcDistance(
   lat2,
   lon2
 ) {
-
 
   const R =
     6371;
@@ -2176,13 +2501,9 @@ function calcDistance(
 
   const a =
 
-    Math.sin(
-      dLat / 2
-    )
+    Math.sin(dLat / 2)
     *
-    Math.sin(
-      dLat / 2
-    )
+    Math.sin(dLat / 2)
 
     +
 
@@ -2194,32 +2515,22 @@ function calcDistance(
       toRad(lat2)
     )
     *
-    Math.sin(
-      dLon / 2
-    )
+    Math.sin(dLon / 2)
     *
-    Math.sin(
-      dLon / 2
-    );
+    Math.sin(dLon / 2);
 
 
   const c =
 
-    2 *
+    2
+    *
     Math.atan2(
-
       Math.sqrt(a),
-
-      Math.sqrt(
-        1 - a
-      )
-
+      Math.sqrt(1 - a)
     );
 
 
-  return (
-    R * c
-  );
+  return R * c;
 
 }
 
@@ -2230,39 +2541,28 @@ function renderNearby(
   userLng
 ) {
 
-
   const enriched =
 
     partners
       .map(
-        function(partner) {
+        partner => ({
 
-          return {
+          ...partner,
 
-            ...partner,
+          distance:
+            calcDistance(
+              userLat,
+              userLng,
+              partner.lat,
+              partner.lng
+            )
 
-            distance:
-              calcDistance(
-                userLat,
-                userLng,
-                partner.lat,
-                partner.lng
-              )
-
-          };
-
-        }
+        })
       )
-
       .sort(
-        function(a,b) {
-
-          return (
-            a.distance -
-            b.distance
-          );
-
-        }
+        (a,b) =>
+          a.distance -
+          b.distance
       );
 
 
@@ -2272,7 +2572,6 @@ function renderNearby(
 
   enriched.forEach(
     function(item) {
-
 
       const card =
         document.createElement(
@@ -2286,58 +2585,67 @@ function renderNearby(
 
       card.innerHTML = `
 
-        <div class="nearby-top">
+        <div class="list-top">
+
 
           <div>
 
-            <h3 class="nearby-title">
+            <h3 class="list-title">
 
               ${item.name}
 
             </h3>
 
-            <div class="nearby-sub">
+
+            <div class="list-sub">
 
               ${item.description}
-
-            </div>
-
-
-            <div class="list-tags">
-
-              <span class="tag">
-
-                ${item.category}
-
-              </span>
-
-              <span class="tag">
-
-                ${item.address}
-
-              </span>
 
             </div>
 
           </div>
 
 
-          <div class="distance-pill">
+          <div class="list-right">
 
-            ${item.distance.toFixed(1)} km
+            <div class="distance-pill">
+
+              ${item.distance.toFixed(1)} km
+
+            </div>
+
+
+            <button
+              class="${favoriteClass(item.id)}"
+              onclick="
+                toggleFavorite(${item.id});
+                requestLocationAndRender();
+              "
+            >
+
+              ${favoriteIcon(item.id)}
+
+            </button>
 
           </div>
 
         </div>
 
 
-        <div class="action-row">
+        <div class="list-tags">
 
-          <button class="soft-btn">
+          <span class="tag">
 
-            Ətraflı
+            ${item.category}
 
-          </button>
+          </span>
+
+
+          <span class="tag">
+
+            ${item.address}
+
+          </span>
 
         </div>
 
@@ -2348,7 +2656,6 @@ function renderNearby(
         card
       );
 
-
     }
   );
 
@@ -2357,7 +2664,6 @@ function renderNearby(
 
 
 function requestLocationAndRender() {
-
 
   if (
     !navigator.geolocation
@@ -2375,72 +2681,61 @@ function requestLocationAndRender() {
     "📍 Konum icazəsi gözlənilir...";
 
 
-  navigator.geolocation.getCurrentPosition(
+  navigator.geolocation
+    .getCurrentPosition(
 
-    function(position) {
+      function(position) {
 
-
-      const latitude =
-        position.coords.latitude;
-
-
-      const longitude =
-        position.coords.longitude;
+        locationInfoBox.innerHTML =
+          "✅ Yaxın partnyorlar məsafəyə görə sıralandı.";
 
 
-      locationInfoBox.innerHTML =
-        "✅ Yaxınlıqdakı partnyorlar məsafəyə görə sıralandı.";
+        renderNearby(
+
+          position.coords.latitude,
+
+          position.coords.longitude
+
+        );
+
+      },
 
 
-      renderNearby(
-        latitude,
-        longitude
-      );
+      function(error) {
 
+        if (
+          error.code === 1
+        ) {
 
-    },
+          locationInfoBox.innerHTML =
+            "📍 Konum icazəsi verilmədi.";
 
+        }
 
-    function(error) {
+        else {
 
+          locationInfoBox.innerHTML =
+            "Konum məlumatını əldə etmək mümkün olmadı.";
 
-      let message =
-        "Konum məlumatını əldə etmək mümkün olmadı.";
+        }
 
+      },
 
-      if (
-        error.code ===
-        1
-      ) {
-
-        message =
-          "📍 Konum icazəsi verilmədi. Yaxın partnyorları görmək üçün brauzerdən konum icazəsi verin.";
-
+      {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 300000
       }
 
-
-      locationInfoBox.innerHTML =
-        message;
-
-
-    },
-
-
-    {
-      enableHighAccuracy: true,
-      timeout: 10000,
-      maximumAge: 300000
-    }
-
-  );
+    );
 
 }
 
 
 
-/* =========================================
+/* ===============================
    NAVIGATION
-========================================= */
+=============================== */
 
 const screens = {
 
@@ -2454,6 +2749,11 @@ const screens = {
       "screen-nearby"
     ),
 
+  favorites:
+    document.getElementById(
+      "screen-favorites"
+    ),
+
   partners:
     document.getElementById(
       "screen-partners"
@@ -2462,32 +2762,23 @@ const screens = {
 };
 
 
-function openScreen(
-  name
-) {
-
+function openScreen(name) {
 
   Object
-    .values(
-      screens
-    )
+    .values(screens)
     .forEach(
-      function(screen) {
-
+      screen =>
         screen.classList.add(
           "hidden"
-        );
-
-      }
+        )
     );
 
 
-  screens[
-    name
-  ]
-  .classList.remove(
-    "hidden"
-  );
+  screens[name]
+    .classList
+    .remove(
+      "hidden"
+    );
 
 
   document
@@ -2522,6 +2813,16 @@ function openScreen(
 
   if (
     name ===
+    "favorites"
+  ) {
+
+    renderFavorites();
+
+  }
+
+
+  if (
+    name ===
     "partners"
   ) {
 
@@ -2536,8 +2837,7 @@ function openScreen(
 
     top: 0,
 
-    behavior:
-      "smooth"
+    behavior: "smooth"
 
   });
 
@@ -2549,15 +2849,12 @@ function openPartnersScreen(
   categoryName = null
 ) {
 
-
   openScreen(
     "partners"
   );
 
 
-  if (
-    !categoryName
-  ) {
+  if (!categoryName) {
 
     renderPartnersList(
       partners
@@ -2571,21 +2868,10 @@ function openPartnersScreen(
   const filtered =
 
     partners.filter(
-      function(item) {
-
-        return (
-
-          item.category
-            .toLowerCase()
-
-          ===
-
-          categoryName
-            .toLowerCase()
-
-        );
-
-      }
+      item =>
+        item.category.toLowerCase()
+        ===
+        categoryName.toLowerCase()
     );
 
 
@@ -2622,6 +2908,20 @@ document
 
 document
   .getElementById(
+    "seeAllCategories"
+  )
+  .addEventListener(
+    "click",
+    function() {
+
+      openPartnersScreen();
+
+    }
+  );
+
+
+document
+  .getElementById(
     "seeAllNewPartners"
   )
   .addEventListener(
@@ -2635,24 +2935,9 @@ document
 
 
 
-document
-  .getElementById(
-    "seeAllCategories"
-  )
-  .addEventListener(
-    "click",
-    function() {
-
-      openPartnersScreen();
-
-    }
-  );
-
-
-
-/* =========================================
+/* ===============================
    SEARCH
-========================================= */
+=============================== */
 
 document
   .getElementById(
@@ -2661,7 +2946,6 @@ document
   .addEventListener(
     "input",
     function() {
-
 
       const value =
         this.value
@@ -2675,14 +2959,6 @@ document
           "home"
         );
 
-        renderCategories(
-          categories
-        );
-
-        renderNewPartners(
-          partners
-        );
-
         return;
 
       }
@@ -2692,7 +2968,6 @@ document
 
         partners.filter(
           function(item) {
-
 
             const searchText = `
 
@@ -2708,54 +2983,44 @@ document
               value
             );
 
-
           }
         );
 
 
-      openPartnersScreen();
+      openScreen(
+        "partners"
+      );
 
 
       renderPartnersList(
         filteredPartners
       );
 
-
     }
   );
 
 
 
-/* =========================================
+/* ===============================
    START
-========================================= */
+=============================== */
 
 renderCategories(
   categories
 );
 
-
 renderNewPartners(
   partners
 );
 
-
 renderNotifications();
 
-
-/*
-  Bildiriş icazəsini ilk səhifə açılan kimi
-  istəmək əvəzinə sonradan daha yaxşı UX ilə
-  aktivləşdirə bilərik.
-
-  Hələlik işləməsi üçün saxlayırıq.
-*/
-
-askNotificationPermission();
+renderFavorites();
 
 
 </script>
 
 
 </body>
+
 </html>
