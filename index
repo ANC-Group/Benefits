@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Rahat Benefits Hub</title>
+
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      color: #17231e;
+
+      background:
+        radial-gradient(
+          circle at 88% 12%,
+          rgba(24,166,106,.12),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 8% 90%,
+          rgba(248,181,67,.10),
+          transparent 25%
+        ),
+        linear-gradient(
+          135deg,
+          #fbfdfc 0%,
+          #f2faf6 100%
+        );
+    }
+
+
+    .page {
+
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 30px 20px;
+    }
+
+
+    .login-card {
+
+      width: 100%;
+      max-width: 1000px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      overflow: hidden;
+
+      background: white;
+
+      border: 1px solid #dde7e1;
+      border-radius: 28px;
+
+      box-shadow:
+        0 28px 70px rgba(36,67,52,.12);
+    }
+
+
+    /* LEFT SIDE */
+
+    .intro-side {
+
+      min-height: 530px;
+
+      padding: 55px 46px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      position: relative;
+      overflow: hidden;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          145deg,
+          #159c63 0%,
+          #087c50 100%
+        );
+    }
+
+
+    .intro-side::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 245px;
+      height: 245px;
+
+      right: -90px;
+      top: -90px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,.08);
+    }
+
+
+    .intro-side::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 190px;
+      height: 190px;
+
+      left: -75px;
+      bottom: -85px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,.06);
+    }
+
+
+    .intro-main {
+
+      position: relative;
+
+      z-index: 2;
+    }
+
+
+    .logo-placeholder {
+
+      width: 66px;
+      height: 66px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-bottom: 28px;
+
+      border-radius: 18px;
+
+      background: white;
+
+      color: #159c63;
+
+      font-size: 25px;
+      font-weight: 850;
+
+      box-shadow:
+        0 8px 20px rgba(0,0,0,.08);
+    }
+
+
+    .intro-title {
+
+      font-size: 39px;
+
+      line-height: 1.08;
+
+      letter-spacing: -.9px;
+
+      font-weight: 850;
+    }
+
+
+    .intro-text {
+
+      max-width: 370px;
+
+      margin-top: 18px;
+
+      font-size: 14px;
+      line-height: 1.7;
+
+      color:
+        rgba(255,255,255,.84);
+    }
+
+
+    .intro-benefits {
+
+      margin-top: 30px;
+
+      display: grid;
+
+      gap: 10px;
+
+      font-size: 13px;
+
+      color:
+        rgba(255,255,255,.88);
+    }
+
+
+    .intro-benefit {
+
+      display: flex;
+      align-items: center;
+
+      gap: 9px;
+    }
+
+
+    .intro-benefit-icon {
+
+      width: 27px;
+      height: 27px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 8px;
+
+      background:
+        rgba(255,255,255,.12);
+    }
+
+
+    .intro-bottom {
+
+      position: relative;
+
+      z-index: 2;
+
+      font-size: 12px;
+
+      color:
+        rgba(255,255,255,.7);
+    }
+
+
+    /* RIGHT SIDE */
+
+    .selection-side {
+
+      padding: 55px 46px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+
+    .selection-kicker {
+
+      color: #159c63;
+
+      font-size: 12px;
+      font-weight: 850;
+
+      text-transform: uppercase;
+
+      letter-spacing: .9px;
+    }
+
+
+    .selection-title {
+
+      margin-top: 10px;
+
+      font-size: 29px;
+
+      font-weight: 850;
+    }
+
+
+    .selection-text {
+
+      margin-top: 8px;
+
+      color: #78857e;
+
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+
+    #filterMount {
+
+      min-height: 195px;
+    }
+
+
+    .loading {
+
+      margin-top: 28px;
+
+      padding: 18px;
+
+      background: #fafcfb;
+
+      border: 1px solid #e0e8e3;
+      border-radius: 14px;
+
+      color: #829088;
+
+      font-size: 13px;
+    }
+
+
+    .load-error {
+
+      margin-top: 28px;
+
+      padding: 18px;
+
+      background: #fff7f8;
+
+      border: 1px solid #f0d5da;
+      border-radius: 14px;
+
+      color: #b13e55;
+
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+
+    @media(max-width:760px) {
+
+      .login-card {
+        grid-template-columns: 1fr;
+      }
+
+
+      .intro-side {
+
+        min-height: auto;
+
+        padding: 35px 28px;
+      }
+
+
+      .intro-title {
+        font-size: 31px;
+      }
+
+
+      .intro-benefits {
+        display: none;
+      }
+
+
+      .intro-bottom {
+        margin-top: 38px;
+      }
+
+
+      .selection-side {
+        padding: 35px 28px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+  <div class="login-card">
+
+
+    <!-- LEFT -->
+
+    <section class="intro-side">
+
+
+      <div class="intro-main">
+
+
+        <div class="logo-placeholder">
+          R
+        </div>
+
+
+        <div class="intro-title">
+          Rahat Benefits Hub
+        </div>
+
+
+        <div class="intro-text">
+          Sizin üçün təqdim olunan xüsusi əməkdaş
+          imtiyazlarını, endirimləri və imkanları
+          bir yerdə kəşf edin.
+        </div>
+
+
+        <div class="intro-benefits">
+
+
+          <div class="intro-benefit">
+
+            <div class="intro-benefit-icon">
+              🎁
+            </div>
+
+            Əməkdaş imtiyazları
+
+          </div>
+
+
+          <div class="intro-benefit">
+
+            <div class="intro-benefit-icon">
+              %
+            </div>
+
+            Xüsusi endirimlər
+
+          </div>
+
+
+          <div class="intro-benefit">
+
+            <div class="intro-benefit-icon">
+              ✨
+            </div>
+
+            Sizə uyğun təkliflər
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="intro-bottom">
+        Employee Benefits & Perks
+      </div>
+
+
+    </section>
+
+
+
+    <!-- RIGHT -->
+
+    <section class="selection-side">
+
+
+      <div class="selection-kicker">
+        Başlayaq
+      </div>
+
+
+      <div class="selection-title">
+        Siz harada çalışırsınız?
+      </div>
+
+
+      <div class="selection-text">
+        Sizə uyğun imtiyazları göstərmək üçün
+        şirkətinizi və işçi kateqoriyanızı seçin.
+      </div>
+
+
+      <div id="filterMount">
+
+        <div class="loading">
+          Seçimlər yüklənir...
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+  </div>
+
+
+</div>
+
+
+
+<script>
+
+async function loadFilter() {
+
+
+  const filterMount =
+    document.getElementById(
+      "filterMount"
+    );
+
+
+  try {
+
+
+    const filterUrl =
+      new URL(
+        "filter.html",
+        window.location.href
+      );
+
+
+    const response =
+      await fetch(
+        filterUrl.href,
+        {
+          cache: "no-store"
+        }
+      );
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        "Filter yüklənmədi. HTTP status: " +
+        response.status
+      );
+
+    }
+
+
+    const filterHtml =
+      await response.text();
+
+
+    filterMount.innerHTML =
+      filterHtml;
+
+
+
+    const companyFilter =
+      document.getElementById(
+        "companyFilter"
+      );
+
+
+    const workerCategoryFilter =
+      document.getElementById(
+        "workerCategoryFilter"
+      );
+
+
+    const continueButton =
+      document.getElementById(
+        "continueButton"
+      );
+
+
+    const filterError =
+      document.getElementById(
+        "filterError"
+      );
+
+
+
+    if (
+      !companyFilter ||
+      !workerCategoryFilter ||
+      !continueButton
+    ) {
+
+      throw new Error(
+        "filter.html daxilində lazımi elementlər tapılmadı."
+      );
+
+    }
+
+
+
+    /* ƏVVƏLKİ SEÇİMLƏR */
+
+    const savedCompany =
+      localStorage.getItem(
+        "rahat-selected-company"
+      );
+
+
+    const savedWorkerCategory =
+      localStorage.getItem(
+        "rahat-selected-worker-category"
+      );
+
+
+    if (savedCompany) {
+
+      companyFilter.value =
+        savedCompany;
+
+    }
+
+
+    if (savedWorkerCategory) {
+
+      workerCategoryFilter.value =
+        savedWorkerCategory;
+
+    }
+
+
+
+    function updateContinueButton() {
+
+
+      const ready =
+
+        companyFilter.value !== ""
+
+        &&
+
+        workerCategoryFilter.value !== "";
+
+
+      continueButton.disabled =
+        !ready;
+
+
+      if (filterError) {
+
+        filterError.style.display =
+          "none";
+
+      }
+
+    }
+
+
+
+    companyFilter.addEventListener(
+      "change",
+      updateContinueButton
+    );
+
+
+    workerCategoryFilter.addEventListener(
+      "change",
+      updateContinueButton
+    );
+
+
+    updateContinueButton();
+
+
+
+    continueButton.addEventListener(
+      "click",
+      function() {
+
+
+        const company =
+          companyFilter.value;
+
+
+        const workerCategory =
+          workerCategoryFilter.value;
+
+
+
+        if (
+          !company ||
+          !workerCategory
+        ) {
+
+          if (filterError) {
+
+            filterError.style.display =
+              "block";
+
+          }
+
+          return;
+
+        }
+
+
+
+        const companyName =
+          companyFilter.options[
+            companyFilter.selectedIndex
+          ].text;
+
+
+        const workerCategoryName =
+          workerCategoryFilter.options[
+            workerCategoryFilter.selectedIndex
+          ].text;
+
+
+
+        localStorage.setItem(
+          "rahat-selected-company",
+          company
+        );
+
+
+        localStorage.setItem(
+          "rahat-selected-company-name",
+          companyName
+        );
+
+
+        localStorage.setItem(
+          "rahat-selected-worker-category",
+          workerCategory
+        );
+
+
+        localStorage.setItem(
+          "rahat-selected-worker-category-name",
+          workerCategoryName
+        );
+
+
+
+        const homeUrl =
+          new URL(
+            "home.html",
+            window.location.href
+          );
+
+
+        window.location.href =
+          homeUrl.href;
+
+
+      }
+    );
+
+
+  }
+
+
+  catch(error) {
+
+
+    console.error(
+      "Rahat Benefits filter error:",
+      error
+    );
+
+
+    filterMount.innerHTML = `
+
+      <div class="load-error">
+
+        ⚠️ Seçim bölməsi yüklənmədi.
+
+        <br><br>
+
+        <strong>Səbəb:</strong>
+        ${error.message}
+
+      </div>
+
+    `;
+
+
+  }
+
+
+}
+
+
+loadFilter();
+
+</script>
+
+
+</body>
+
+</html>
