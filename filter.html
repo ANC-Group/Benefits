@@ -2,7 +2,7 @@
 
   .filter-panel {
     width: 100%;
-    margin-top: 28px;
+    margin-top: 26px;
   }
 
   .filters {
@@ -22,6 +22,7 @@
     font-weight: 700;
   }
 
+  .filter-field input,
   .filter-field select {
     width: 100%;
     height: 52px;
@@ -38,7 +39,6 @@
     font-size: 14px;
 
     outline: none;
-    cursor: pointer;
 
     transition:
       border-color .15s ease,
@@ -46,10 +46,20 @@
       background .15s ease;
   }
 
+  .filter-field select {
+    cursor: pointer;
+  }
+
+  .filter-field input::placeholder {
+    color: #a5afb8;
+  }
+
+  .filter-field input:hover,
   .filter-field select:hover {
     border-color: #bcc8d4;
   }
 
+  .filter-field input:focus,
   .filter-field select:focus {
     border-color: #18a66a;
 
@@ -125,6 +135,42 @@
   <div class="filters">
 
 
+    <!-- AD -->
+
+    <div class="filter-field">
+
+      <label for="firstNameInput">
+        👤 Ad
+      </label>
+
+      <input
+        id="firstNameInput"
+        type="text"
+        placeholder="Adınızı yazın"
+        autocomplete="given-name"
+      >
+
+    </div>
+
+
+    <!-- SOYAD -->
+
+    <div class="filter-field">
+
+      <label for="lastNameInput">
+        Soyad
+      </label>
+
+      <input
+        id="lastNameInput"
+        type="text"
+        placeholder="Soyadınızı yazın"
+        autocomplete="family-name"
+      >
+
+    </div>
+
+
     <!-- ŞİRKƏT -->
 
     <div class="filter-field">
@@ -165,7 +211,7 @@
     <div class="filter-field">
 
       <label for="workerCategoryFilter">
-        👤 İşçi kateqoriyası
+        👥 İşçi kateqoriyası
       </label>
 
       <select id="workerCategoryFilter">
@@ -195,7 +241,7 @@
     id="continueButton"
     disabled
   >
-    Davam et →
+    Benefits Hub-a daxil ol →
   </button>
 
 
@@ -203,7 +249,7 @@
     class="filter-error"
     id="filterError"
   >
-    Zəhmət olmasa şirkət və işçi kateqoriyasını seçin.
+    Zəhmət olmasa bütün xanaları doldurun.
   </div>
 
 </div>
