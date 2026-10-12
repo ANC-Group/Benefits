@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="az">
 
 <head>
@@ -26,7 +27,6 @@
     }
 
     body {
-
       font-family:
         Inter,
         -apple-system,
@@ -57,7 +57,6 @@
 
 
     .page {
-
       min-height: 100vh;
 
       display: flex;
@@ -69,12 +68,11 @@
 
 
     .login-card {
-
       width: 100%;
-      max-width: 1000px;
+      max-width: 1040px;
 
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: .95fr 1.05fr;
 
       overflow: hidden;
 
@@ -88,14 +86,10 @@
     }
 
 
-
-    /* =========================================
-       LEFT SIDE
-    ========================================= */
+    /* LEFT SIDE */
 
     .intro-side {
-
-      min-height: 530px;
+      min-height: 570px;
 
       padding: 55px 46px;
 
@@ -111,14 +105,13 @@
       background:
         linear-gradient(
           145deg,
-          #159c63 0%,
-          #087c50 100%
+          #13a467 0%,
+          #087b4f 100%
         );
     }
 
 
     .intro-side::before {
-
       content: "";
 
       position: absolute;
@@ -137,7 +130,6 @@
 
 
     .intro-side::after {
-
       content: "";
 
       position: absolute;
@@ -156,7 +148,6 @@
 
 
     .intro-main {
-
       position: relative;
 
       z-index: 2;
@@ -164,7 +155,6 @@
 
 
     .logo-placeholder {
-
       width: 76px;
       height: 66px;
 
@@ -183,15 +173,12 @@
       font-size: 18px;
       font-weight: 900;
 
-      letter-spacing: -.3px;
-
       box-shadow:
         0 8px 20px rgba(0,0,0,.08);
     }
 
 
     .intro-title {
-
       font-size: 39px;
 
       line-height: 1.08;
@@ -203,7 +190,6 @@
 
 
     .intro-text {
-
       max-width: 380px;
 
       margin-top: 18px;
@@ -217,7 +203,6 @@
 
 
     .intro-benefits {
-
       margin-top: 30px;
 
       display: grid;
@@ -232,7 +217,6 @@
 
 
     .intro-benefit {
-
       display: flex;
       align-items: center;
 
@@ -241,9 +225,8 @@
 
 
     .intro-benefit-icon {
-
-      width: 27px;
-      height: 27px;
+      width: 28px;
+      height: 28px;
 
       display: flex;
       align-items: center;
@@ -257,7 +240,6 @@
 
 
     .intro-bottom {
-
       position: relative;
 
       z-index: 2;
@@ -269,13 +251,9 @@
     }
 
 
-
-    /* =========================================
-       RIGHT SIDE
-    ========================================= */
+    /* RIGHT */
 
     .selection-side {
-
       padding: 55px 46px;
 
       display: flex;
@@ -285,7 +263,6 @@
 
 
     .selection-kicker {
-
       color: #159c63;
 
       font-size: 12px;
@@ -298,7 +275,6 @@
 
 
     .selection-title {
-
       margin-top: 10px;
 
       font-size: 29px;
@@ -308,7 +284,6 @@
 
 
     .selection-text {
-
       margin-top: 8px;
 
       color: #78857e;
@@ -319,13 +294,11 @@
 
 
     #filterMount {
-
-      min-height: 195px;
+      min-height: 285px;
     }
 
 
     .loading {
-
       margin-top: 28px;
 
       padding: 18px;
@@ -342,7 +315,6 @@
 
 
     .load-error {
-
       margin-top: 28px;
 
       padding: 18px;
@@ -359,40 +331,29 @@
     }
 
 
-
-    /* =========================================
-       MOBILE
-    ========================================= */
-
     @media(max-width:760px) {
 
       .login-card {
         grid-template-columns: 1fr;
       }
 
-
       .intro-side {
-
         min-height: auto;
 
         padding: 35px 28px;
       }
 
-
       .intro-title {
         font-size: 31px;
       }
-
 
       .intro-benefits {
         display: none;
       }
 
-
       .intro-bottom {
         margin-top: 38px;
       }
-
 
       .selection-side {
         padding: 35px 28px;
@@ -410,13 +371,8 @@
 
 <div class="page">
 
-
   <div class="login-card">
 
-
-    <!-- =====================================
-         LEFT
-    ====================================== -->
 
     <section class="intro-side">
 
@@ -492,10 +448,6 @@
 
 
 
-    <!-- =====================================
-         RIGHT
-    ====================================== -->
-
     <section class="selection-side">
 
 
@@ -505,13 +457,13 @@
 
 
       <div class="selection-title">
-        Siz harada çalışırsınız?
+        Xoş gəlmisiniz 👋
       </div>
 
 
       <div class="selection-text">
         Sizə uyğun imtiyazları göstərmək üçün
-        şirkətinizi və işçi kateqoriyanızı seçin.
+        məlumatlarınızı daxil edin.
       </div>
 
 
@@ -529,7 +481,6 @@
 
   </div>
 
-
 </div>
 
 
@@ -537,7 +488,6 @@
 <script>
 
 async function loadFilter() {
-
 
   const filterMount =
     document.getElementById(
@@ -547,11 +497,6 @@ async function loadFilter() {
 
   try {
 
-
-    /*
-      filter.html index.html ilə
-      eyni qovluqdadır.
-    */
 
     const filterUrl =
       new URL(
@@ -588,9 +533,17 @@ async function loadFilter() {
 
 
 
-    /* =========================================
-       FILTER ELEMENTLƏRİ
-    ========================================= */
+    const firstNameInput =
+      document.getElementById(
+        "firstNameInput"
+      );
+
+
+    const lastNameInput =
+      document.getElementById(
+        "lastNameInput"
+      );
+
 
     const companyFilter =
       document.getElementById(
@@ -618,6 +571,8 @@ async function loadFilter() {
 
 
     if (
+      !firstNameInput ||
+      !lastNameInput ||
       !companyFilter ||
       !workerCategoryFilter ||
       !continueButton
@@ -631,20 +586,46 @@ async function loadFilter() {
 
 
 
-    /* =========================================
-       ƏVVƏLKİ SEÇİMLƏRİ YÜKLƏ
-    ========================================= */
+    /* ƏVVƏLKİ MƏLUMATLAR */
+
+    const savedFirstName =
+      localStorage.getItem(
+        "anc-first-name"
+      );
+
+
+    const savedLastName =
+      localStorage.getItem(
+        "anc-last-name"
+      );
+
 
     const savedCompany =
       localStorage.getItem(
-        "rahat-selected-company"
+        "anc-selected-company"
       );
 
 
     const savedWorkerCategory =
       localStorage.getItem(
-        "rahat-selected-worker-category"
+        "anc-selected-worker-category"
       );
+
+
+    if (savedFirstName) {
+
+      firstNameInput.value =
+        savedFirstName;
+
+    }
+
+
+    if (savedLastName) {
+
+      lastNameInput.value =
+        savedLastName;
+
+    }
 
 
     if (savedCompany) {
@@ -664,14 +645,18 @@ async function loadFilter() {
 
 
 
-    /* =========================================
-       DAVAM ET BUTTON
-    ========================================= */
-
     function updateContinueButton() {
 
 
       const ready =
+
+        firstNameInput.value.trim() !== ""
+
+        &&
+
+        lastNameInput.value.trim() !== ""
+
+        &&
 
         companyFilter.value !== ""
 
@@ -695,6 +680,18 @@ async function loadFilter() {
 
 
 
+    firstNameInput.addEventListener(
+      "input",
+      updateContinueButton
+    );
+
+
+    lastNameInput.addEventListener(
+      "input",
+      updateContinueButton
+    );
+
+
     companyFilter.addEventListener(
       "change",
       updateContinueButton
@@ -711,13 +708,17 @@ async function loadFilter() {
 
 
 
-    /* =========================================
-       DAVAM ET
-    ========================================= */
-
     continueButton.addEventListener(
       "click",
       function() {
+
+
+        const firstName =
+          firstNameInput.value.trim();
+
+
+        const lastName =
+          lastNameInput.value.trim();
 
 
         const company =
@@ -730,6 +731,8 @@ async function loadFilter() {
 
 
         if (
+          !firstName ||
+          !lastName ||
           !company ||
           !workerCategory
         ) {
@@ -760,40 +763,48 @@ async function loadFilter() {
 
 
 
-        /*
-          Hələlik bu key-ləri dəyişmirik.
-          home.html ilə uyğun işləməsi üçün
-          eyni saxlayırıq.
-        */
+        /* AD + SOYAD */
 
         localStorage.setItem(
-          "rahat-selected-company",
+          "anc-first-name",
+          firstName
+        );
+
+
+        localStorage.setItem(
+          "anc-last-name",
+          lastName
+        );
+
+
+        /* ŞİRKƏT */
+
+        localStorage.setItem(
+          "anc-selected-company",
           company
         );
 
 
         localStorage.setItem(
-          "rahat-selected-company-name",
+          "anc-selected-company-name",
           companyName
         );
 
 
+        /* KATEQORİYA */
+
         localStorage.setItem(
-          "rahat-selected-worker-category",
+          "anc-selected-worker-category",
           workerCategory
         );
 
 
         localStorage.setItem(
-          "rahat-selected-worker-category-name",
+          "anc-selected-worker-category-name",
           workerCategoryName
         );
 
 
-
-        /* =========================================
-           HOME PAGE
-        ========================================= */
 
         const homeUrl =
           new URL(
@@ -817,7 +828,7 @@ async function loadFilter() {
 
 
     console.error(
-      "ANC Group Benefits filter error:",
+      "ANC Benefits login error:",
       error
     );
 
@@ -826,7 +837,7 @@ async function loadFilter() {
 
       <div class="load-error">
 
-        ⚠️ Seçim bölməsi yüklənmədi.
+        ⚠️ Giriş bölməsi yüklənmədi.
 
         <br><br>
 
@@ -839,7 +850,6 @@ async function loadFilter() {
 
 
   }
-
 
 }
 
