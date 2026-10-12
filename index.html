@@ -196,11 +196,11 @@
     }
 
     .brand-strip {
-      margin-top: 22px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-    }
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
 
     .brand-card {
       height: 74px;
@@ -412,12 +412,6 @@
         const filterError =
           document.getElementById("filterError");
 
-        const companyLogoPreview =
-          document.getElementById("companyLogoPreview");
-
-        const companyLogoFallback =
-          document.getElementById("companyLogoFallback");
-
         if (
           !firstNameInput ||
           !companyFilter ||
@@ -457,27 +451,6 @@
 
           companyLogoPreview.style.display = "none";
           companyLogoFallback.style.display = "none";
-
-          if (value === "anc-group") {
-            companyLogoPreview.src = "anc-logo.png";
-            companyLogoPreview.alt = "ANC Group";
-            companyLogoPreview.style.display = "block";
-          } else if (
-            value === "rahat-market" ||
-            value === "rahat-gourmet"
-          ) {
-            companyLogoPreview.src = "rahat-logo.png";
-            companyLogoPreview.alt = "Rahat";
-            companyLogoPreview.style.display = "block";
-          } else if (value === "port-baku-bazar") {
-            companyLogoPreview.src = "portbaku-logo.png";
-            companyLogoPreview.alt = "Port Baku Bazar";
-            companyLogoPreview.style.display = "block";
-          } else if (value === "pribaltika") {
-            companyLogoFallback.textContent = "Pribaltika";
-            companyLogoFallback.style.display = "flex";
-          }
-        }
 
         function updateContinueButton() {
           const ready =
