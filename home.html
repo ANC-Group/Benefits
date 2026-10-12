@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="az">
 
 <head>
@@ -39,15 +38,13 @@
       --muted: #78857e;
 
       --border: #dee7e2;
-
       --background: #f6faf8;
-
-      --white: #ffffff;
 
     }
 
 
     body {
+
       margin: 0;
 
       font-family:
@@ -73,13 +70,13 @@
 
 
     /* =========================================
-       APP HEADER
+       HEADER
     ========================================= */
 
     .app-header {
 
       background:
-        rgba(255,255,255,.96);
+        rgba(255,255,255,.97);
 
       border-bottom:
         1px solid var(--border);
@@ -101,7 +98,7 @@
         1280px;
 
       min-height:
-        78px;
+        80px;
 
       margin:
         auto;
@@ -116,19 +113,17 @@
         center;
 
       gap:
-        15px;
+        14px;
     }
 
-
-    /* PROFILE */
 
     .profile-avatar {
 
       width:
-        49px;
+        50px;
 
       height:
-        49px;
+        50px;
 
       flex-shrink:
         0;
@@ -149,37 +144,27 @@
         linear-gradient(
           145deg,
           #ff7417,
-          #ff9a45
+          #ffa04f
         );
 
       color:
         white;
 
       font-size:
-        15px;
+        18px;
 
       font-weight:
-        850;
-
-      border:
-        3px solid white;
+        900;
 
       box-shadow:
-        0 3px 12px rgba(40,55,45,.12);
-    }
-
-
-    .welcome-block {
-
-      line-height:
-        1.15;
+        0 4px 13px rgba(50,60,50,.13);
     }
 
 
     .welcome-title {
 
       font-size:
-        16px;
+        17px;
 
       font-weight:
         850;
@@ -189,7 +174,7 @@
     .welcome-subtitle {
 
       margin-top:
-        5px;
+        4px;
 
       color:
         var(--muted);
@@ -200,9 +185,7 @@
 
 
     .header-spacer {
-
-      flex:
-        1;
+      flex: 1;
     }
 
 
@@ -229,11 +212,11 @@
       background:
         #f8fcfa;
 
-      font-size:
-        11px;
-
       color:
         #53655c;
+
+      font-size:
+        11px;
     }
 
 
@@ -323,12 +306,6 @@
 
       display:
         inline-flex;
-
-      align-items:
-        center;
-
-      gap:
-        7px;
 
       padding:
         7px 11px;
@@ -462,8 +439,7 @@
 
     .hero-card::before {
 
-      content:
-        "";
+      content: "";
 
       position:
         absolute;
@@ -560,41 +536,6 @@
     }
 
 
-    .section {
-
-      margin-bottom:
-        48px;
-    }
-
-
-    .section-title {
-
-      font-size:
-        22px;
-
-      font-weight:
-        850;
-    }
-
-
-    .section-description {
-
-      margin-top:
-        5px;
-
-      color:
-        var(--muted);
-
-      font-size:
-        13px;
-    }
-
-
-
-    /* =========================================
-       PROFILE INFO
-    ========================================= */
-
     .profile-grid {
 
       display:
@@ -653,9 +594,6 @@
       justify-content:
         center;
 
-      flex-shrink:
-        0;
-
       border-radius:
         11px;
 
@@ -690,12 +628,33 @@
     }
 
 
+    .section-title {
 
-    /* =========================================
-       BENEFITS PLACEHOLDER
-    ========================================= */
+      font-size:
+        22px;
+
+      font-weight:
+        850;
+    }
+
+
+    .section-description {
+
+      margin-top:
+        5px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        13px;
+    }
+
 
     .coming-box {
+
+      margin-top:
+        20px;
 
       padding:
         48px 25px;
@@ -754,19 +713,9 @@
 
 
 
-    /* =========================================
-       MOBILE
-    ========================================= */
-
     @media(max-width:800px) {
 
-      .hero-grid {
-
-        grid-template-columns:
-          1fr;
-      }
-
-
+      .hero-grid,
       .profile-grid {
 
         grid-template-columns:
@@ -836,12 +785,7 @@
 
 
 
-<!-- =========================================
-     APP HEADER
-========================================= -->
-
 <header class="app-header">
-
 
   <div class="header-inner">
 
@@ -850,11 +794,11 @@
       class="profile-avatar"
       id="profileAvatar"
     >
-      ANC
+      A
     </div>
 
 
-    <div class="welcome-block">
+    <div>
 
       <div
         class="welcome-title"
@@ -864,7 +808,7 @@
       </div>
 
       <div class="welcome-subtitle">
-        Sənin üçün özəl imkanları kəşf et!
+        Özəl imkanları kəşf et!
       </div>
 
     </div>
@@ -880,7 +824,6 @@
         —
       </span>
 
-
       <button
         class="change-button"
         id="changeButton"
@@ -893,26 +836,18 @@
 
   </div>
 
-
 </header>
 
 
 
-<!-- =========================================
-     HERO
-========================================= -->
-
 <section class="hero">
 
-
   <div class="hero-inner">
-
 
     <div class="hero-grid">
 
 
       <div>
-
 
         <div class="hero-kicker">
           ✨ ANC Group Benefits Hub
@@ -940,51 +875,38 @@
         >
         </div>
 
-
       </div>
 
 
 
       <div class="hero-card">
 
-
         <div class="hero-card-icon">
           🎁
         </div>
-
 
         <div class="hero-card-title">
           Sənin Benefits Hub-ın
         </div>
 
-
         <div class="hero-card-text">
-          Şəxsi seçimlərinə uyğun benefitlər
-          növbəti mərhələdə burada görünəcək.
+          Sənə uyğun bütün benefitlər və xüsusi
+          təkliflər burada görünəcək.
         </div>
-
 
       </div>
 
 
     </div>
 
-
   </div>
-
 
 </section>
 
 
 
-<!-- =========================================
-     MAIN
-========================================= -->
-
 <main class="page">
 
-
-  <!-- PROFILE DATA -->
 
   <section class="profile-grid">
 
@@ -1067,42 +989,34 @@
 
 
 
-  <!-- BENEFITS -->
-
-  <section class="section">
-
+  <section>
 
     <div class="section-title">
       Sənin imtiyazların
     </div>
-
 
     <div class="section-description">
       Sənə uyğun olan bütün benefitlər burada göstəriləcək.
     </div>
 
 
-    <div
-      class="coming-box"
-      style="margin-top:20px;"
-    >
+    <div class="coming-box">
 
       <div class="coming-icon">
         🎁
       </div>
 
       <div class="coming-title">
-        Növbəti addım: Benefitləri əlavə edirik
+        Benefitlər növbəti mərhələdə əlavə olunacaq
       </div>
 
       <div class="coming-text">
         Rahat Market, Rahat Gourmet, Port Baku Bazar və
-        Pribaltika üçün benefit məlumatlarını əlavə etdikdən sonra
-        sistem avtomatik olaraq yalnız sənə uyğun imtiyazları göstərəcək.
+        Pribaltika üçün imtiyazları əlavə etdikdən sonra
+        sistem seçiminə uyğun benefitləri avtomatik göstərəcək.
       </div>
 
     </div>
-
 
   </section>
 
@@ -1113,19 +1027,10 @@
 
 <script>
 
-/* =========================================
-   READ USER DATA
-========================================= */
 
 const firstName =
   localStorage.getItem(
     "anc-first-name"
-  );
-
-
-const lastName =
-  localStorage.getItem(
-    "anc-last-name"
   );
 
 
@@ -1154,13 +1059,10 @@ const workerCategoryName =
 
 
 
-/* =========================================
-   CHECK LOGIN DATA
-========================================= */
+/* GİRİŞ MƏLUMATLARINI YOXLAYIRIQ */
 
 if (
   !firstName ||
-  !lastName ||
   !company ||
   !workerCategory
 ) {
@@ -1172,44 +1074,24 @@ if (
 
 
 
-/* =========================================
-   INITIALS
-========================================= */
+/* AVATAR */
 
-function getInitials() {
+const initial =
+  firstName
+    .charAt(0)
+    .toUpperCase();
 
-  const first =
-    firstName
-      ? firstName.charAt(0)
-      : "";
-
-
-  const last =
-    lastName
-      ? lastName.charAt(0)
-      : "";
-
-
-  return (
-    first +
-    last
-  ).toUpperCase();
-
-}
-
-
-
-/* =========================================
-   RENDER PROFILE
-========================================= */
 
 document
   .getElementById(
     "profileAvatar"
   )
   .textContent =
-    getInitials();
+    initial;
 
+
+
+/* SALAM */
 
 document
   .getElementById(
@@ -1219,6 +1101,9 @@ document
     `Salam, ${firstName} 👋`;
 
 
+
+/* HERO */
+
 document
   .getElementById(
     "heroTitle"
@@ -1227,12 +1112,15 @@ document
     `${firstName}, sənin üçün özəl imkanlar 🎁`;
 
 
+
+/* PROFILE */
+
 document
   .getElementById(
     "employeeName"
   )
   .textContent =
-    `${firstName} ${lastName}`;
+    firstName;
 
 
 document
@@ -1251,12 +1139,16 @@ document
     workerCategoryName;
 
 
+
+/* HEADER */
+
 document
   .getElementById(
     "headerCompany"
   )
   .textContent =
     `${companyName} • ${workerCategoryName}`;
+
 
 
 document
@@ -1268,9 +1160,7 @@ document
 
 
 
-/* =========================================
-   CHANGE PROFILE
-========================================= */
+/* DƏYİŞ */
 
 document
   .getElementById(
@@ -1285,6 +1175,7 @@ document
 
     }
   );
+
 
 </script>
 
