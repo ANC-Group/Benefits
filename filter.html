@@ -11,6 +11,10 @@
     gap: 14px;
   }
 
+  .filter-field:first-child {
+    grid-column: 1 / -1;
+  }
+
   .filter-field label {
     display: block;
 
@@ -39,11 +43,6 @@
     font-size: 14px;
 
     outline: none;
-
-    transition:
-      border-color .15s ease,
-      box-shadow .15s ease,
-      background .15s ease;
   }
 
   .filter-field select {
@@ -119,15 +118,21 @@
     text-align: center;
   }
 
+
   @media(max-width:650px) {
 
     .filters {
       grid-template-columns: 1fr;
     }
 
+    .filter-field:first-child {
+      grid-column: auto;
+    }
+
   }
 
 </style>
+
 
 
 <div class="filter-panel">
@@ -152,23 +157,6 @@
 
     </div>
 
-
-    <!-- SOYAD -->
-
-    <div class="filter-field">
-
-      <label for="lastNameInput">
-        Soyad
-      </label>
-
-      <input
-        id="lastNameInput"
-        type="text"
-        placeholder="Soyadınızı yazın"
-        autocomplete="family-name"
-      >
-
-    </div>
 
 
     <!-- ŞİRKƏT -->
@@ -204,6 +192,7 @@
       </select>
 
     </div>
+
 
 
     <!-- İŞÇİ KATEQORİYASI -->
@@ -249,7 +238,7 @@
     class="filter-error"
     id="filterError"
   >
-    Zəhmət olmasa bütün xanaları doldurun.
+    Zəhmət olmasa adınızı, şirkəti və işçi kateqoriyasını seçin.
   </div>
 
 </div>
