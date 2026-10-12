@@ -1,0 +1,209 @@
+<style>
+
+  .filter-panel {
+    width: 100%;
+    margin-top: 28px;
+  }
+
+  .filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .filter-field label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #667085;
+
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .filter-field select {
+    width: 100%;
+    height: 52px;
+
+    border: 1px solid #d9e1ea;
+    border-radius: 12px;
+
+    padding: 0 14px;
+
+    background: #f9fbfc;
+
+    color: #263238;
+
+    font-size: 14px;
+
+    outline: none;
+    cursor: pointer;
+
+    transition:
+      border-color .15s ease,
+      box-shadow .15s ease,
+      background .15s ease;
+  }
+
+  .filter-field select:hover {
+    border-color: #bcc8d4;
+  }
+
+  .filter-field select:focus {
+    border-color: #18a66a;
+
+    background: white;
+
+    box-shadow:
+      0 0 0 3px rgba(24,166,106,.09);
+  }
+
+  .continue-button {
+    width: 100%;
+    height: 52px;
+
+    margin-top: 18px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #18a66a;
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition:
+      transform .15s ease,
+      background .15s ease,
+      box-shadow .15s ease;
+  }
+
+  .continue-button:hover:not(:disabled) {
+    background: #128557;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+      0 9px 20px rgba(24,166,106,.19);
+  }
+
+  .continue-button:disabled {
+    opacity: .40;
+    cursor: not-allowed;
+  }
+
+  .filter-error {
+    display: none;
+
+    margin-top: 12px;
+
+    color: #c63f55;
+
+    font-size: 12px;
+
+    text-align: center;
+  }
+
+  @media(max-width:650px) {
+
+    .filters {
+      grid-template-columns: 1fr;
+    }
+
+  }
+
+</style>
+
+
+<div class="filter-panel">
+
+  <div class="filters">
+
+
+    <!-- ŞİRKƏT -->
+
+    <div class="filter-field">
+
+      <label for="companyFilter">
+        🏢 Şirkət
+      </label>
+
+      <select id="companyFilter">
+
+        <option value="">
+          Şirkətinizi seçin
+        </option>
+
+        <option value="rahat-market">
+          Rahat Market
+        </option>
+
+        <option value="rahat-gourmet">
+          Rahat Gourmet
+        </option>
+
+        <option value="port-baku-bazar">
+          Port Baku Bazar
+        </option>
+
+        <option value="pribaltika">
+          Pribaltika
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <!-- İŞÇİ KATEQORİYASI -->
+
+    <div class="filter-field">
+
+      <label for="workerCategoryFilter">
+        👤 İşçi kateqoriyası
+      </label>
+
+      <select id="workerCategoryFilter">
+
+        <option value="">
+          İşçi kateqoriyasını seçin
+        </option>
+
+        <option value="office">
+          Ofis əməkdaşı
+        </option>
+
+        <option value="store">
+          Mağaza əməkdaşı
+        </option>
+
+      </select>
+
+    </div>
+
+
+  </div>
+
+
+  <button
+    class="continue-button"
+    id="continueButton"
+    disabled
+  >
+    Davam et →
+  </button>
+
+
+  <div
+    class="filter-error"
+    id="filterError"
+  >
+    Zəhmət olmasa şirkət və işçi kateqoriyasını seçin.
+  </div>
+
+</div>
