@@ -1,4314 +1,733 @@
+
 <!DOCTYPE html>
 <html lang="az">
-
 <head>
-
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>ANC Group İmtiyazlar Platforması</title>
-
-
-  <style>
-
-    * {
-      box-sizing: border-box;
-    }
-
-
-    :root {
-
-      --bg: #f7f8f7;
-      --card: #ffffff;
-
-      --green: #4db66b;
-      --green-dark: #337f4b;
-      --green-soft: #eaf7ee;
-
-      --red: #d96662;
-      --red-dark: #b94e4b;
-      --red-soft: #fdeeed;
-
-      --orange-soft: #fff1e8;
-
-      --text: #262626;
-      --muted: #848484;
-
-      --border: #ececec;
-
-      --shadow:
-        0 10px 28px rgba(0,0,0,.055);
-
-    }
-
-
-    body {
-
-      margin: 0;
-
-      padding-bottom: 92px;
-
-      background:
-        var(--bg);
-
-      color:
-        var(--text);
-
-      font-family:
-        Inter,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Arial,
-        sans-serif;
-
-    }
-
-
-    button,
-    input {
-      font-family: inherit;
-    }
-
-
-    button {
-      cursor: pointer;
-    }
-
-
-    .app {
-
-      width: 100%;
-
-      max-width: 540px;
-
-      min-height: 100vh;
-
-      margin: auto;
-
-      background:
-        var(--bg);
-
-    }
-
-
-    /* =========================================
-       HEADER
-    ========================================= */
-
-    .top {
-
-      padding:
-        18px 18px 10px;
-
-      background:
-
-        radial-gradient(
-          circle at 90% 0%,
-          rgba(217,102,98,.10),
-          transparent 36%
-        ),
-
-        linear-gradient(
-          180deg,
-          #fff4f2 0%,
-          #f7f8f7 100%
-        );
-
-    }
-
-
-    .top-row {
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      gap: 10px;
-
-    }
-
-
-    .user-area {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 11px;
-
-      min-width: 0;
-
-    }
-
-
-    .avatar {
-
-      width: 49px;
-
-      height: 49px;
-
-      flex-shrink: 0;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      border-radius: 50%;
-
-      background:
-        linear-gradient(
-          145deg,
-          #dd7772,
-          #bf4d49
-        );
-
-      color: white;
-
-      box-shadow:
-        var(--shadow);
-
-    }
-
-
-    .avatar svg {
-
-      width: 30px;
-
-      height: 30px;
-
-    }
-
-
-    .hello {
-
-      min-width: 0;
-
-    }
-
-
-    .hello-title {
-
-      margin: 0;
-
-      font-size: 21px;
-
-      font-weight: 850;
-
-      line-height: 1.1;
-
-    }
-
-
-    .hello-subtitle {
-
-      margin-top: 4px;
-
-      color:
-        var(--muted);
-
-      font-size: 11px;
-
-    }
-
-
-    .top-actions {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 6px;
-
-      flex-shrink: 0;
-
-    }
-
-
-    .change-button {
-
-      min-height: 40px;
-
-      padding:
-        0 9px;
-
-      border:
-        1px solid #d7eadf;
-
-      border-radius: 13px;
-
-      background:
-        var(--green-soft);
-
-      color:
-        var(--green-dark);
-
-      font-size: 9px;
-
-      font-weight: 800;
-
-      white-space: nowrap;
-
-    }
-
-
-    .notification-button {
-
-      position: relative;
-
-      width: 42px;
-
-      height: 42px;
-
-      border: none;
-
-      border-radius: 14px;
-
-      background: white;
-
-      box-shadow:
-        var(--shadow);
-
-      font-size: 19px;
-
-    }
-
-
-    .notification-badge {
-
-      position: absolute;
-
-      top: -5px;
-
-      right: -5px;
-
-      min-width: 21px;
-
-      height: 21px;
-
-      padding:
-        0 5px;
-
-      display: none;
-
-      align-items: center;
-
-      justify-content: center;
-
-      border:
-        3px solid #fff4f2;
-
-      border-radius: 999px;
-
-      background:
-        var(--red);
-
-      color: white;
-
-      font-size: 9px;
-
-      font-weight: 850;
-
-    }
-
-
-    /* =========================================
-       SEARCH
-    ========================================= */
-
-    .search-box {
-
-      height: 52px;
-
-      margin-top: 18px;
-
-      padding:
-        0 16px;
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 10px;
-
-      border:
-        1px solid var(--border);
-
-      border-radius: 17px;
-
-      background: white;
-
-      box-shadow:
-        var(--shadow);
-
-    }
-
-
-    .search-box input {
-
-      width: 100%;
-
-      border: none;
-
-      outline: none;
-
-      background: transparent;
-
-      font-size: 14px;
-
-    }
-
-
-    .search-icon {
-
-      opacity: .6;
-
-    }
-
-
-    /* =========================================
-       MAIN
-    ========================================= */
-
-    main {
-
-      padding:
-        5px 18px 30px;
-
-    }
-
-
-    .screen.hidden {
-
-      display: none;
-
-    }
-
-
-    .section {
-
-      margin-top: 23px;
-
-    }
-
-
-    .section-header {
-
-      margin-bottom: 13px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      gap: 10px;
-
-    }
-
-
-    .section-title {
-
-      margin: 0;
-
-      font-size: 21px;
-
-      font-weight: 850;
-
-    }
-
-
-    .section-link {
-
-      border: none;
-
-      background: transparent;
-
-      color:
-        var(--muted);
-
-      font-size: 12px;
-
-    }
-
-
-    /* =========================================
-       CATEGORIES
-    ========================================= */
-
-    .categories {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(4,1fr);
-
-      gap: 9px;
-
-    }
-
-
-    .category-card {
-
-      min-height: 102px;
-
-      padding:
-        11px 5px 9px;
-
-      display: flex;
-
-      flex-direction: column;
-
-      align-items: center;
-
-      justify-content: flex-start;
-
-      border:
-        1px solid var(--border);
-
-      border-radius: 19px;
-
-      background: white;
-
-      box-shadow:
-        var(--shadow);
-
-    }
-
-
-    .category-icon {
-
-      width: 44px;
-
-      height: 44px;
-
-      margin-bottom: 8px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      border-radius: 14px;
-
-      background:
-        var(--orange-soft);
-
-      font-size: 20px;
-
-    }
-
-
-    .category-name {
-
-      color: #464646;
-
-      font-size: 10px;
-
-      font-weight: 750;
-
-      line-height: 1.2;
-
-      text-align: center;
-
-    }
-
-
-    /* =========================================
-       FEATURED / NEW PARTNERS
-    ========================================= */
-
-    .horizontal-cards {
-
-      display: flex;
-
-      gap: 13px;
-
-      overflow-x: auto;
-
-      padding-bottom: 6px;
-
-    }
-
-
-    .horizontal-cards::-webkit-scrollbar {
-
-      display: none;
-
-    }
-
-
-    .featured-card {
-
-      min-width: 245px;
-
-      overflow: hidden;
-
-      border:
-        1px solid var(--border);
-
-      border-radius: 22px;
-
-      background: white;
-
-      box-shadow:
-        var(--shadow);
-
-    }
-
-
-    .featured-top {
-
-      position: relative;
-
-      height: 135px;
-
-      padding: 18px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      background:
-
-        radial-gradient(
-          circle at 90% 10%,
-          rgba(217,102,98,.13),
-          transparent 35%
-        ),
-
-        linear-gradient(
-          135deg,
-          #eff9f2,
-          #ffffff
-        );
-
-      color:
-        var(--green-dark);
-
-      font-size: 27px;
-
-      font-weight: 900;
-
-      text-align: center;
-
-    }
-
-
-    .discount-badge {
-
-      position: absolute;
-
-      top: 13px;
-
-      right: 13px;
-
-      padding:
-        6px 9px;
-
-      border-radius: 11px;
-
-      background:
-        var(--red);
-
-      color: white;
-
-      font-size: 11px;
-
-      font-weight: 850;
-
-    }
-
-
-    .favorite-button {
-
-      width: 36px;
-
-      height: 36px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      border:
-        1px solid #f0dddd;
-
-      border-radius: 50%;
-
-      background: white;
-
-      color:
-        var(--red);
-
-      font-size: 20px;
-
-    }
-
-
-    .favorite-button.active {
-
-      background:
-        var(--red-soft);
-
-    }
-
-
-    .featured-top .favorite-button {
-
-      position: absolute;
-
-      top: 12px;
-
-      left: 12px;
-
-    }
-
-
-    .featured-body {
-
-      padding: 15px;
-
-    }
-
-
-    .featured-name {
-
-      font-size: 17px;
-
-      font-weight: 850;
-
-    }
-
-
-    .featured-description {
-
-      margin-top: 6px;
-
-      min-height: 35px;
-
-      color: #727272;
-
-      font-size: 12px;
-
-      line-height: 1.45;
-
-    }
-
-
-    .featured-bottom {
-
-      margin-top: 13px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      gap: 8px;
-
-    }
-
-
-    .category-chip {
-
-      padding:
-        6px 9px;
-
-      border-radius: 999px;
-
-      background:
-        var(--green-soft);
-
-      color:
-        var(--green-dark);
-
-      font-size: 10px;
-
-      font-weight: 800;
-
-    }
-
-
-    .open-button {
-
-      width: 35px;
-
-      height: 35px;
-
-      border: none;
-
-      border-radius: 50%;
-
-      background: #f3f4f3;
-
-      color: #555;
-
-      font-size: 17px;
-
-    }
-
-
-    /* =========================================
-       STANDARD PARTNER LIST
-    ========================================= */
-
-    .partner-list {
-
-      display: grid;
-
-      gap: 12px;
-
-    }
-
-
-    .partner-card {
-
-      padding: 16px;
-
-      border:
-        1px solid var(--border);
-
-      border-radius: 19px;
-
-      background: white;
-
-      box-shadow:
-        var(--shadow);
-
-    }
-
-
-    .partner-top {
-
-      display: flex;
-
-      align-items: flex-start;
-
-      justify-content: space-between;
-
-      gap: 12px;
-
-    }
-
-
-    .partner-info {
-
-      flex: 1;
-
-      min-width: 0;
-
-    }
-
-
-    .partner-name {
-
-      font-size: 17px;
-
-      font-weight: 850;
-
-    }
-
-
-    .partner-description {
-
-      margin-top: 5px;
-
-      color:
-        #757575;
-
-      font-size: 12px;
-
-      line-height: 1.5;
-
-      white-space: pre-line;
-
-    }
-
-
-    .right-actions {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 7px;
-
-    }
-
-
-    .small-discount {
-
-      padding:
-        6px 8px;
-
-      border-radius: 999px;
-
-      background:
-        var(--red-soft);
-
-      color:
-        var(--red-dark);
-
-      font-size: 11px;
-
-      font-weight: 850;
-
-      white-space: nowrap;
-
-    }
-
-
-    .tags {
-
-      margin-top: 12px;
-
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 7px;
-
-    }
-
-
-    .tag {
-
-      padding:
-        6px 9px;
-
-      border-radius: 999px;
-
-      background: #f3f7f5;
-
-      color: #5c6861;
-
-      font-size: 10px;
-
-      font-weight: 750;
-
-    }
-
-
-    .card-buttons {
-
-      margin-top: 13px;
-
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 8px;
-
-    }
-
-
-    .soft-button {
-
-      padding:
-        10px 13px;
-
-      border: none;
-
-      border-radius: 12px;
-
-      background:
-        var(--green-soft);
-
-      color:
-        var(--green-dark);
-
-      font-size: 11px;
-
-      font-weight: 800;
-
-      text-decoration: none;
-
-    }
-
-
-    .soft-button.red {
-
-      background:
-        var(--red-soft);
-
-      color:
-        var(--red-dark);
-
-    }
-
-
-    /* =========================================
-       EMPTY
-    ========================================= */
-
-    .empty-box {
-
-      padding: 27px 20px;
-
-      border:
-        1px dashed #d7dfda;
-
-      border-radius: 18px;
-
-      background: white;
-
-      color: #777;
-
-      font-size: 13px;
-
-      line-height: 1.55;
-
-      text-align: center;
-
-    }
-
-
-    .empty-icon {
-
-      margin-bottom: 8px;
-
-      font-size: 34px;
-
-    }
-
-
-    /* =========================================
-       NOTIFICATION PANEL
-    ========================================= */
-
-    .notification-panel {
-
-      position: fixed;
-
-      top: 78px;
-
-      left: 16px;
-
-      right: 16px;
-
-      z-index: 400;
-
-      max-width: 500px;
-
-      margin: auto;
-
-      padding: 16px;
-
-      border:
-        1px solid var(--border);
-
-      border-radius: 20px;
-
-      background: white;
-
-      box-shadow:
-        0 20px 55px rgba(0,0,0,.13);
-
-    }
-
-
-    .notification-panel.hidden {
-
-      display: none;
-
-    }
-
-
-    .notification-header {
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      gap: 10px;
-
-      margin-bottom: 8px;
-
-    }
-
-
-    .close-button {
-
-      width: 32px;
-
-      height: 32px;
-
-      border: none;
-
-      border-radius: 50%;
-
-      background: #f4f4f4;
-
-      font-size: 16px;
-
-    }
-
-
-    .notification-item {
-
-      padding:
-        11px 0;
-
-      border-bottom:
-        1px solid #f0f0f0;
-
-    }
-
-
-    .notification-item:last-child {
-
-      border-bottom: none;
-
-    }
-
-
-    .notification-title {
-
-      font-size: 13px;
-
-      font-weight: 850;
-
-    }
-
-
-    .notification-text {
-
-      margin-top: 4px;
-
-      color: #6f6f6f;
-
-      font-size: 12px;
-
-      line-height: 1.4;
-
-    }
-
-
-    /* =========================================
-       MODAL
-    ========================================= */
-
-    .modal-backdrop {
-
-      position: fixed;
-
-      inset: 0;
-
-      z-index: 600;
-
-      padding:
-        20px 14px;
-
-      display: flex;
-
-      align-items: flex-end;
-
-      justify-content: center;
-
-      background:
-        rgba(24,24,24,.43);
-
-    }
-
-
-    .modal-backdrop.hidden {
-
-      display: none;
-
-    }
-
-
-    .modal {
-
-      width: 100%;
-
-      max-width: 520px;
-
-      max-height: 87vh;
-
-      overflow-y: auto;
-
-      padding: 20px;
-
-      border-radius:
-        25px 25px 18px 18px;
-
-      background: white;
-
-      box-shadow:
-        0 25px 70px rgba(0,0,0,.20);
-
-    }
-
-
-    .modal-header {
-
-      display: flex;
-
-      align-items: flex-start;
-
-      justify-content: space-between;
-
-      gap: 12px;
-
-    }
-
-
-    .modal-title {
-
-      margin: 0;
-
-      font-size: 23px;
-
-      font-weight: 900;
-
-    }
-
-
-    .modal-category {
-
-      margin-top: 5px;
-
-      color:
-        var(--green-dark);
-
-      font-size: 11px;
-
-      font-weight: 800;
-
-    }
-
-
-    .modal-section {
-
-      margin-top: 20px;
-
-    }
-
-
-    .modal-label {
-
-      margin-bottom: 7px;
-
-      color: #919191;
-
-      font-size: 10px;
-
-      font-weight: 850;
-
-      text-transform: uppercase;
-
-      letter-spacing: .6px;
-
-    }
-
-
-    .modal-content {
-
-      color: #484848;
-
-      font-size: 13px;
-
-      line-height: 1.65;
-
-      white-space: pre-line;
-
-    }
-
-
-    .discount-box {
-
-      margin-top: 16px;
-
-      padding:
-        14px 15px;
-
-      border-radius: 15px;
-
-      background:
-        var(--red-soft);
-
-      color:
-        var(--red-dark);
-
-    }
-
-
-    .discount-box strong {
-
-      font-size: 22px;
-
-    }
-
-
-    /* PROMO */
-
-    .promo-box {
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      gap: 12px;
-
-      padding:
-        12px 14px;
-
-      border:
-        1px dashed #cde2d4;
-
-      border-radius: 14px;
-
-      background:
-        var(--green-soft);
-
-    }
-
-
-    .promo-code {
-
-      color:
-        var(--green-dark);
-
-      font-size: 18px;
-
-      font-weight: 900;
-
-      letter-spacing: .5px;
-
-    }
-
-
-    .copy-button {
-
-      padding:
-        8px 10px;
-
-      border: none;
-
-      border-radius: 10px;
-
-      background: white;
-
-      color:
-        var(--green-dark);
-
-      font-size: 10px;
-
-      font-weight: 850;
-
-    }
-
-
-    /* RELATED PERSON */
-
-    .contact-box {
-
-      padding: 15px;
-
-      border:
-        1px solid #d8e9df;
-
-      border-radius: 15px;
-
-      background:
-        #f5fbf7;
-
-    }
-
-
-    .contact-name {
-
-      color: #353535;
-
-      font-size: 14px;
-
-      font-weight: 850;
-
-    }
-
-
-    .contact-phone {
-
-      margin-top: 7px;
-
-    }
-
-
-    .phone-link {
-
-      display: inline-flex;
-
-      align-items: center;
-
-      gap: 7px;
-
-      color:
-        var(--green-dark);
-
-      font-size: 14px;
-
-      font-weight: 850;
-
-      text-decoration: none;
-
-    }
-
-
-    .contact-help {
-
-      margin-top: 8px;
-
-      color: #888;
-
-      font-size: 10px;
-
-      line-height: 1.4;
-
-    }
-
-
-    .external-buttons {
-
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 8px;
-
-    }
-
-
-    /* =========================================
-       BOTTOM NAV
-    ========================================= */
-
-    .bottom-nav {
-
-      position: fixed;
-
-      left: 50%;
-
-      bottom: 0;
-
-      z-index: 300;
-
-      transform:
-        translateX(-50%);
-
-      width: 100%;
-
-      max-width: 540px;
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(4,1fr);
-
-      padding:
-        8px 5px
-        calc(8px + env(safe-area-inset-bottom));
-
-      border-top:
-        1px solid var(--border);
-
-      background:
-        rgba(255,255,255,.96);
-
-      backdrop-filter:
-        blur(12px);
-
-    }
-
-
-    .nav-button {
-
-      padding:
-        7px 2px;
-
-      display: flex;
-
-      flex-direction: column;
-
-      align-items: center;
-
-      gap: 4px;
-
-      border: none;
-
-      border-radius: 13px;
-
-      background: transparent;
-
-      color: #7e7e7e;
-
-      font-size: 9px;
-
-      font-weight: 750;
-
-    }
-
-
-    .nav-button.active {
-
-      background:
-        var(--green-soft);
-
-      color:
-        var(--green-dark);
-
-    }
-
-
-    .nav-icon {
-
-      font-size: 18px;
-
-    }
-
-
-    @media(max-width:420px) {
-
-      .top,
-      main {
-
-        padding-left: 14px;
-
-        padding-right: 14px;
-
-      }
-
-
-      .hello-title {
-
-        font-size: 18px;
-
-      }
-
-
-      .avatar {
-
-        width: 44px;
-
-        height: 44px;
-
-      }
-
-
-      .change-button {
-
-        padding:
-          0 6px;
-
-        font-size: 8px;
-
-      }
-
-
-      .categories {
-
-        gap: 7px;
-
-      }
-
-
-      .category-card {
-
-        min-height: 94px;
-
-        padding:
-          10px 3px 7px;
-
-      }
-
-
-      .category-icon {
-
-        width: 40px;
-
-        height: 40px;
-
-        font-size: 18px;
-
-      }
-
-
-      .category-name {
-
-        font-size: 9px;
-
-      }
-
-    }
-
-  </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANC Group İmtiyazlar Platforması</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --green: #317f4c;
+  --green-soft: #eaf6ee;
+  --red: #d96763;
+  --red-soft: #fdeeed;
+  --bg: #f7f8f7;
+  --text: #242424;
+  --muted: #777;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  max-width: 540px;
+  min-height: 100vh;
+  margin: auto;
+  padding-bottom: 90px;
+}
+
+header {
+  padding: 24px 18px;
+  background: linear-gradient(#fff1ef, var(--bg));
+}
+
+h1 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 7px;
+}
+
+.search {
+  width: 100%;
+  margin-top: 22px;
+  padding: 16px;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  background: white;
+  font-size: 14px;
+  outline: none;
+}
+
+main {
+  padding: 0 18px;
+}
+
+h2 {
+  font-size: 21px;
+  margin: 23px 0 14px;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.category {
+  padding: 15px 5px;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 18px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.category.active {
+  background: var(--green-soft);
+  color: var(--green);
+  border-color: #cce5d3;
+}
+
+.category-icon {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 9px;
+}
+
+.cards {
+  display: grid;
+  gap: 14px;
+}
+
+.card {
+  background: white;
+  border-radius: 22px;
+  border: 1px solid #eee;
+  overflow: hidden;
+  box-shadow: 0 8px 25px #00000008;
+}
+
+.card-cover {
+  height: 155px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eef8f1, #fff5f4);
+}
+
+.partner-logo {
+  max-width: 75%;
+  max-height: 105px;
+  object-fit: contain;
+}
+
+.partner-placeholder {
+  color: var(--green);
+  font-size: 26px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.discount {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: var(--red);
+  color: white;
+  padding: 8px 10px;
+  border-radius: 11px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.favorite {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  width: 38px;
+  height: 38px;
+  background: white;
+  border: 1px solid #f0dddd;
+  border-radius: 50%;
+  color: var(--red);
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.card-body {
+  padding: 18px;
+}
+
+.partner-name {
+  font-size: 19px;
+  font-weight: 850;
+}
+
+.partner-description {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 8px;
+  white-space: pre-line;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 19px;
+}
+
+.category-chip {
+  background: var(--green-soft);
+  color: var(--green);
+  padding: 8px 12px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.detail-button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #f3f4f3;
+  cursor: pointer;
+  font-size: 19px;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 540px;
+  background: white;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-around;
+  padding: 13px 5px;
+}
+
+.nav-button {
+  border: none;
+  background: transparent;
+  color: #777;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav-button.active {
+  color: var(--green);
+}
+
+dialog {
+  width: min(94vw, 520px);
+  max-height: 85vh;
+  overflow-y: auto;
+  border: none;
+  border-radius: 23px;
+  padding: 22px;
+  box-shadow: 0 20px 70px #0003;
+}
+
+dialog::backdrop {
+  background: #0007;
+}
+
+.modal-logo {
+  display: block;
+  width: 200px;
+  max-height: 120px;
+  object-fit: contain;
+  margin: 15px auto;
+}
+
+.modal-section {
+  margin-top: 20px;
+}
+
+.modal-label {
+  color: var(--green);
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.modal-text {
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+.promo {
+  padding: 15px;
+  border-radius: 13px;
+  background: var(--green-soft);
+  color: var(--green);
+  font-weight: bold;
+}
+
+.action-link, .copy-button {
+  display: inline-block;
+  margin: 5px 5px 5px 0;
+  padding: 11px 13px;
+  border: none;
+  border-radius: 11px;
+  background: var(--green-soft);
+  color: var(--green);
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close {
+  float: right;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.empty {
+  padding: 30px;
+  text-align: center;
+  color: var(--muted);
+  background: white;
+  border-radius: 18px;
+}
+
+@media (min-width: 500px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>
 </head>
-
 
 <body>
 
-
 <div class="app">
 
-
-  <!-- HEADER -->
-
-  <header class="top">
-
-
-    <div class="top-row">
-
-
-      <div class="user-area">
-
-
-        <div class="avatar">
-
-          <svg
-            viewBox="0 0 64 64"
-            fill="none"
-          >
-
-            <circle
-              cx="32"
-              cy="18"
-              r="10"
-              fill="currentColor"
-            />
-
-            <path
-              d="M14 52C16.5 42 23.5 36 32 36C40.5 36 47.5 42 50 52"
-              fill="currentColor"
-            />
-
-          </svg>
-
-        </div>
-
-
-        <div class="hello">
-
-          <h1
-            class="hello-title"
-            id="helloTitle"
-          >
-            Salam
-          </h1>
-
-
-          <div class="hello-subtitle">
-
-            Özəl imtiyazları kəşf edin!
-
-          </div>
-
-        </div>
-
-
-      </div>
-
-
-
-      <div class="top-actions">
-
-
-        <button
-          class="change-button"
-          id="changeButton"
-        >
-
-          Şirkət / kateqoriya
-
-        </button>
-
-
-        <button
-          class="notification-button"
-          id="notificationButton"
-        >
-
-          🔔
-
-          <span
-            class="notification-badge"
-            id="notificationBadge"
-          >
-          </span>
-
-        </button>
-
-
-      </div>
-
-
-    </div>
-
-
-
-    <div class="search-box">
-
-      <span class="search-icon">
-        🔎
-      </span>
-
-      <input
-        id="searchInput"
-        type="text"
-        placeholder="Partnyor və ya kateqoriya axtar"
-      >
-
-    </div>
-
-
-  </header>
-
-
-
-  <main>
-
-
-    <!-- =====================================
-         HOME
-    ====================================== -->
-
-    <section
-      class="screen"
-      id="screen-home"
-    >
-
-
-      <div class="section">
-
-
-        <div class="section-header">
-
-
-          <h2 class="section-title">
-            Kateqoriyalar
-          </h2>
-
-
-          <button
-            class="section-link"
-            id="allCategoriesButton"
-          >
-            Hamısı ›
-          </button>
-
-
-        </div>
-
-
-        <div
-          class="categories"
-          id="categoriesContainer"
-        >
-        </div>
-
-
-      </div>
-
-
-
-      <div class="section">
-
-
-        <div class="section-header">
-
-
-          <h2 class="section-title">
-            Yeni partnyorlar
-          </h2>
-
-
-          <button
-            class="section-link"
-            id="allPartnersButton"
-          >
-            Hamısı ›
-          </button>
-
-
-        </div>
-
-
-        <div
-          class="horizontal-cards"
-          id="newPartnersContainer"
-        >
-        </div>
-
-
-      </div>
-
-
-    </section>
-
-
-
-    <!-- =====================================
-         NEARBY
-    ====================================== -->
-
-    <section
-      class="screen hidden"
-      id="screen-nearby"
-    >
-
-
-      <div class="section">
-
-
-        <div class="section-header">
-
-          <h2 class="section-title">
-            Yaxınlıqda
-          </h2>
-
-        </div>
-
-
-        <div
-          class="empty-box"
-          id="locationMessage"
-        >
-
-          Yaxınlıqdakı partnyorları göstərmək üçün
-          konum icazəsi tələb olunur.
-
-        </div>
-
-
-        <div
-          class="partner-list"
-          id="nearbyContainer"
-          style="margin-top:12px;"
-        >
-        </div>
-
-
-      </div>
-
-
-    </section>
-
-
-
-    <!-- =====================================
-         FAVORITES
-    ====================================== -->
-
-    <section
-      class="screen hidden"
-      id="screen-favorites"
-    >
-
-
-      <div class="section">
-
-
-        <div class="section-header">
-
-
-          <h2 class="section-title">
-            Favorilər
-          </h2>
-
-
-          <span
-            class="section-link"
-            id="favoriteCount"
-          >
-            0 partnyor
-          </span>
-
-
-        </div>
-
-
-        <div
-          class="partner-list"
-          id="favoritesContainer"
-        >
-        </div>
-
-
-      </div>
-
-
-    </section>
-
-
-
-    <!-- =====================================
-         PARTNERS
-    ====================================== -->
-
-    <section
-      class="screen hidden"
-      id="screen-partners"
-    >
-
-
-      <div class="section">
-
-
-        <div class="section-header">
-
-
-          <h2
-            class="section-title"
-            id="partnersTitle"
-          >
-            Partnyorlar
-          </h2>
-
-
-        </div>
-
-
-        <div
-          class="partner-list"
-          id="partnersContainer"
-        >
-        </div>
-
-
-      </div>
-
-
-    </section>
-
-
-  </main>
-
-
-</div>
-
-
-
-<!-- =====================================
-     NOTIFICATIONS
-====================================== -->
-
-<div
-  class="notification-panel hidden"
-  id="notificationPanel"
->
-
-
-  <div class="notification-header">
-
-    <strong>
-      Bildirişlər
-    </strong>
-
-
-    <button
-      class="close-button"
-      id="closeNotificationButton"
-    >
-      ✕
-    </button>
-
+<header>
+  <h1>Salam! 👋</h1>
+  <div class="subtitle">
+    ANC Group əməkdaşları üçün özəl imtiyazlar
   </div>
 
+  <input
+    class="search"
+    id="searchInput"
+    placeholder="🔎 Partnyor və ya kateqoriya axtar..."
+  >
+</header>
 
-  <div id="notificationContainer">
-  </div>
+<main>
+  <h2>Kateqoriyalar</h2>
+  <div class="categories" id="categories"></div>
 
-
-</div>
-
-
-
-<!-- =====================================
-     PARTNER MODAL
-====================================== -->
-
-<div
-  class="modal-backdrop hidden"
-  id="modalBackdrop"
->
-
-
-  <div class="modal">
-
-
-    <div class="modal-header">
-
-
-      <div>
-
-        <h2
-          class="modal-title"
-          id="modalTitle"
-        >
-        </h2>
-
-
-        <div
-          class="modal-category"
-          id="modalCategory"
-        >
-        </div>
-
-      </div>
-
-
-      <button
-        class="close-button"
-        id="closeModalButton"
-      >
-        ✕
-      </button>
-
-
-    </div>
-
-
-    <div id="modalBody">
-    </div>
-
-
-  </div>
-
-
-</div>
-
-
-
-<!-- =====================================
-     BOTTOM NAVIGATION
-====================================== -->
+  <h2 id="sectionTitle">Yeni partnyorlar</h2>
+  <div class="cards" id="partnerCards"></div>
+</main>
 
 <nav class="bottom-nav">
-
-
-  <button
-    class="nav-button active"
-    data-screen="home"
-  >
-
-    <span class="nav-icon">
-      🏠
-    </span>
-
-    <span>
-      Əsas
-    </span>
-
+  <button class="nav-button active" data-tab="all">
+    🏠 Ana səhifə
   </button>
-
-
-
-  <button
-    class="nav-button"
-    data-screen="nearby"
-  >
-
-    <span class="nav-icon">
-      📍
-    </span>
-
-    <span>
-      Yaxınlıqda
-    </span>
-
+  <button class="nav-button" data-tab="favorites">
+    ❤️ Favoritlər
   </button>
-
-
-
-  <button
-    class="nav-button"
-    data-screen="favorites"
-  >
-
-    <span class="nav-icon">
-      ♥
-    </span>
-
-    <span>
-      Favorilər
-    </span>
-
+  <button class="nav-button" data-tab="new">
+    ✨ Yenilər
   </button>
-
-
-
-  <button
-    class="nav-button"
-    data-screen="partners"
-  >
-
-    <span class="nav-icon">
-      🤝
-    </span>
-
-    <span>
-      Partnyorlar
-    </span>
-
-  </button>
-
-
 </nav>
 
+</div>
 
-
-<!-- REAL PARTNER DATA -->
+<dialog id="partnerDialog">
+  <button class="close" id="closeDialog">×</button>
+  <div id="dialogContent"></div>
+</dialog>
 
 <script src="partners.js"></script>
 
-
-
 <script>
+const partners = window.ANC_PARTNERS || [];
 
+let currentCategory = "Hamısı";
+let currentTab = "all";
 
-/* =========================================
-   USER
-========================================= */
+let favorites = [];
 
-const firstName =
+try {
+  favorites = JSON.parse(
+    localStorage.getItem("ancFavorites") || "[]"
+  );
+} catch (e) {
+  favorites = [];
+}
 
-  localStorage.getItem(
-    "anc-first-name"
-  )
-
-  ||
-
-  "Əməkdaş";
-
-
-document
-  .getElementById(
-    "helloTitle"
-  )
-  .textContent =
-
-    `Salam, ${firstName}`;
-
-
-
-/* =========================================
-   DATA
-========================================= */
-
-const partners =
-
-  Array.isArray(
-    window.ANC_PARTNERS
-  )
-
-  ?
-
-  window.ANC_PARTNERS
-
-  :
-
-  [];
-
-
+if (!Array.isArray(favorites)) favorites = [];
 
 const categories = [
-
-  {
-    name: "Restoran / Kafe",
-    icon: "☕"
-  },
-
-  {
-    name: "Alış-veriş",
-    icon: "🛍️"
-  },
-
-  {
-    name: "Sağlamlıq",
-    icon: "🩺"
-  },
-
-  {
-    name: "Gözəllik",
-    icon: "💄"
-  },
-
-  {
-    name: "İstirahət mərkəzi",
-    icon: "🏞️"
-  },
-
-  {
-    name: "Təhsil",
-    icon: "🎓"
-  },
-
-  {
-    name: "Səyahət",
-    icon: "✈️"
-  },
-
-  {
-    name: "Uşaq",
-    icon: "🧸"
-  },
-
-  {
-    name: "Əyləncə",
-    icon: "🎉"
-  }
-
+  ["Hamısı", "🏠"],
+  ["Restoran / Kafe", "☕"],
+  ["Alış-veriş", "🛍️"],
+  ["Sağlamlıq", "🩺"],
+  ["Gözəllik", "💄"],
+  ["İstirahət mərkəzi", "🏞️"],
+  ["Təhsil", "🎓"],
+  ["Səyahət", "✈️"],
+  ["Uşaq", "🧸"],
+  ["Əyləncə", "🎉"]
 ];
 
-
-
-/* =========================================
-   FAVORITES
-========================================= */
-
-let favoriteIds =
-
-  JSON.parse(
-
-    localStorage.getItem(
-      "anc-favorite-partners"
-    )
-
-    ||
-
-    "[]"
-
+function escapeHTML(value) {
+  return String(value ?? "").replace(
+    /[&<>"']/g,
+    char => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    }[char])
   );
-
-
-
-function isFavorite(id) {
-
-  return favoriteIds.includes(
-    id
-  );
-
 }
-
-
-
-function saveFavorites() {
-
-  localStorage.setItem(
-
-    "anc-favorite-partners",
-
-    JSON.stringify(
-      favoriteIds
-    )
-
-  );
-
-}
-
-
-
-function toggleFavorite(
-  id
-) {
-
-
-  if (
-    favoriteIds.includes(
-      id
-    )
-  ) {
-
-
-    favoriteIds =
-
-      favoriteIds.filter(
-
-        itemId =>
-          itemId !== id
-
-      );
-
-
-  }
-
-  else {
-
-
-    favoriteIds.push(
-      id
-    );
-
-
-  }
-
-
-  saveFavorites();
-
-
-  renderNewPartners();
-
-  renderPartners(
-    partners
-  );
-
-  renderFavorites();
-
-}
-
-
-
-/* =========================================
-   CATEGORIES
-========================================= */
-
-const categoriesContainer =
-
-  document.getElementById(
-    "categoriesContainer"
-  );
-
-
 
 function renderCategories() {
-
-
-  categoriesContainer.innerHTML =
-    "";
-
-
-  categories.forEach(
-    function(category) {
-
-
-      const button =
-
-        document.createElement(
-          "button"
-        );
-
-
-      button.className =
-        "category-card";
-
-
-      button.innerHTML = `
-
-        <div class="category-icon">
-
-          ${category.icon}
-
-        </div>
-
-        <div class="category-name">
-
-          ${category.name}
-
-        </div>
-
-      `;
-
-
-      button.addEventListener(
-        "click",
-        function() {
-
-
-          openPartnersByCategory(
-            category.name
-          );
-
-
-        }
-      );
-
-
-      categoriesContainer.appendChild(
-        button
-      );
-
-
-    }
-  );
-
+  document.getElementById("categories").innerHTML =
+    categories.map(([name, icon]) => `
+      <button
+        class="category ${currentCategory === name ? "active" : ""}"
+        data-category="${escapeHTML(name)}"
+      >
+        <span class="category-icon">${icon}</span>
+        ${escapeHTML(name)}
+      </button>
+    `).join("");
 }
 
-
-
-/* =========================================
-   HELPER
-========================================= */
-
-function shortDescription(
-  partner
-) {
-
-
-  if (
-    partner.details
-  ) {
-
-    return partner.details;
-
-  }
-
-
-  if (
-    partner.discount
-  ) {
-
-    return `${partner.discount} endirim`;
-
-  }
-
-
-  return "ANC Group əməkdaşları üçün xüsusi imtiyaz.";
-
-}
-
-
-
-function favoriteButtonHTML(
-  partner
-) {
-
-
-  const active =
-
-    isFavorite(
-      partner.id
-    );
-
-
-  return `
-
-    <button
-      class="favorite-button ${active ? "active" : ""}"
-      onclick="
-        event.stopPropagation();
-        toggleFavorite('${partner.id}');
-      "
-      aria-label="Favori"
-    >
-
-      ${active ? "♥" : "♡"}
-
-    </button>
-
-  `;
-
-}
-
-
-
-/* =========================================
-   NEW PARTNERS
-========================================= */
-
-const newPartnersContainer =
-
-  document.getElementById(
-    "newPartnersContainer"
-  );
-
-
-
-function renderNewPartners() {
-
-
-  newPartnersContainer.innerHTML =
-    "";
-
-
-  const newPartners =
-
-    partners.filter(
-
-      partner =>
-        partner.isNew
-
-    );
-
-
-  if (
-    !newPartners.length
-  ) {
-
-
-    newPartnersContainer.innerHTML = `
-
-      <div class="empty-box">
-
-        Hazırda yeni partnyor yoxdur.
-
-      </div>
-
-    `;
-
-
-    return;
-
-  }
-
-
-
-  newPartners.forEach(
-    function(partner) {
-
-
-      const card =
-
-        document.createElement(
-          "div"
-        );
-
-
-      card.className =
-        "featured-card";
-
-
-      card.innerHTML = `
-
-        <div class="featured-top">
-
-          ${favoriteButtonHTML(partner)}
-
-          ${partner.name}
-
-          ${
-            partner.discount
-
-            ?
-
-            `
-              <div class="discount-badge">
-
-                ${partner.discount}
-
-              </div>
-            `
-
-            :
-
-            ""
-          }
-
-        </div>
-
-
-        <div class="featured-body">
-
-
-          <div class="featured-name">
-
-            ${partner.name}
-
-          </div>
-
-
-          <div class="featured-description">
-
-            ${shortDescription(partner)}
-
-          </div>
-
-
-          <div class="featured-bottom">
-
-
-            <span class="category-chip">
-
-              ${partner.category}
-
-            </span>
-
-
-            <button
-              class="open-button"
-              onclick="openPartner('${partner.id}')"
-            >
-
-              →
-
-            </button>
-
-
-          </div>
-
-
-        </div>
-
-      `;
-
-
-      newPartnersContainer.appendChild(
-        card
-      );
-
-
-    }
-  );
-
-}
-
-
-
-/* =========================================
-   PARTNER LIST
-========================================= */
-
-const partnersContainer =
-
-  document.getElementById(
-    "partnersContainer"
-  );
-
-
-
-function renderPartners(
-  list
-) {
-
-
-  partnersContainer.innerHTML =
-    "";
-
-
-  if (
-    !list.length
-  ) {
-
-
-    partnersContainer.innerHTML = `
-
-      <div class="empty-box">
-
-        Bu bölmədə hazırda partnyor yoxdur.
-
-      </div>
-
-    `;
-
-
-    return;
-
-  }
-
-
-
-  list.forEach(
-    function(partner) {
-
-
-      const card =
-
-        document.createElement(
-          "div"
-        );
-
-
-      card.className =
-        "partner-card";
-
-
-      card.innerHTML = `
-
-        <div class="partner-top">
-
-
-          <div class="partner-info">
-
-
-            <div class="partner-name">
-
-              ${partner.name}
-
-            </div>
-
-
-            <div class="partner-description">
-
-              ${shortDescription(partner)}
-
-            </div>
-
-
-          </div>
-
-
-          <div class="right-actions">
-
-
-            ${
-              partner.discount
-
-              ?
-
-              `
-                <span class="small-discount">
-
-                  ${partner.discount}
-
-                </span>
-              `
-
-              :
-
-              ""
-            }
-
-
-            ${favoriteButtonHTML(partner)}
-
-
-          </div>
-
-
-        </div>
-
-
-        <div class="tags">
-
-          <span class="tag">
-
-            ${partner.category}
-
-          </span>
-
-        </div>
-
-
-        <div class="card-buttons">
-
-
-          <button
-            class="soft-button"
-            onclick="openPartner('${partner.id}')"
-          >
-
-            Ətraflı
-
-          </button>
-
-
-          ${
-            partner.mapUrl
-
-            ?
-
-            `
-              <a
-                class="soft-button red"
-                href="${partner.mapUrl}"
-                target="_blank"
-                rel="noopener"
-              >
-
-                📍 Xəritədə aç
-
-              </a>
-            `
-
-            :
-
-            ""
-          }
-
-
-        </div>
-
-      `;
-
-
-      partnersContainer.appendChild(
-        card
-      );
-
-
-    }
-  );
-
-}
-
-
-
-/* =========================================
-   FAVORITES
-========================================= */
-
-const favoritesContainer =
-
-  document.getElementById(
-    "favoritesContainer"
-  );
-
-
-
-function renderFavorites() {
-
-
-  const favorites =
-
-    partners.filter(
-
-      partner =>
-
-        favoriteIds.includes(
-          partner.id
-        )
-
-    );
-
-
-  document
-    .getElementById(
-      "favoriteCount"
-    )
-    .textContent =
-
-      `${favorites.length} partnyor`;
-
-
-  favoritesContainer.innerHTML =
-    "";
-
-
-  if (
-    !favorites.length
-  ) {
-
-
-    favoritesContainer.innerHTML = `
-
-      <div class="empty-box">
-
-        <div class="empty-icon">
-          ♡
-        </div>
-
-        Hələ heç bir partnyoru favorilərə
-        əlavə etməmisiniz.
-
-        <br><br>
-
-        Bəyəndiyiniz və ya tez-tez istifadə etdiyiniz
-        partnyorun ürək işarəsinə toxunun.
-
-      </div>
-
-    `;
-
-
-    return;
-
-  }
-
-
-
-  favorites.forEach(
-    function(partner) {
-
-
-      const card =
-
-        document.createElement(
-          "div"
-        );
-
-
-      card.className =
-        "partner-card";
-
-
-      card.innerHTML = `
-
-        <div class="partner-top">
-
-
-          <div class="partner-info">
-
-
-            <div class="partner-name">
-
-              ${partner.name}
-
-            </div>
-
-
-            <div class="partner-description">
-
-              ${shortDescription(partner)}
-
-            </div>
-
-
-          </div>
-
-
-          <div class="right-actions">
-
-
-            ${
-              partner.discount
-
-              ?
-
-              `
-                <span class="small-discount">
-
-                  ${partner.discount}
-
-                </span>
-              `
-
-              :
-
-              ""
-            }
-
-
-            <button
-              class="favorite-button active"
-              onclick="toggleFavorite('${partner.id}')"
-            >
-
-              ♥
-
-            </button>
-
-
-          </div>
-
-
-        </div>
-
-
-        <div class="tags">
-
-          <span class="tag">
-
-            ${partner.category}
-
-          </span>
-
-        </div>
-
-
-        <div class="card-buttons">
-
-          <button
-            class="soft-button"
-            onclick="openPartner('${partner.id}')"
-          >
-
-            Ətraflı
-
-          </button>
-
-        </div>
-
-      `;
-
-
-      favoritesContainer.appendChild(
-        card
-      );
-
-
-    }
-  );
-
-}
-
-
-
-/* =========================================
-   PARTNER MODAL
-========================================= */
-
-const modalBackdrop =
-
-  document.getElementById(
-    "modalBackdrop"
-  );
-
-
-const modalTitle =
-
-  document.getElementById(
-    "modalTitle"
-  );
-
-
-const modalCategory =
-
-  document.getElementById(
-    "modalCategory"
-  );
-
-
-const modalBody =
-
-  document.getElementById(
-    "modalBody"
-  );
-
-
-
-function cleanPhone(
-  number
-) {
-
-  return number.replace(
-    /[^\d+]/g,
-    ""
-  );
-
-}
-
-
-
-function openPartner(
-  partnerId
-) {
-
-
-  const partner =
-
-    partners.find(
-
-      item =>
-        item.id === partnerId
-
-    );
-
-
-  if (
-    !partner
-  ) {
-
-    return;
-
-  }
-
-
-  modalTitle.textContent =
-    partner.name;
-
-
-  modalCategory.textContent =
-    partner.category;
-
-
-  let html =
-    "";
-
-
-
-  /* ENDİRİM */
-
-  if (
-    partner.discount
-  ) {
-
-
-    html += `
-
-      <div class="discount-box">
-
-        <div class="modal-label">
-          Endirim
-        </div>
-
-        <strong>
-          ${partner.discount}
-        </strong>
-
-      </div>
-
-    `;
-
-  }
-
-
-
-  /* ƏTRAFLI MƏLUMAT */
-
-  if (
-    partner.details
-  ) {
-
-
-    html += `
-
-      <div class="modal-section">
-
-        <div class="modal-label">
-
-          Ətraflı məlumat
-
-        </div>
-
-        <div class="modal-content">
-
-          ${partner.details}
-
-        </div>
-
-      </div>
-
-    `;
-
-  }
-
-
-
-  /* İSTİFADƏ QAYDASI */
-
-  if (
-    partner.usage
-  ) {
-
-
-    html += `
-
-      <div class="modal-section">
-
-        <div class="modal-label">
-
-          İstifadə qaydası
-
-        </div>
-
-        <div class="modal-content">
-
-          ${partner.usage}
-
-        </div>
-
-      </div>
-
-    `;
-
-  }
-
-
-
-  /* PROMOKOD */
-
-  if (
-    partner.promoCode
-  ) {
-
-
-    html += `
-
-      <div class="modal-section">
-
-        <div class="modal-label">
-
-          Promokod
-
-        </div>
-
-
-        <div class="promo-box">
-
-
-          <div
-            class="promo-code"
-            id="currentPromoCode"
-          >
-
-            ${partner.promoCode}
-
-          </div>
-
-
-          <button
-            class="copy-button"
-            onclick="copyPromoCode('${partner.promoCode}')"
-          >
-
-            Kopyala
-
-          </button>
-
-
-        </div>
-
-      </div>
-
-    `;
-
-  }
-
-
-
-  /* ƏLAQƏLİ ŞƏXS */
-
-  if (
-    partner.relatedPerson
-    ||
-    partner.relatedPhone
-  ) {
-
-
-    html += `
-
-      <div class="modal-section">
-
-        <div class="modal-label">
-
-          Problem yarandıqda əlaqə
-
-        </div>
-
-
-        <div class="contact-box">
-
-
-          ${
-            partner.relatedPerson
-
-            ?
-
-            `
-              <div class="contact-name">
-
-                ${partner.relatedPerson}
-
-              </div>
-            `
-
-            :
-
-            ""
-          }
-
-
-          ${
-            partner.relatedPhone
-
-            ?
-
-            `
-              <div class="contact-phone">
-
-                <a
-                  class="phone-link"
-                  href="tel:${cleanPhone(partner.relatedPhone)}"
-                >
-
-                  📞 ${partner.relatedPhone}
-
-                </a>
-
-              </div>
-            `
-
-            :
-
-            ""
-          }
-
-
-          <div class="contact-help">
-
-            İmtiyazdan istifadə zamanı problem yaranarsa
-            əlaqə saxlaya bilərsiniz.
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-    `;
-
-  }
-
-
-
-  /* LINKS */
-
-  if (
-    partner.mapUrl
-    ||
-    partner.facebook
-    ||
-    partner.instagram
-    ||
-    partner.whatsapp
-  ) {
-
-
-    html += `
-
-      <div class="modal-section">
-
-
-        <div class="modal-label">
-
-          Faydalı linklər
-
-        </div>
-
-
-        <div class="external-buttons">
-
-
-          ${
-            partner.mapUrl
-
-            ?
-
-            `
-              <a
-                class="soft-button"
-                href="${partner.mapUrl}"
-                target="_blank"
-                rel="noopener"
-              >
-
-                📍 Google Maps
-
-              </a>
-            `
-
-            :
-
-            ""
-          }
-
-
-          ${
-            partner.instagram
-
-            ?
-
-            `
-              <a
-                class="soft-button"
-                href="${partner.instagram}"
-                target="_blank"
-                rel="noopener"
-              >
-
-                Instagram
-
-              </a>
-            `
-
-            :
-
-            ""
-          }
-
-
-          ${
-            partner.facebook
-
-            ?
-
-            `
-              <a
-                class="soft-button"
-                href="${partner.facebook}"
-                target="_blank"
-                rel="noopener"
-              >
-
-                Facebook
-
-              </a>
-            `
-
-            :
-
-            ""
-          }
-
-
-          ${
-            partner.whatsapp
-
-            ?
-
-            `
-              <a
-                class="soft-button"
-                href="${partner.whatsapp}"
-                target="_blank"
-                rel="noopener"
-              >
-
-                WhatsApp
-
-              </a>
-            `
-
-            :
-
-            ""
-          }
-
-
-        </div>
-
-      </div>
-
-    `;
-
-  }
-
-
-
-  modalBody.innerHTML =
-    html;
-
-
-  modalBackdrop
-    .classList
-    .remove(
-      "hidden"
-    );
-
-}
-
-
-
-function closeModal() {
-
-  modalBackdrop
-    .classList
-    .add(
-      "hidden"
-    );
-
-}
-
-
-
-document
-  .getElementById(
-    "closeModalButton"
-  )
-  .addEventListener(
-    "click",
-    closeModal
-  );
-
-
-
-modalBackdrop.addEventListener(
-  "click",
-  function(event) {
-
-
-    if (
-      event.target ===
-      modalBackdrop
-    ) {
-
-
-      closeModal();
-
-
-    }
-
-
-  }
-);
-
-
-
-function copyPromoCode(
-  code
-) {
-
-
-  if (
-    navigator.clipboard
-  ) {
-
-
-    navigator.clipboard
-      .writeText(
-        code
-      );
-
-
-  }
-
-
-  alert(
-    "Promokod kopyalandı: " +
-    code
-  );
-
-}
-
-
-
-/* =========================================
-   NOTIFICATIONS
-========================================= */
-
-const notificationPanel =
-
-  document.getElementById(
-    "notificationPanel"
-  );
-
-
-const notificationBadge =
-
-  document.getElementById(
-    "notificationBadge"
-  );
-
-
-const notificationContainer =
-
-  document.getElementById(
-    "notificationContainer"
-  );
-
-
-
-function renderNotifications() {
-
-
-  const newPartners =
-
-    partners.filter(
-      partner =>
-        partner.isNew
-    );
-
-
-  if (
-    newPartners.length
-  ) {
-
-
-    notificationBadge.style.display =
-      "flex";
-
-
-    notificationBadge.textContent =
-      newPartners.length;
-
-
-  }
-
-  else {
-
-
-    notificationBadge.style.display =
-      "none";
-
-
-  }
-
-
-
-  if (
-    !newPartners.length
-  ) {
-
-
-    notificationContainer.innerHTML = `
-
-      <div class="empty-box">
-
-        Yeni bildiriş yoxdur.
-
-      </div>
-
-    `;
-
-
-    return;
-
-  }
-
-
-
-  notificationContainer.innerHTML =
-
-    newPartners
-      .map(
-        partner => `
-
-          <div class="notification-item">
-
-            <div class="notification-title">
-
-              Yeni partnyor əlavə edildi 🎉
-
-            </div>
-
-            <div class="notification-text">
-
-              ${partner.name}
-
-              ${
-                partner.discount
-
-                ?
-
-                ` — ${partner.discount} imtiyaz`
-
-                :
-
-                ""
-              }
-
-            </div>
-
-          </div>
-
-        `
-      )
-      .join("");
-
-}
-
-
-
-document
-  .getElementById(
-    "notificationButton"
-  )
-  .addEventListener(
-    "click",
-    function() {
-
-
-      notificationPanel
-        .classList
-        .toggle(
-          "hidden"
-        );
-
-
-    }
-  );
-
-
-
-document
-  .getElementById(
-    "closeNotificationButton"
-  )
-  .addEventListener(
-    "click",
-    function() {
-
-
-      notificationPanel
-        .classList
-        .add(
-          "hidden"
-        );
-
-
-    }
-  );
-
-
-
-/* =========================================
-   NEARBY
-========================================= */
-
-const nearbyContainer =
-
-  document.getElementById(
-    "nearbyContainer"
-  );
-
-
-const locationMessage =
-
-  document.getElementById(
-    "locationMessage"
-  );
-
-
-
-function renderNearbyLinks() {
-
-
-  const partnersWithMap =
-
-    partners.filter(
-      partner =>
-        partner.mapUrl
-    );
-
-
-  nearbyContainer.innerHTML =
-    "";
-
-
-  if (
-    !partnersWithMap.length
-  ) {
-
-
-    return;
-
-  }
-
-
-  partnersWithMap.forEach(
-    function(partner) {
-
-
-      const card =
-
-        document.createElement(
-          "div"
-        );
-
-
-      card.className =
-        "partner-card";
-
-
-      card.innerHTML = `
-
-        <div class="partner-top">
-
-
-          <div class="partner-info">
-
-
-            <div class="partner-name">
-
-              ${partner.name}
-
-            </div>
-
-
-            <div class="partner-description">
-
-              ${shortDescription(partner)}
-
-            </div>
-
-
-          </div>
-
-
-          ${
-            partner.discount
-
-            ?
-
-            `
-              <span class="small-discount">
-
-                ${partner.discount}
-
-              </span>
-            `
-
-            :
-
-            ""
-          }
-
-
-        </div>
-
-
-        <div class="card-buttons">
-
-
-          <a
-            class="soft-button"
-            href="${partner.mapUrl}"
-            target="_blank"
-            rel="noopener"
-          >
-
-            📍 Xəritədə aç
-
-          </a>
-
-
-          <button
-            class="soft-button red"
-            onclick="openPartner('${partner.id}')"
-          >
-
-            Ətraflı
-
-          </button>
-
-
-        </div>
-
-      `;
-
-
-      nearbyContainer.appendChild(
-        card
-      );
-
-
-    }
-  );
-
-}
-
-
-
-/*
-  DƏQİQ MƏSAFƏ ÜÇÜN:
-  Excel-də gələcəkdə hər partnyor üçün
-  latitude və longitude əlavə etmək kifayətdir.
-*/
-
-function requestLocation() {
-
-
-  if (
-    !navigator.geolocation
-  ) {
-
-
-    locationMessage.innerHTML =
-
-      "Bu cihaz konum funksiyasını dəstəkləmir.";
-
-
-    renderNearbyLinks();
-
-
-    return;
-
-  }
-
-
-
-  locationMessage.innerHTML =
-
-    "📍 Konum icazəsi gözlənilir...";
-
-
-
-  navigator.geolocation.getCurrentPosition(
-
-
-    function() {
-
-
-      const hasCoordinates =
-
-        partners.some(
-
-          partner =>
-
-            typeof partner.lat === "number"
-
-            &&
-
-            typeof partner.lng === "number"
-
-        );
-
-
-
-      if (
-        hasCoordinates
-      ) {
-
-
-        locationMessage.innerHTML =
-
-          "✅ Konum icazəsi verildi.";
-
-
-      }
-
-      else {
-
-
-        locationMessage.innerHTML =
-
-          `✅ Konum icazəsi verildi.
-
-          Partnyorların koordinatları əlavə olunduqca
-          məsafə burada avtomatik hesablanacaq.`;
-
-      }
-
-
-      renderNearbyLinks();
-
-
-    },
-
-
-    function(error) {
-
-
-      if (
-        error.code === 1
-      ) {
-
-
-        locationMessage.innerHTML =
-
-          "📍 Konum icazəsi verilmədi. Brauzer və ya telefon ayarlarından konum icazəsini aktiv edə bilərsiniz.";
-
-
-      }
-
-      else {
-
-
-        locationMessage.innerHTML =
-
-          "Konum məlumatını əldə etmək mümkün olmadı.";
-
-
-      }
-
-
-      renderNearbyLinks();
-
-
-    },
-
-
-    {
-
-      enableHighAccuracy:
-        true,
-
-      timeout:
-        10000,
-
-      maximumAge:
-        300000
-
-    }
-
-
-  );
-
-}
-
-
-
-/* =========================================
-   NAVIGATION
-========================================= */
-
-const screens = {
-
-  home:
-    document.getElementById(
-      "screen-home"
-    ),
-
-  nearby:
-    document.getElementById(
-      "screen-nearby"
-    ),
-
-  favorites:
-    document.getElementById(
-      "screen-favorites"
-    ),
-
-  partners:
-    document.getElementById(
-      "screen-partners"
-    )
-
-};
-
-
-
-function openScreen(
-  screenName
-) {
-
-
-  Object
-    .values(
-      screens
-    )
-    .forEach(
-      screen =>
-
-        screen
-          .classList
-          .add(
-            "hidden"
-          )
-
-    );
-
-
-  screens[
-    screenName
-  ]
-  .classList
-  .remove(
-    "hidden"
-  );
-
-
-
-  document
-    .querySelectorAll(
-      ".nav-button"
-    )
-    .forEach(
-      function(button) {
-
-
-        button.classList.toggle(
-
-          "active",
-
-          button.dataset.screen ===
-          screenName
-
-        );
-
-
-      }
-    );
-
-
-
-  if (
-    screenName ===
-    "favorites"
-  ) {
-
-
-    renderFavorites();
-
-
-  }
-
-
-
-  if (
-    screenName ===
-    "partners"
-  ) {
-
-
-    document
-      .getElementById(
-        "partnersTitle"
-      )
-      .textContent =
-        "Partnyorlar";
-
-
-    renderPartners(
-      partners
-    );
-
-
-  }
-
-
-
-  if (
-    screenName ===
-    "nearby"
-  ) {
-
-
-    requestLocation();
-
-
-  }
-
-
-
-  window.scrollTo({
-
-    top: 0,
-
-    behavior:
-      "smooth"
-
+function renderPartners() {
+  const search = document.getElementById("searchInput")
+    .value.toLocaleLowerCase("az").trim();
+
+  let list = partners.filter(partner => {
+    const matchesCategory =
+      currentCategory === "Hamısı" ||
+      partner.category === currentCategory;
+
+    const searchable = [
+      partner.name,
+      partner.category,
+      partner.details,
+      partner.usage
+    ].join(" ").toLocaleLowerCase("az");
+
+    return matchesCategory && searchable.includes(search);
   });
 
+  if (currentTab === "favorites") {
+    list = list.filter(p => favorites.includes(p.id));
+  }
+
+  if (currentTab === "new") {
+    list = list.filter(p => p.isNew);
+  }
+
+  document.getElementById("sectionTitle").textContent =
+    currentTab === "favorites"
+      ? "Favoritlər"
+      : currentTab === "new"
+      ? "Yeni partnyorlar"
+      : "Partnyorlar";
+
+  const container = document.getElementById("partnerCards");
+
+  if (!list.length) {
+    container.innerHTML =
+      '<div class="empty">Partnyor tapılmadı.</div>';
+    return;
+  }
+
+  container.innerHTML = list.map(p => `
+    <div class="card">
+
+      <div class="card-cover">
+
+        <button
+          class="favorite"
+          data-favorite="${escapeHTML(p.id)}"
+        >
+          ${favorites.includes(p.id) ? "♥" : "♡"}
+        </button>
+
+        ${p.discount ? `
+          <span class="discount">
+            ${escapeHTML(p.discount)}
+          </span>
+        ` : ""}
+
+        ${p.logo ? `
+          <img
+            class="partner-logo"
+            src="${escapeHTML(p.logo)}"
+            alt="${escapeHTML(p.name)} loqosu"
+            loading="lazy"
+          >
+        ` : `
+          <div class="partner-placeholder">
+            ${escapeHTML(p.name)}
+          </div>
+        `}
+
+      </div>
+
+      <div class="card-body">
+        <div class="partner-name">
+          ${escapeHTML(p.name)}
+        </div>
+
+        <div class="partner-description">
+          ${escapeHTML(p.details || p.category || "")}
+        </div>
+
+        <div class="card-bottom">
+          <span class="category-chip">
+            ${escapeHTML(p.category)}
+          </span>
+
+          <button
+            class="detail-button"
+            data-detail="${escapeHTML(p.id)}"
+          >
+            →
+          </button>
+        </div>
+      </div>
+
+    </div>
+  `).join("");
 }
 
+function section(label, value) {
+  if (!value) return "";
 
-
-function openPartnersByCategory(
-  categoryName
-) {
-
-
-  openScreen(
-    "partners"
-  );
-
-
-  document
-    .getElementById(
-      "partnersTitle"
-    )
-    .textContent =
-      categoryName;
-
-
-
-  const filtered =
-
-    partners.filter(
-
-      partner =>
-
-        partner.category ===
-        categoryName
-
-    );
-
-
-  renderPartners(
-    filtered
-  );
-
+  return `
+    <div class="modal-section">
+      <div class="modal-label">${escapeHTML(label)}</div>
+      <div class="modal-text">${escapeHTML(value)}</div>
+    </div>
+  `;
 }
 
+function safeLink(url, label) {
+  if (!url) return "";
 
+  try {
+    const parsed = new URL(url);
 
-document
-  .querySelectorAll(
-    ".nav-button"
-  )
-  .forEach(
-    function(button) {
-
-
-      button.addEventListener(
-        "click",
-        function() {
-
-
-          openScreen(
-            button.dataset.screen
-          );
-
-
-        }
-      );
-
-
+    if (!["https:", "http:"].includes(parsed.protocol)) {
+      return "";
     }
-  );
 
+    return `
+      <a
+        class="action-link"
+        href="${escapeHTML(parsed.href)}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ${escapeHTML(label)}
+      </a>
+    `;
+  } catch (e) {
+    return "";
+  }
+}
 
+function openPartner(id) {
+  const p = partners.find(item => item.id === id);
+  if (!p) return;
 
-document
-  .getElementById(
-    "allCategoriesButton"
-  )
-  .addEventListener(
-    "click",
-    function() {
+  let html = "";
 
+  if (p.logo) {
+    html += `
+      <img
+        class="modal-logo"
+        src="${escapeHTML(p.logo)}"
+        alt="${escapeHTML(p.name)} loqosu"
+      >
+    `;
+  }
 
-      openScreen(
-        "partners"
-      );
+  html += `
+    <h2>${escapeHTML(p.name)}</h2>
+  `;
 
+  html += section("Kateqoriya", p.category);
+  html += section("Endirim", p.discount);
+  html += section("Ətraflı məlumat", p.details);
+  html += section("İstifadə qaydası", p.usage);
 
-    }
-  );
+  if (p.promoCode) {
+    html += `
+      <div class="modal-section">
+        <div class="modal-label">Promokod</div>
+        <div class="promo">
+          ${escapeHTML(p.promoCode)}
+        </div>
+        <button class="copy-button" id="copyPromo">
+          📋 Kopyala
+        </button>
+      </div>
+    `;
+  }
 
+  html += section("Əlaqəli şəxs", p.relatedPerson);
 
+  if (p.relatedPhone) {
+    const phone = String(p.relatedPhone)
+      .replace(/[^\d+]/g, "");
 
-document
-  .getElementById(
-    "allPartnersButton"
-  )
-  .addEventListener(
-    "click",
-    function() {
+    html += `
+      <div class="modal-section">
+        <div class="modal-label">Əlaqə nömrəsi</div>
+        <div class="modal-text">
+          ${escapeHTML(p.relatedPhone)}
+        </div>
+        <a
+          class="action-link"
+          href="tel:${escapeHTML(phone)}"
+        >
+          📞 Zəng et
+        </a>
+      </div>
+    `;
+  }
 
+  const mapLinks = (p.mapUrls || [])
+    .map((url, index) =>
+      safeLink(url, "📍 Ünvan " + (index + 1))
+    ).join("");
 
-      openScreen(
-        "partners"
-      );
+  const socialLinks = [
+    safeLink(p.facebook, "Facebook"),
+    safeLink(p.instagram, "Instagram"),
+    safeLink(p.whatsapp, "WhatsApp")
+  ].join("");
 
+  if (mapLinks || socialLinks) {
+    html += `
+      <div class="modal-section">
+        <div class="modal-label">
+          Ünvan və sosial şəbəkələr
+        </div>
+        ${mapLinks}
+        ${socialLinks}
+      </div>
+    `;
+  }
 
-    }
-  );
+  document.getElementById("dialogContent").innerHTML = html;
 
+  const copyButton = document.getElementById("copyPromo");
 
-
-/* =========================================
-   SEARCH
-========================================= */
-
-document
-  .getElementById(
-    "searchInput"
-  )
-  .addEventListener(
-    "input",
-    function() {
-
-
-      const value =
-
-        this.value
-          .trim()
-          .toLowerCase();
-
-
-      if (
-        !value
-      ) {
-
-
-        openScreen(
-          "home"
-        );
-
-
-        return;
-
+  if (copyButton) {
+    copyButton.onclick = async () => {
+      try {
+        await navigator.clipboard.writeText(p.promoCode);
+        copyButton.textContent = "✓ Kopyalandı";
+      } catch (e) {
+        copyButton.textContent = "Kopyalama alınmadı";
       }
+    };
+  }
 
+  document.getElementById("partnerDialog").showModal();
+}
 
+function toggleFavorite(id) {
+  if (favorites.includes(id)) {
+    favorites = favorites.filter(item => item !== id);
+  } else {
+    favorites.push(id);
+  }
 
-      const results =
-
-        partners.filter(
-          function(partner) {
-
-
-            const searchable = `
-
-              ${partner.name || ""}
-
-              ${partner.category || ""}
-
-              ${partner.discount || ""}
-
-              ${partner.details || ""}
-
-              ${partner.usage || ""}
-
-            `
-            .toLowerCase();
-
-
-            return searchable.includes(
-              value
-            );
-
-
-          }
-        );
-
-
-
-      openScreen(
-        "partners"
-      );
-
-
-      document
-        .getElementById(
-          "partnersTitle"
-        )
-        .textContent =
-          "Axtarış nəticələri";
-
-
-      renderPartners(
-        results
-      );
-
-
-    }
+  localStorage.setItem(
+    "ancFavorites",
+    JSON.stringify(favorites)
   );
 
+  renderPartners();
+}
 
+document.addEventListener("click", event => {
+  const categoryButton = event.target.closest("[data-category]");
 
-/* =========================================
-   CHANGE LOGIN FILTER
-========================================= */
+  if (categoryButton) {
+    currentCategory = categoryButton.dataset.category;
+    renderCategories();
+    renderPartners();
+  }
 
-document
-  .getElementById(
-    "changeButton"
-  )
-  .addEventListener(
-    "click",
-    function() {
+  const detailButton = event.target.closest("[data-detail]");
 
+  if (detailButton) {
+    openPartner(detailButton.dataset.detail);
+  }
 
-      window.location.href =
-        "index.html";
+  const favoriteButton = event.target.closest("[data-favorite]");
 
+  if (favoriteButton) {
+    toggleFavorite(favoriteButton.dataset.favorite);
+  }
 
-    }
-  );
+  const navButton = event.target.closest("[data-tab]");
 
+  if (navButton) {
+    currentTab = navButton.dataset.tab;
+    currentCategory = "Hamısı";
 
+    document.getElementById("searchInput").value = "";
 
-/* =========================================
-   START
-========================================= */
+    document.querySelectorAll(".nav-button").forEach(button => {
+      button.classList.toggle(
+        "active",
+        button === navButton
+      );
+    });
+
+    renderCategories();
+    renderPartners();
+  }
+});
+
+document.getElementById("searchInput")
+  .addEventListener("input", renderPartners);
+
+document.getElementById("closeDialog")
+  .addEventListener("click", () => {
+    document.getElementById("partnerDialog").close();
+  });
 
 renderCategories();
-
-renderNewPartners();
-
-renderPartners(
-  partners
-);
-
-renderFavorites();
-
-renderNotifications();
-
-
+renderPartners();
 </script>
 
-
 </body>
-
 </html>
