@@ -2,16 +2,13 @@ window.ANC_PARTNERS = [
 
   {
     id: "saat-store",
-
     name: "Saat Store",
-
     category: "Alış-veriş",
-
     discount: "20%",
-
     logo: "saat-store-logo.jpg",
 
-    details: "Bütün məhsullara 20% endirim",
+    details:
+      "Bütün məhsullara 20% endirim",
 
     usage:
       "Saat Store mağazalarına yaxınlaşaraq ANC Groupda çalışdığınızı və qeyd edilən promokoddan istifadə edərək 20% endirim əldə edin.\n\nEndirim Tam Kart, Birkart kredit kartları və ya nağd ödənişlə edilən alışlarda istifadə oluna bilər.\n\nAlış məbləği üzrə məhdudiyyət yoxdur.",
@@ -44,13 +41,9 @@ window.ANC_PARTNERS = [
 
   {
     id: "flower-az",
-
     name: "Flower.az",
-
     category: "Alış-veriş",
-
     discount: "20%",
-
     logo: "flower-logo.jpg",
 
     details:
@@ -78,11 +71,8 @@ window.ANC_PARTNERS = [
 
   {
     id: "focus-optika",
-
     name: "Focus Optika",
-
     category: "Alış-veriş",
-
     discount: "5-20%",
 
     details:
@@ -97,22 +87,16 @@ window.ANC_PARTNERS = [
 
   {
     id: "isiq-optika",
-
     name: "İşıq Optika",
-
     category: "Alış-veriş"
   },
 
 
   {
     id: "dominos-pizza",
-
     name: "Domino's Pizza",
-
     category: "Restoran / Kafe",
-
     discount: "30%",
-
     promoCode: "ANCGroup"
   }
 
