@@ -5,7 +5,8 @@ window.ANC_PARTNERS = [
     name: "Saat Store",
     category: "Alış-veriş",
     discount: "20%",
-    logo: "saat-store-logo.jpg",
+
+    logo: "saat-store-logo.jpeg",
 
     details:
       "Bütün məhsullara 20% endirim",
@@ -44,7 +45,8 @@ window.ANC_PARTNERS = [
     name: "Flower.az",
     category: "Alış-veriş",
     discount: "20%",
-    logo: "flower-logo.jpg",
+
+    logo: "flower-logo.jpeg",
 
     details:
       "Bütün məhsullara 20% endirim",
@@ -65,7 +67,7 @@ window.ANC_PARTNERS = [
       "https://www.instagram.com/_flower.az__",
 
     whatsapp:
-      "https://api.whatsapp.com/send/?phone=994554440010&text&type=phone_number&app_absent=0"
+      "https://api.whatsapp.com/send/?phone=994554440010"
   },
 
 
